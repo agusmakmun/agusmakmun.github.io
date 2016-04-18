@@ -7,3 +7,5 @@ urls:
     - text: github
       url: https://github.com/agusmakmun
 baseurl: '/agusmakmun.github.io'
+paginate: 1
+paginate_path: "/page:num/"

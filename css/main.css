@@ -39,14 +39,12 @@ h2 {
     font-weight: normal;
     margin-bottom: 5px;
     color: #666666;
-    border-bottom: 1px solid #E6E6E6;
 }
         
 h3 {
     font-weight: normal;
     margin-bottom: 5px;
     color: #666666;
-    text-decoration: underline;
 }
 
 a, a:link, a:active {
