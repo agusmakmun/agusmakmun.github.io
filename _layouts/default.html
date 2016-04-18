@@ -25,21 +25,19 @@
 		<div class="container">
 
 			<div class="col-sm-3">
-				<h1>{{ site.name }}</h1>
-				<img id="about" src="{{ site.baseurl }}/img/avatar.jpg" height="75px" width="75px" /><br />	
-
+				<img id="about" src="{{ site.baseurl }}/img/avatar.jpg" height="75px" width="75px" />
+                <h1 class="author-name">{{ site.name }}</h1>
+                {% if site.about %}
+                <div id="about">
+                    {{ site.about }}
+                </div>
+                {% endif %}
+                <hr />
 				<strong>Navigation</strong><br />
 				<a href="{{ site.baseurl }}/">home</a> <br />
 				{% for i in site.urls %}
-					<a class="about" href="{{ i.url }}">{{ i.text }}</a><br />
+					&raquo; <a class="about" href="{{ i.url }}">{{ i.text }}</a><br />
 				{% endfor %}
-				
-				{% if site.about %}
-				<div id="about">
-					<strong>About</strong><br />
-					{{ site.about }}
-				</div>
-				{% endif %}
 			</div>
 
 			<div class="col-sm-8 col-offset-1">
