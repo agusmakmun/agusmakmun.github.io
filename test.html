@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>{% if page.title %} {{ page.title }} {% else %} {{ site.name }} {% endif %}</title>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="css/syntax.css">
+        
+        <!-- Bootstrap core CSS -->
+    	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/main.css">
+
+    </head>
+    <body>
+
+		<div class="container">
+
+			<div class="col-sm-3">
+				<h1>Simply Grey</h1>
+				<img id="about" src="img/logo.jpg" height="75px" width="75px" /><br />	
+
+				<strong>navigation</strong><br />
+				<a href="{{ site.baseurl }}/">home</a> <br />
+					<a class="about" href="{{ i.url }}">{{ i.text }}</a><br />
+					<a class="about" href="{{ i.url }}">{{ i.text }}</a><br />
+				
+				<div id="about">
+					<strong>about</strong><br />
+					about me lalala
+				</div>
+			</div>
+
+			<div class="col-sm-8 col-offset-1">
+				
+				<h1>Title</h1>
+				<span class="time">34 Dec</span>
+
+				<div class="content">
+					<div class="post">This is the main content lalallalalalallalalalalalThis is the main content lalallalalalallalalalalalThis is the main content lalallalalalalalalalThis is the main content lalallalalalallalalalalalThis is the main content lalallalalalallalalalalalThis is the main content lalallalalalallalalalalalThis is the main content lalallalallalallalalalalal</div>
+				</div>
+
+				
+				<footer>
+					&copy; {{ site.name }}
+					{% if site.github %} 
+						- <a href="{{ site.github }}">{{ site.github }}</a>
+					{% endif %}
+				</footer>
+			</div>
+		
+		</div>
+		
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+name: Agus Makmun
+markdown: redcarpet
+pygments: true
+github: https://github.com/agusmakmun
+about: I am an independent developer from the sunny UK. I dabble in Ruby, play in C and I'm an avid systems administrator.
+urls:
+    - text: github
+      url: https://github.com/agusmakmun
+baseurl: '/agusmakmun.github.io'
