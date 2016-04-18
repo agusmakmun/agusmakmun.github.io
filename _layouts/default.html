@@ -8,16 +8,16 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
+        <link rel="stylesheet" href="/css/syntax.css">
         
         <!-- Bootstrap core CSS -->
-    	<link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Fonts -->
         <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:400,300italic,300,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+        <link rel="stylesheet" href="/css/main.css">
 
     </head>
     <body>
@@ -25,7 +25,7 @@
 		<div class="container">
 
 			<div class="col-sm-3">
-				<img id="about" src="{{ site.baseurl }}/img/avatar.jpg" height="75px" width="75px" />
+				<img id="about" src="/img/avatar.jpg" height="75px" width="75px" />
                 <h1 class="author-name">{{ site.name }}</h1>
                 {% if site.about %}
                 <div id="about">
@@ -34,7 +34,7 @@
                 {% endif %}
                 <hr />
 				<strong>Navigation</strong><br />
-				&raquo; <a href="{{ site.baseurl }}/">home</a> <br />
+				&raquo; <a href="/">home</a> <br />
 				{% for i in site.urls %}
 					&raquo; <a class="about" href="{{ i.url }}">{{ i.text }}</a><br />
 				{% endfor %}
@@ -57,7 +57,7 @@
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
