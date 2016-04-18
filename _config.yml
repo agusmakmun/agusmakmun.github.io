@@ -6,4 +6,4 @@ about: I am an independent developer from the sunny UK. I dabble in Ruby, play i
 urls:
     - text: github
       url: https://github.com/agusmakmun
-baseurl: '/agusmakmun.github.io'
+baseurl: '/'
