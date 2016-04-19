@@ -172,20 +172,24 @@ div.col-sm-3 img#about {
     margin-left: auto;
     margin-right: auto;
 }
+
 .PageNavigation {
-  font-size: 14px;
-  display: block;
-  width: auto;
-  overflow: hidden;
+    font-size: 14px;
+    display: block;
+    width: auto;
+    overflow: hidden;
 }
 
 .PageNavigation a {
-  display: block;
-  width: 50%;
-  float: left;
-  margin: 1em 0;
+    display: block;
+    width: 50%;
+    float: left;
+    margin: 1em 0;
 }
 
 .PageNavigation .next {
-  text-align: right;
+    text-align: right;
+}
+.PageNavigation .prev {
+    text-align: left;
 }
