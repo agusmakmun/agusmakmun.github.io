@@ -11,7 +11,13 @@ body {
     color: #666;
     font-weight: 300;
 }
-
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #F7F1F1;
+    border-bottom: 1px solid #fff;
+}
 /*
 @media (min-width: 768px) {
   .container {
@@ -101,7 +107,7 @@ div.content .highlight {
 }
 
 footer {
-    border-top: 1px solid #E6E6E6;
+    border-top: 1px solid #F7F1F1;
     width: 100%;
     height: 10px;
     margin-top: 10px;
