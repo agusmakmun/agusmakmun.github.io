@@ -1,16 +1,15 @@
 ---
 layout: post
 title:  "Email BackEnd with SMTP Gmail"
-date:   2016-04-19 02:28:15
+date:   2016-04-19 02:28:15 +0700
 categories: django
 ---
-
 Add this configurations in your `settings.py`
 
 This configurations is if you work with `smtp.gmail.com`, other smtp is similiar with configurations.
 
-* Unlock Captha: https://accounts.google.com/DisplayUnlockCaptcha
-* Change to active: https://www.google.com/settings/security/lesssecureapps
+* Unlock Captha: [https://accounts.google.com/DisplayUnlockCaptcha](https://accounts.google.com/DisplayUnlockCaptcha)
+* Change to active: [https://www.google.com/settings/security/lesssecureapps](https://www.google.com/settings/security/lesssecureapps)
 
 ```
 EMAIL_HOST          = 'smtp.gmail.com'

@@ -1,11 +1,16 @@
 name: Agus Makmun
-markdown: redcarpet
-pygments: true
 github: https://github.com/agusmakmun
 about: I am freelance developer. Currently doing more in backend, actually in Python and Django.
 urls:
-    - text: github
+    - text: About Me
+      url: /about/
+    - text: Github
       url: https://github.com/agusmakmun
+    - text: XML Sitemap
+      url: /sitemap.xml
+url: "https://agusmakmun.github.io"
+baseurl: ""
 paginate: 20
 per_page: 20
 paginate_path: "/page:num/"
+markdown: kramdown

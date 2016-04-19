@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Welcome to Simply Grey"
-date:   2013-12-23 00:18:23 
+date:   2013-12-23 00:18:23 +0700
 categories: simplygrey
 ---
 SimplyGrey is a simple, easy to use theme for Jekyll that compromises of mainly grey colours. A lot of people enjoy the simplistic look of grey and also find it easier to read.
@@ -18,6 +18,7 @@ Jekyll is a static site generator developed in ruby that generates websites from
 
 ### Code Snippets
 Code Snippets are one of the main reasons why I love Jekyll and I think you will too. All code snippets become highlighted with great colours when you write the code in markdown. Here is an example of highlighted Ruby code in a weather application that I have made.
+
 {% highlight ruby %}
 #!/usr/bin/env ruby
 
