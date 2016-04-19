@@ -35,9 +35,9 @@ layout: default
                 {% endif %}
             {% endif %}
             
-            <ol class="posts">
+            <ul class="posts">
                 <li><a href="{{ post.url }}">{{ post.title }}</a> &raquo; <i><span>{{ post.date | date_to_string }}</span></i></li>
-            </ol>
+            </ul>
 
             {% if forloop.last %}
                 </div>
