@@ -13,7 +13,7 @@ Install this module manually from souce inside your environtment: [https://githu
 
 #### 2. Register and Put the Server Keys
 
-Register and put your server API token here: https://account.postmarkapp.com/servers/<id_server>/credentials
+Register and put your server API token here: https://account.postmarkapp.com/servers/101010/credentials . `101010` is id of your server.
 
 > Makesure verified your SPF and DKIM. this configurations to allowing the permission from your domain for signature.
 
