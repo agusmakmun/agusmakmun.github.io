@@ -94,7 +94,7 @@ div.content {
 
 div.content pre {
     background: #333333;
-    padding: 5px;
+    padding: 10px;
     color: #FFF;
     overflow-x: auto;
     font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
@@ -171,4 +171,21 @@ div.col-sm-3 img#about {
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
+}
+.PageNavigation {
+  font-size: 14px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+}
+
+.PageNavigation .next {
+  text-align: right;
 }
