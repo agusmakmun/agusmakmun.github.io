@@ -23,7 +23,7 @@ Register and put your server API token here: https://account.postmarkapp.com/ser
 EMAIL_USE_TLS        = True
 EMAIL_HOST           = 'smtp.postmarkapp.com'
 EMAIL_PORT           = 587
-POSTMARK_API_KEY     = 'a6530431-55e3-4969-98c0-7f21a340968f'
+POSTMARK_API_KEY     = 'yourkey-yourkey-yourkey-yourkey'
 POSTMARK_SENDER      = 'your_company_email@domain.com'
 EMAIL_HOST_USER      = POSTMARK_SENDER
 DEFAULT_FROM_EMAIL   = POSTMARK_SENDER
