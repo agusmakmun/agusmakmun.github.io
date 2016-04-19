@@ -6,8 +6,8 @@ urls:
       url: /about/
     - text: Github
       url: https://github.com/agusmakmun
-    - text: XML Sitemap
-      url: /sitemap.xml
+    - text: XML Feed
+      url: /feed.xml
 url: "https://agusmakmun.github.io"
 baseurl: ""
 paginate: 20
