@@ -4,7 +4,7 @@ Our Stack Problems
 
 #### Screenshoot
 
-![Screenshot Post](https://raw.githubusercontent.com/agusmakmun/agusmakmun.github.io/master/img/screenshot-post.png  "Screenshot Post")screenshot-post.png
+![Screenshot Post](https://raw.githubusercontent.com/agusmakmun/agusmakmun.github.io/master/img/screenshot-post.png  "Screenshot Post")
 
 #### License
 
