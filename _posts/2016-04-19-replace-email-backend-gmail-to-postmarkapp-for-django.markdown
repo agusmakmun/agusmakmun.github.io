@@ -9,7 +9,7 @@ categories: [django]
 
 Install this module manually from souce inside your environtment: [https://github.com/themartorana/python-postmark](https://github.com/themartorana/python-postmark)
 
-> If you work inside `Django==1.9.*`, requirements only `mock`.
+> If you work on `Django==1.9.*`, requirements only `mock`.
 
 #### 2. Register and Put the Server Keys
 
