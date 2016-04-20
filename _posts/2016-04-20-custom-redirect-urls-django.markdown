@@ -4,7 +4,7 @@ title:  "Custom redirect urls django"
 date:   2016-04-20 09:41:20 +0700
 categories: [python, django]
 ---
-Example in this problem we need redirect the url `http://localhost:8000/a/b/C/123/4/5` to `http://localhost:8000/abC12345` without `/` slash.
+Example in this problem we need redirect the url `http://localhost:8000/a/b/C/123/4/5/` to `http://localhost:8000/abC12345` without `/` slash.
 
 #### 1. In your `views.py`
 
