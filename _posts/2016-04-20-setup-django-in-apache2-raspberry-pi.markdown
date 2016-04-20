@@ -34,4 +34,4 @@ Listen 192.168.1.27:8001
 
 And then, you can access from another client with IP: `192.168.1.27:8001`
 
-> Thanks for: _Nabil Abdat_
+> Thanks to: _Nabil Abdat_
