@@ -32,6 +32,12 @@ Listen 192.168.1.27:8001
 </VirtualHost>
 {% endhighlight %}
 
+* **Now restart or reload your apache**
+
+```shell
+service apache2 restart
+```
+
 And then, you can access from another client with IP: `192.168.1.27:8001`
 
 > Thanks to: _Nabil Abdat_
