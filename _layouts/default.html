@@ -6,7 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="shortcut icon" href="/img/favicon.ico" />
-        <title>{% if page.title %} {{ page.title }} {% else %} {{ site.name }} {% endif %}</title>
+        <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.author }}{% endif %}</title>
+        <meta name="author" content="{{ site.author }}" />
+        <meta name="description" content="{% if page.title %}{{ page.title }}{% else %}{{ site.description }}{% endif %}" />
+        <meta name="keywords" content="{% if page.title %}{{ page.title }}, {{ site.title }}, {% for categ in page.categories %}{{ categ }}{% if forloop.last == false %}, {% endif %}{% endfor %}{% else %}{{ site.title }}, {% for category in site.categories %}{% capture categories_slug %}{{ category | first }}{% endcapture %}{% for categ in categories_slug %}{{ categ }}{% endfor %}{% if forloop.last == false %}, {% endif %}{% endfor %}{% endif %}" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
         <!-- syntax highlighting CSS -->
         <link rel="stylesheet" href="/css/syntax.css">
@@ -17,7 +21,8 @@
         <!-- Fonts -->
         <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:400,300italic,300,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
-        <!-- Custom CSS -->
+        <!-- Custom CSS -->        
+        <link rel="stylesheet" href="/css/super-search.css">
         <link rel="stylesheet" href="/css/main.css">
     </head>
 
@@ -25,13 +30,20 @@
         <div class="container">
             <div class="col-sm-3">
                 <a href="/"><img id="about" src="/img/avatar.jpg" height="75px" width="75px" /></a>
-                <h1 class="author-name">{{ site.name }}</h1>
+                <h1 class="author-name">{{ site.author }}</h1>
                 {% if site.about %}
                 <div id="about">
                     {{ site.about }}
                 </div>
                 {% endif %}
+
                 <hr />
+                <div class="search" id="js-search">
+                  <input type="text" placeholder="(sitemap)~$ type to search" class="search__input form-control" id="js-search__input">
+                  <ul class="search__results" id="js-search__results"></ul>
+                </div>
+                <hr />
+
                 <strong>Navigation</strong><br />
                     &raquo; <a href="/">Home</a> <br />
                 {% for i in site.urls %}
@@ -43,7 +55,7 @@
                 {{ content }}
 
                 <footer>
-                    &copy; {{ site.name }}
+                    &copy; {{ site.author }}
                     {% if site.github %} 
                     - <a href="{{ site.github }}">{{ site.github }}</a> - Powered by Jekyll.
                     {% endif %}
@@ -56,5 +68,6 @@
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/super-search.js"></script>
     </body>
 </html>
