@@ -18,11 +18,11 @@ class UserRedirectView(RedirectView):
     permanent = False
     def get_redirect_url(self, pk):
         pk = ''.join(str(pk).split('/'))
-        return reverse('pool_fix', kwargs={'pk': pk})
+        return reverse('pool_fix_page', kwargs={'pk': pk})
 
 def pool_fix(request, pk):
     return HttpResponse("You're looking at question %s." % pk)
-    
+
 {% endhighlight %}
 
 #### 2. In your `urls.py`
@@ -32,7 +32,10 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
+    # first view the pool to doing redirection
     url(r'^pool/(?P<pk>[0-9a-zA-Z\/]+)/$', views.UserRedirectView.as_view(), name='pool'),
-    url(r'^pool/(?P<pk>[\d\w_]+)$', views.pool_fix, name='pool_fix'), #allow decimal and words only.
+
+    # allow decimal and words only.
+    url(r'^pool/(?P<pk>[\d\w_]+)$', views.pool_fix, name='pool_fix_page'),
 ]
 {% endhighlight %}
