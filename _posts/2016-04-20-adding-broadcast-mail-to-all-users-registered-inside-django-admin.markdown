@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Adding BroadCast Mail to All Users Registered inside Django Admin"
-date:   2016-04-19 19:51:02 +0700
+date:   2016-04-20 19:51:02 +0700
 categories: [python, django]
 ---
 
