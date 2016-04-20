@@ -15,4 +15,4 @@
 
 #### Screenshot
 
-![Screenshot Post](https://raw.githubusercontent.com/agusmakmun/agusmakmun.github.io/master/img/screenshot-post.png  "Screenshot Post")
+![Screenshot Post Page](https://raw.githubusercontent.com/agusmakmun/agusmakmun.github.io/master/img/screenshot-post-page.png  "Screenshot Post Page")
