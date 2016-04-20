@@ -7,9 +7,11 @@ categories: [python, django]
 
 Adding BroadCast Mail to All User Registered in Django Admin. This is my last problem, we need custom default Django Admin to can submit BroadCast mail to All User. Because this is perfectly to make a promotions.
 
-This problem has been helped by our Danny W. Adair who are answered someone's question about the ["Django Admin Customizing"](http://stackoverflow.com/a/5803941/3445802 target="_blank").
+This problem has been helped by our Danny W. Adair who are answered someone's question about the ["Django Admin Customizing"]("http://stackoverflow.com/a/5803941/3445802" target="_blank").
 
 > In this configuration, we use gmail for email backend. Please following this tutorial first [Email BackEnd with SMTP Gmail](https://agusmakmun.github.io/python/django/2016/04/18/email-backend-with-smtp-gmail.html).
+
+-----
 
 **1.** In your `models.py`
 
@@ -27,6 +29,8 @@ class BroadCast_Email(models.Model):
         verbose_name_plural = "BroadCast Email"
 
 {% endhighlight %}
+
+-----
 
 **2.** In your `admin.py`, importing some module for "admin" and for "email setup".
 
@@ -72,6 +76,8 @@ class BroadCast_Email_Admin(admin.ModelAdmin):
 admin.site.register(models.BroadCast_Email, BroadCast_Email_Admin)
 
 {% endhighlight %}
+
+-----
 
 **3.** And then, you can see. we have **Submit BroadCast** selection, just click button **Go** to submit broadcast mail.
 
