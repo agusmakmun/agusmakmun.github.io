@@ -102,7 +102,7 @@
     searchInputEl.addEventListener('input', function onInputChange() {
         var currentResultHash, d;
 
-        currentInputValue = searchInputEl.value;
+        currentInputValue = (searchInputEl.value + '').toLowerCase();
         if (!currentInputValue || currentInputValue.length < 3) {
             lastSearchResultHash = '';
             searchResultsEl.classList.add('is-hidden');
@@ -111,7 +111,7 @@
         searchResultsEl.style.offsetWidth;
 
         var matchingPosts = posts.filter(function (post) {
-            if (post.title.indexOf(currentInputValue) !== -1 || post.description.indexOf(currentInputValue) !== -1) {
+            if ((post.title + '').toLowerCase().indexOf(currentInputValue) !== -1 || (post.description + '').toLowerCase().indexOf(currentInputValue) !== -1) {
                 return true;
             }
         });
