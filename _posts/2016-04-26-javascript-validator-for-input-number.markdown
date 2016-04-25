@@ -25,4 +25,4 @@ document.getElementById('id_price').setAttribute("onkeypress", "return isNumber(
 
 For example result of it:
 
-<script async src="//jsfiddle.net/agaust/3qz105nn/embed/html,result/dark/"></script>
+<iframe width="100%" height="300" src="//jsfiddle.net/agaust/3qz105nn/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
