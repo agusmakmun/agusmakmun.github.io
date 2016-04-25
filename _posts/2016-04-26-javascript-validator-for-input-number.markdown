@@ -11,7 +11,7 @@ For example result of it:
 <iframe width="100%" height="350" src="//jsfiddle.net/agaust/3qz105nn/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 tutorial above, when you can not directly add the attribute inside html tag.
-but if you can add it, you can following this bellow:
+but if you can add it, you can following this tutorial bellow:
 
 {% highlight html %}
 <input id="id_price" type="number" min=0 onkeypress="return isNumber(event)"/>
