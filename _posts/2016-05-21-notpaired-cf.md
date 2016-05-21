@@ -12,9 +12,11 @@ In Numberland, every integer living there has a soulmate which is the exact same
 **Example:**
 
 * `notPaired([1, 2, 1]) = 2`
+
     2 is the only number in the sequence that appears once.
 
 * `notPaired([1, 3, 5, 7, 9, 7, 5, 3, 1]) = 9`
+
     9 is the only number in the sequence that appears once.
 
 **Input/Output**
