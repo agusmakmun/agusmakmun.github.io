@@ -5,7 +5,7 @@ date:   2016-05-21 14:32:04 +0700
 categories: [python, security]
 ---
 
-Simply how to make a ciphertext only with 1 line. in this sample, the plaintext is result encoded from hexa.
+Simply how to make a ciphertext only with 1 line. in this sample, the plaintext is result encoded from hexa. and then, just changing all integer `3` to `6` and also otherwise from `6` to `3`.
 
 ```python
 >>> #hex_encode = 'summonagus'.encode('hex')
