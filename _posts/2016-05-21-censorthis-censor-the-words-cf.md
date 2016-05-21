@@ -67,7 +67,7 @@ Expected Output: "Python is the **** programming language and LOLCODE is the ***
 ```
 text: "A bald eagle is a worthy adversary"
 forbiddenWords: ["bald", "a"]
-Output: "* **** eagle is * worthy adversary"
+Expected Output: "* **** eagle is * worthy adversary"
 ```
 
 **Test 5**
