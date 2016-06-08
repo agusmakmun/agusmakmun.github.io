@@ -11,6 +11,7 @@ layout: default
 
 <div class="content">
     <div class="post">{{ content }}</div>
+    {% include share-page.html %}
 </div>
 
 {% assign hasSimilar = '' %}
@@ -56,7 +57,7 @@ layout: default
     <script type="text/javascript">
         /* <![CDATA[ */
 
-        var disqus_shortname = 'stackproblems';
+        var disqus_shortname = "{{ site.disqus_shortname }}";
         var disqus_identifier = "{{ site.url }}_{{ page.title }}";
         var disqus_title = "{{ page.title }}";
 
