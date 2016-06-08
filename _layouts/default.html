@@ -72,6 +72,8 @@
           <meta name="twitter:image:src" content="{{ site.url }}/{{ page.header-img }}">
         {% endif %}
 
+        <!-- Font awesome icons -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
         <!-- syntax highlighting CSS -->
         <link rel="stylesheet" href="/static/css/syntax.css">
@@ -103,7 +105,8 @@
                 </div>
                 {% endif %}
 
-                <hr />                
+                {% include social_links.html %}
+
                 <div class="search" id="js-search">
                   <input type="text" placeholder="(sitemap)~$ type to search" class="search__input form-control" id="js-search__input">
                   <ul class="search__results" id="js-search__results"></ul>
