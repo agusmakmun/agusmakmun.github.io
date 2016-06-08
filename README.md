@@ -15,6 +15,10 @@
 * Highlight pre
 * Next & Previous Post
 * Disqus comment
+* Projects
+* Project page
+* Share on social media
+* Google analytics
 
 #### Screenshot
 
