@@ -193,3 +193,20 @@ div.col-sm-3 img#about {
 .PageNavigation .prev {
     text-align: left;
 }
+
+.social{
+    display: block;
+    margin: 10px 0;
+}
+.social ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.social ul li {
+    display: inline-block;
+    margin: 0 5px;
+}
+.social li a {
+    font-size: 16px;
+}

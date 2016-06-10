@@ -3,16 +3,49 @@ description: My Personal Stack Problems
 author: Agus Makmun
 github: https://github.com/agusmakmun
 about: I am freelance developer. Currently doing more in backend, actually in Python and Django.
+disqus_shortname: aboutashu
+google_analytics: UA-XXXXXXXX-Y
+
+enableTags: true
+tagarray: []
+
+collections:
+  project:
+    output: true
+    permalink: /project/:path/
+
+social:
+    - icon: fa-facebook
+      link: "#"
+    - icon: fa-skype
+      link: "#"
+    - icon: fa-twitter
+      link: "#"
+    - icon: fa-linkedin
+      link: "#"
+    - icon: fa-stack-exchange
+      link: "#"
+
+share:
+  twitter_username: 216ashutosh
+  fb_appid: 0000000000000
+
 urls:
     - text: About Me
       url: /about/
+    - text: Projects
+      url: /projects/
     - text: Github
       url: https://github.com/agusmakmun
     - text: XML Feed
       url: /feed.xml
+
 url: "https://agusmakmun.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
 paginate_path: "/page:num/"
 markdown: kramdown
+gems:
+  - jekyll-paginate
+  - jekyll-gist
