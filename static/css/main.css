@@ -216,3 +216,4 @@ div.col-sm-3 img#about {
     border-top: 1px solid #f0f0f0;
     border-bottom: 1px solid #f0f0f0;
 }
+.post-content img, .content img {max-width: 100%}
