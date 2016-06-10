@@ -42,8 +42,8 @@ urls:
 
 url: "https://agusmakmun.github.io"
 baseurl: ""
-paginate: 15
-per_page: 15
+paginate: 20
+per_page: 20
 paginate_path: "/page:num/"
 markdown: kramdown
 gems:
