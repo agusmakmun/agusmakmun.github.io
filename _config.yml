@@ -3,7 +3,7 @@ description: My Personal Stack Problems
 author: Agus Makmun
 github: https://github.com/agusmakmun
 about: I am freelance developer. Currently doing more in backend, actually in Python and Django.
-disqus_shortname: aboutashu
+disqus_shortname: stackproblems
 google_analytics: UA-XXXXXXXX-Y
 
 enableTags: true
@@ -20,15 +20,15 @@ social:
     - icon: fa-skype
       link: "#"
     - icon: fa-twitter
-      link: "#"
+      link: "https://twitter.com/agusmakmun6"
     - icon: fa-linkedin
       link: "#"
     - icon: fa-stack-exchange
       link: "#"
 
 share:
-  twitter_username: 216ashutosh
-  fb_appid: 0000000000000
+  twitter_username: agusmakmun6
+  fb_appid: 1749788565247320
 
 urls:
     - text: About Me
@@ -42,8 +42,8 @@ urls:
 
 url: "https://agusmakmun.github.io"
 baseurl: ""
-paginate: 20
-per_page: 20
+paginate: 15
+per_page: 15
 paginate_path: "/page:num/"
 markdown: kramdown
 gems:

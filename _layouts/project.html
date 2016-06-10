@@ -33,14 +33,14 @@ layout: default
                     {% endif %}
                 {% endfor %}
                 {% if p_url == nil %}{% assign p_url = i.url %}{% endif %}
-                {% if p_url %}<a href="{{ p_url }}">{% endif %}
+                {% if p_url %}<a class="project-detail" href="{{ p_url }}">{% endif %}
     			<h3 class="project-headlines">{{ i.name }}</h3>
     			{% if p_url %} </a> {% endif %}
     			<div class="project-content">
     				<div class="tag-holder">
     				{% if i.tags %} 
     					{% for j in i.tags %}
-    					<span class="tags tag-filter" data-tag="{{ j | downcase }}"><a href="#">{{ j }}</a></span>
+    					<span class="tags tag-filter" data-tag="{{ j | downcase }}"><a href="#{{ j }}">{{ j }}</a></span>
     					{% endfor %}
     				{% endif %}
     				</div>
@@ -48,7 +48,7 @@ layout: default
     			</div>
     			<div class="project-footer"> 
     				{% if i.url %} 
-    				<a href="{{ i.url }}" class="project-link">View</a>
+    				<a href="{{ i.url }}" class="project-link" target="_blank"><i class="fa fa-globe"></i> View</a>
     				{% endif %}
     				<span class="project-timeline">{{ i.date }}</span>
     			</div>

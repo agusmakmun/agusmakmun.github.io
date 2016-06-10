@@ -210,3 +210,9 @@ div.col-sm-3 img#about {
 .social li a {
     font-size: 16px;
 }
+
+.share-page {
+    padding: 10px 10px 5px;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}

@@ -1,8 +1,6 @@
-/**
- * //////////////////////////////////
+/*
  * Project Elements
- * //////////////////////////////////
- */
+*/
 .project-outer {
     display: inline-block;
     width: 30%;
@@ -15,7 +13,6 @@
 h3.project-headlines {
     margin: 5px 0;
     font-size: 20px;
-    border-bottom: 1px #EEE solid;
 }
 span.tags {
     font-size: 10px;
@@ -34,6 +31,7 @@ span.tags:last-child{ margin-right: 0; }
     display: inline-block;
     position: relative;
     float: left;
+    text-decoration: none;
 }
 .project-footer .project-timeline {
     display: inline-block;
@@ -69,3 +67,6 @@ span.tag-cloud {
     background: #ccc;
 }
 .project-item.not-show{ display: none; }
+
+a.project-detail:hover {text-decoration: none;}
+a.project-detail:hover h3 {color: #62A253;}
