@@ -1,7 +1,5 @@
 /**
- * //////////////
  * Master styling
- * //////////////
  */
 body {
     font-family: "Roboto Condensed", Arial, sans-serif;
@@ -18,18 +16,9 @@ hr {
     border-top: 1px solid #F7F1F1;
     border-bottom: 1px solid #fff;
 }
-/*
-@media (min-width: 768px) {
-  .container {
-    max-width: 780px;
-  }
-}
-*/
 
 /**
- * //////////////////////////
  * Font and link declarations
- * //////////////////////////
  */
 span.time, span.categories {
     color: #ADADAD;
@@ -145,9 +134,7 @@ div.right .post ul {
 }
 
 /**
- * ///////////////////////////////////
  * Left column aka nav bar formatting
- * ///////////////////////////////////
  */
 div.col-sm-3 {
         margin-top: 100px;
@@ -217,3 +204,16 @@ div.col-sm-3 img#about {
     border-bottom: 1px solid #f0f0f0;
 }
 .post-content img, .content img {max-width: 100%}
+
+/* Responsive Conditional */
+@media (min-width: 1024px) {
+    .fixed-condition {
+        position: fixed;
+        max-width: 255px;
+    }
+}
+@media (max-width: 768px) {
+    div.col-sm-3 {
+        margin-top: 30px;
+    }
+}
