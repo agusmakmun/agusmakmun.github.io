@@ -7,7 +7,11 @@ layout: default
     <hr />
     <ol class="posts">
     {% for post in paginator.posts %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a> &raquo; <i><span>{{ post.date | date_to_string }}</span></i></li>
+    {% assign seriesPost = nil %}
+    {% if post.series == nil %}
+    {% if post.series_slug != nil %} {% assign seriesPost = '(Series)' %} {% endif %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a> {{ seriesPost }} &raquo; <i><span>{{ post.date | date_to_string }}</span></i></li>
+    {% endif %}
     {% endfor %}
     </ol>
 
