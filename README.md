@@ -10,6 +10,7 @@
 * Sitemap and XML Feed
 * Paginations in homepage
 * Posts under category
+* Post series
 * Realtime Search Posts _(title & description)_ under query.
 * Related Posts
 * Highlight pre
