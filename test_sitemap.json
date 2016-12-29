@@ -1,0 +1,10 @@
+---
+layout: null
+---
+[{% for post in site.posts %}
+  {
+    "title": "{{ post.title }}",
+    "date" : "{{ post.date | date_to_string }}",
+    "link" : "{{ post.url | prepend: site.baseurl | prepend: site.url }}"
+  }{% if forloop.last == false %},{% endif %}
+{% endfor %}]
