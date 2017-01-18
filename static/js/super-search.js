@@ -110,11 +110,18 @@
         }
         searchResultsEl.style.offsetWidth;
 
-        var matchingPosts = posts.filter(function (post) {
-            if ((post.title + '').toLowerCase().indexOf(currentInputValue) !== -1 || (post.description + '').toLowerCase().indexOf(currentInputValue) !== -1) {
-                return true;
-            }
-        });
+        var matchingPosts;
+        // check the `posts` object is single or many objects.
+        // if posts.title === undefined, so posts is many objects.
+        if(posts.title === undefined) {
+          matchingPosts = posts.filter(function (post) {
+              if ((post.title + '').toLowerCase().indexOf(currentInputValue) !== -1 || (post.description + '').toLowerCase().indexOf(currentInputValue) !== -1) {
+                  return true;
+              }
+          });
+        }else {
+          matchingPosts = [posts]; // assign single object to Array
+        }
         if (!matchingPosts.length) {
             searchResultsEl.classList.add('is-hidden');
         }
