@@ -1,0 +1,44 @@
+{% assign seriesarray = '|' | split : '|' %}
+{% assign seriestitle = '' %}
+{% assign serieslabel = '' %}
+{% assign sortedposts = (site.posts | sort: 'date') %}
+{% for post in sortedposts %}
+    {% if post.series and page.series_slug != nil and post.series == page.series_slug %}
+
+        {% capture postitem %}    <li> <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a> </li> {% endcapture %}
+        {% assign seriesarray = seriesarray | push: postitem %}
+        {% assign seriestitle = 'Posts in this series' %}
+        {% assign serieslabel = 'Series Post' %}
+
+    {% elsif post.series != nil and page.series != nil and page.series == post.series %}
+
+        {% assign pageurl = page.url | split:'/' | last %}
+        {% assign posturl = post.url | split:'/' | last %}
+        {% if pageurl != posturl %}
+        {% capture postitem %}    <li> <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a> </li> {% endcapture %}
+        {% else %}
+        {% capture postitem %}    <li> {{ post.title }} </li> {% endcapture %}
+        {% endif %}
+        {% assign seriesarray = seriesarray | push: postitem %}
+
+    {% endif %}
+
+    {% if post.series_slug != nil and page.series != nil and page.series == post.series_slug %}
+		{% capture series_title %} <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>  {% endcapture %}
+		{% assign seriestitle = 'This posts is part of series - ' | append: series_title %}
+		{% assign serieslabel = 'This posts is part of series - ' | append: series_title %}
+	{% endif %}
+
+{% endfor %}
+
+{% capture serieslayout %}
+	{% if seriesarray.size > 0 %} 
+    <hr />
+    <div class="panel">
+        <div class="panel-body">
+        <h4> {{ seriestitle }} </h4>
+        <ul id="post-series-list">
+    {% endif %}
+    {% for post in seriesarray %} {{ post }} {% endfor %}
+    {% if seriesarray.size > 0 %} </ul> </div> </div> {% endif %}
+{% endcapture %}

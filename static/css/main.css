@@ -20,7 +20,7 @@ hr {
 /**
  * Font and link declarations
  */
-span.time, span.categories {
+span.time, span.categories, span.part-series {
     color: #ADADAD;
     margin-bottom: 5px;
     font-size: 11px;
