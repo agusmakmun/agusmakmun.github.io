@@ -1,166 +1,169 @@
+---
+layout: compress
+---
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/static/img/favicon.ico" />
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.author }}{% endif %}</title>
+    <meta name="author" content="{{ site.author }}" />
+    <meta name="description" content="{% if page.title %}{{ page.title }}{% else %}{{ site.description }}{% endif %}" />
+    <meta name="keywords" content="{% if page.title %}{{ page.title }}, {{ site.title }}, {% for categ in page.categories %}{{ categ }}{% if forloop.last == false %}, {% endif %}{% endfor %}{% else %}{{ site.title }}, {% for category in site.categories %}{% capture categories_slug %}{{ category | first }}{% endcapture %}{% for categ in categories_slug %}{{ categ }}{% endfor %}{% if forloop.last == false %}, {% endif %}{% endfor %}{% endif %}" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <meta content="{{ site.share.fb_appid }}" property="fb:app_id">
+    <meta content="{{ site.title }}" property="og:site_name">
 
-        <link rel="shortcut icon" href="/static/img/favicon.ico" />
-        <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.author }}{% endif %}</title>
-        <meta name="author" content="{{ site.author }}" />
-        <meta name="description" content="{% if page.title %}{{ page.title }}{% else %}{{ site.description }}{% endif %}" />
-        <meta name="keywords" content="{% if page.title %}{{ page.title }}, {{ site.title }}, {% for categ in page.categories %}{{ categ }}{% if forloop.last == false %}, {% endif %}{% endfor %}{% else %}{{ site.title }}, {% for category in site.categories %}{% capture categories_slug %}{{ category | first }}{% endcapture %}{% for categ in categories_slug %}{{ categ }}{% endfor %}{% if forloop.last == false %}, {% endif %}{% endfor %}{% endif %}" />
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    {% if page.title %}
+      <meta content="{{ page.title }}" property="og:title">
+      <meta content="article" property="og:type">
+    {% else %}
+      <meta content="{{ site.title }}" property="og:title">
+      <meta content="website" property="og:type">
+    {% endif %}
 
-        <meta content="{{ site.share.fb_appid }}" property="fb:app_id">
-        <meta content="{{ site.title }}" property="og:site_name">
-        {% if page.title %}
-          <meta content="{{ page.title }}" property="og:title">
-        {% else %}
-          <meta content="{{ site.title }}" property="og:title">
-        {% endif %}
-        {% if page.title %}
-          <meta content="article" property="og:type">
-        {% else %}
-          <meta content="website" property="og:type">
-        {% endif %}
-        {% if page.description %}
-          <meta content="{{ page.description }}" property="og:description">
-        {% else %}
-          <meta content="{{ site.description }}" property="og:description">
-        {% endif %}
-        {% if page.url %}
-          <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-        {% endif %}
-        {% if page.date %}
-          <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
-          <meta content="{{ site.url }}/about/" property="article:author">
-        {% endif %}
-        {% if page.image %}
-          <meta content="{{ site.url }}/static/img/posts/{{ page.image }}" property="og:image">
-        {% else %}
-          <meta content="{{ site.url }}/static/img/logo-high-resolution.png" property="og:image">
-        {% endif %}
-        {% if page.categories %}
-          {% for category in page.categories limit:1 %}
-          <meta content="{{ category }}" property="article:section">
-          {% endfor %}
-        {% endif %}
-        {% if page.tags %}
-          {% for tag in page.tags %}
-          <meta content="{{ tag }}" property="article:tag">
-          {% endfor %}
-        {% endif %}
+    {% if page.description %}
+      <meta content="{{ page.description }}" property="og:description">
+    {% else %}
+      <meta content="{{ site.description }}" property="og:description">
+    {% endif %}
 
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@{{ site.share.twitter_username }}">
-        <meta name="twitter:creator" content="@{{ site.share.twitter_username }}">
-        {% if page.title %}
-          <meta name="twitter:title" content="{{ page.title }}">
-        {% else %}
-          <meta name="twitter:title" content="{{ site.title }}">
-        {% endif %}
-        {% if page.url %}
-          <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
-        {% endif %}
-        {% if page.description %}
-          <meta name="twitter:description" content="{{ page.description }}">
-        {% else %}
-          <meta name="twitter:description" content="{{ site.description }}">
-        {% endif %}
-        {% if page.header-img %}
-          <meta name="twitter:image:src" content="{{ site.url }}/{{ page.header-img }}">
-        {% endif %}
+    {% if page.url %}
+      <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    {% endif %}
 
-        <!-- Font awesome icons -->
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    {% if page.date %}
+      <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+      <meta content="{{ site.url }}/about/" property="article:author">
+    {% endif %}
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/static/css/syntax.css">
+    {% if page.image %}
+      <meta content="{{ site.url }}/static/img/posts/{{ page.image }}" property="og:image">
+    {% else %}
+      <meta content="{{ site.url }}/static/img/logo-high-resolution.png" property="og:image">
+    {% endif %}
 
-        <!-- Bootstrap core CSS -->
-        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    {% if page.categories %}
+      {% for category in page.categories limit:1 %}
+        <meta content="{{ category }}" property="article:section">
+      {% endfor %}
+    {% endif %}
 
-        <!-- Fonts -->
-        <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:400,300italic,300,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    {% if page.tags %}
+      {% for tag in page.tags %}
+        <meta content="{{ tag }}" property="article:tag">
+      {% endfor %}
+    {% endif %}
 
-        <!-- Custom CSS -->        
-        <link rel="stylesheet" href="/static/css/super-search.css">
-        <link rel="stylesheet" href="/static/css/thickbox.css">
-        <link rel="stylesheet" href="/static/css/projects.css">
-        <link rel="stylesheet" href="/static/css/main.css">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@{{ site.share.twitter_username }}">
+    <meta name="twitter:creator" content="@{{ site.share.twitter_username }}">
 
-        <!-- Google Analytics -->
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-          
-          ga('create', '{{ site.google_analytics }}', 'auto');
-          ga('send', 'pageview');
-        </script>
-    </head>
+    {% if page.title %}
+      <meta name="twitter:title" content="{{ page.title }}">
+    {% else %}
+      <meta name="twitter:title" content="{{ site.title }}">
+    {% endif %}
 
-    <body>
-        <div class="container">
-            <div class="col-sm-3">
-              <div class="fixed-condition">
-                <a href="/"><img id="about" src="/static/img/avatar.jpg" height="75px" width="75px" /></a>
-                <h1 class="author-name">{{ site.author }}</h1>
-                {% if site.about %}
-                <div id="about">
-                    {{ site.about }}
-                </div>
-                {% endif %}
+    {% if page.url %}
+      <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+    {% endif %}
 
-                <div class="social">
-                    <ul>
-                        {% for link in site.social %}
-                            <li><a href="{{ link.link }}" target="_blank"><i class="fa {{ link.icon }}"></i></a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
+    {% if page.description %}
+      <meta name="twitter:description" content="{{ page.description }}">
+    {% else %}
+      <meta name="twitter:description" content="{{ site.description }}">
+    {% endif %}
 
-                <div class="search" id="js-search">
-                  <input type="text" placeholder="(sitemap)~$ type to search" class="search__input form-control" id="js-search__input">
-                  <ul class="search__results" id="js-search__results"></ul>
-                </div>
-                <hr />
+    {% if page.header-img %}
+      <meta name="twitter:image:src" content="{{ site.url }}/{{ page.header-img }}">
+    {% endif %}
 
-                <strong>Navigation</strong><br />
-                    &nbsp;&raquo; <a href="/">Home</a> <br />
-                {% for i in site.urls %}
-                    &nbsp;&raquo; <a class="about" href="{{ i.url }}">{{ i.text }}</a><br />
-                {% endfor %}
-              </div><!-- end /.fixed-condition -->
+    <!-- Font awesome icons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/static/css/syntax.css">
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300italic,300,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/super-search.css">
+    <link rel="stylesheet" href="/static/css/thickbox.css">
+    <link rel="stylesheet" href="/static/css/projects.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', '{{ site.google_analytics }}', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-sm-3">
+        <div class="fixed-condition">
+          <a href="/"><img class="profile-avatar" src="/static/img/avatar.jpg" height="75px" width="75px" /></a>
+          <h1 class="author-name">{{ site.author }}</h1>
+          {% if site.about %}
+            <div class="profile-about">
+              {{ site.about }}
             </div>
+          {% endif %}
+          <div class="social">
+            <ul>
+              {% for link in site.social %}
+                <li><a href="{{ link.link }}" target="_blank"><i class="fa {{ link.icon }}"></i></a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="search" id="js-search">
+            <input type="text" placeholder="(sitemap)~$ type to search" class="search__input form-control" id="js-search__input">
+            <ul class="search__results" id="js-search__results"></ul>
+          </div>
+          <hr />
+          <ul class="sidebar-nav">
+            <strong>Navigation</strong>
+            <li><a href="/">Home</a></li>
+            {% for i in site.urls %}
+              <li><a class="about" href="{{ i.url }}">{{ i.text }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- end /.fixed-condition -->
+      </div>
+      <div class="col-sm-8 col-offset-1 main-layout">
+        {{ content }}
+        <footer>
+          &copy; {{ site.author }}
+          {% if site.github %}
+            - <a href="{{ site.github }}">{{ site.github }}</a> - Powered by Jekyll.
+          {% endif %}
+          <div class="btn-github" style="float:right;">
+            <iframe src="https://ghbtns.com/github-btn.html?user=agusmakmun&repo=agusmakmun.github.io&type=star&count=true" frameborder="0" scrolling="0" width="85" height="20px"></iframe>
+            <iframe src="https://ghbtns.com/github-btn.html?user=agusmakmun&repo=agusmakmun.github.io&type=fork&count=true" frameborder="0" scrolling="0" width="85" height="20px"></iframe>
+          </div>
+        </footer>
+      </div>
+      <!-- end /.col-sm-8 -->
+    </div>
+    <!-- end /.container -->
 
-            <div class="col-sm-8 col-offset-1">
-                {{ content }}
-
-                <footer>
-                    &copy; {{ site.author }}
-                    {% if site.github %} 
-                    - <a href="{{ site.github }}">{{ site.github }}</a> - Powered by Jekyll.
-                    {% endif %}
-
-                    <div class="btn-github" style="float:right;">
-                        <iframe src="https://ghbtns.com/github-btn.html?user=agusmakmun&repo=agusmakmun.github.io&type=star&count=true" frameborder="0" scrolling="0" width="85" height="20px"></iframe>                    
-                        <iframe src="https://ghbtns.com/github-btn.html?user=agusmakmun&repo=agusmakmun.github.io&type=fork&count=true" frameborder="0" scrolling="0" width="85" height="20px"></iframe>
-                    </div>
-                </footer>
-            </div><!-- end /.col-sm-8 -->
-        </div><!-- end /.container -->
-
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script src="/static/js/bootstrap.min.js"></script>
-        <script src="/static/js/super-search.js"></script>
-        <script src="/static/js/thickbox-compressed.js"></script>
-        <script src="/static/js/projects.js"></script>
-    </body>
+    <!-- Bootstrap core JavaScript
+      ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/super-search.js"></script>
+    <script src="/static/js/thickbox-compressed.js"></script>
+    <script src="/static/js/projects.js"></script>
+  </body>
 </html>
