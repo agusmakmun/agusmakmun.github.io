@@ -3,6 +3,7 @@ layout: post
 title:  "Adding BroadCast Mail to All Users Registered inside Django Admin"
 date:   2016-04-20 19:51:02 +0700
 categories: [python, django]
+image: Broadcast_Mail.png
 ---
 
 Adding BroadCast Mail to All User Registered in Django Admin. This is my last problem, we need custom default Django Admin to can submit BroadCast mail to All User. Because this is perfectly to make a promotions.
@@ -82,4 +83,3 @@ admin.site.register(models.BroadCast_Email, BroadCast_Email_Admin)
 **3.** And then, you can see. we have **Submit BroadCast** selection, just click button **Go** to submit broadcast mail.
 
 ![Screenshot broadcast](https://raw.githubusercontent.com/agusmakmun/agusmakmun.github.io/master/static/img/_posts/Broadcast_Mail.png  "Screenshot broadcast")
-
