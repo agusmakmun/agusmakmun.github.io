@@ -33,7 +33,7 @@ layout: default
         {% endif %}
       {% endfor %}
 
-      <li><a href="/page{{ paginator.total_pages }}/">Last</a></li>
+      <li><a href="/page/{{ paginator.total_pages }}/">Last</a></li>
 
       {% if paginator.next_page %}
         <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a></li>
