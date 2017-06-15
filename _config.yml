@@ -1,9 +1,9 @@
 title: Stack Problems
 description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I am freelance developer. Currently doing more in backend, focused in Python and Django.
-disqus_shortname: stackproblems
+author: Muhammad Mudassir
+github: https://github.com/itsmudassir
+about: I know a thing or two about computer-vision, bigdata, Android, ML, RTC and IOT.
+disqus_shortname: itsmudassir
 google_analytics: UA-XXXXXXXX-Y
 avatar_url: /static/img/avatar.jpg
 
@@ -19,16 +19,16 @@ social:
     - icon: fa-facebook
       link: "#"
     - icon: fa-twitter
-      link: "https://twitter.com/agusmakmun6"
+      link: "https://twitter.com/4906bf56275541e"
     - icon: fa-linkedin
-      link: "https://www.linkedin.com/in/summonagus"
+      link: "https://www.linkedin.com/in/muhammad-mudassir-ba2512b6/"
     - icon: fa-stack-exchange
       link: "#"
     - icon: fa-github
-      link: "https://github.com/agusmakmun"
+      link: "https://github.com/itsmudassir"
 
 share:
-  twitter_username: agusmakmun6
+  twitter_username: Mudassir
   fb_appid: 1749788565247320
 
 urls:
@@ -39,7 +39,7 @@ urls:
     - text: XML Feed
       url: /feed.xml
 
-url: "https://agusmakmun.github.io"
+url: "https://itsmudassir.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
