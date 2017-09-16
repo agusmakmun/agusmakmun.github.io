@@ -4,7 +4,7 @@
 > and the search posts using [Super Search](https://github.com/chinchang/super-search)
 
 ### Demo
-* [https://agusmakmun.github.io](https://agusmakmun.github.io)
+* [https://anirtek.github.io](https://anirtek.github.io)
 
 #### Features
 
