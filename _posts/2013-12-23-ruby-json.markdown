@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Parsing JSON with Ruby"
+title:  "Python and Data Science by Dataquest"
 date:   2013-12-23 00:18:23 +0700
 categories: [ruby]
 ---
