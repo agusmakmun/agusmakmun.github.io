@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I am graduate student of Computer Science at Binghamton University. At present, I am actively learning Machine Learning and Data Science from Dataquest.io. I have enjoy solving the problems and coding them. I am also planning to graduate on May 2018. 
+I am graduate student of Computer Science at Binghamton University. At present, I am actively learning Machine Learning and Data Science from [Dataquest.io](https://dataquest.io/profile/atekade1). I also enjoy solving the problems and coding them. I am also planning to graduate on May 2018. 
 
 Doing more in Machine Learning with Python, R. Also learning cryptocurrencies from Princeton University which has totally involved me. 
 
