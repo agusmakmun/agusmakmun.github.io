@@ -24,7 +24,7 @@ To move forward, lets say we want to calculate the percentage of the Titanic Sur
 age_group_survival = titanic_survival.pivot_table(index = "age_labels", values = "survived", aggfunc = numpy.mean)
 {% endhighlight %}
 
-To make this work successfully, I have defined a function called "decide_age_class" that takes a row from [titanic_surival] dataframe using the apply() method and returns [Series] of age labels. The age_labes is a series that states whether a person is minor, adult or unknown.
+To make this work successfully, I have defined a function called "decide_age_class" that takes a row from titanic_surival dataframe using the apply() method and returns [Series](http://pandas.pydata.org/pandas-docs/version/0.17.1/api.html#series) of age labels. The age_labes is a series that states whether a person is minor, adult or unknown.
 
 {% highlight ruby %}
 def decide_age_class(row):
@@ -38,7 +38,7 @@ def decide_age_class(row):
 age_labels = titanic_survival.apply(decide_age_class, axis=1)
 {% endhighlight %}
 
-[DataFrame.apply()] will iterate through each column in a DataFrame, and perform on each function. When we create our function, we give it one parameter, apply() method passes each column to the parameter as a pandas series. Finally our output looks like this :
+[DataFrame.apply()]() will iterate through each column in a DataFrame, and perform on each function. When we create our function, we give it one parameter, apply() method passes each column to the parameter as a pandas series. Finally our output looks like this :
 
 {% highlight ruby %}
 age_labels 
