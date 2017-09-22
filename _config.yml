@@ -31,6 +31,9 @@ share:
   twitter_username: aptekade
   fb_appid: 200215623851551
 
+# Google Analytics
+google_analytics: UA-106904421-1
+
 urls:
     - text: About Me
       url: /about/
