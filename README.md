@@ -9,9 +9,9 @@
 #### Features
 
 * Sitemap and XML Feed
-* Paginations in homepage
+* Pagination in homepage
 * Posts under category
-* Realtime Search Posts _(title & description)_ under query.
+* Realtime Search Posts _(title & description)_ by query.
 * Related Posts
 * Highlight pre
 * Next & Previous Post
@@ -34,9 +34,9 @@
 
 ### How to Use?
 
-**a. Add new Categories**
+**a. Add new Category**
 
-All categories saved inside path of `category/`, you can see existed categories.
+All categories saved inside path of `category/`, you can see the existed categories.
 
 **b. Add new Posts**
 
