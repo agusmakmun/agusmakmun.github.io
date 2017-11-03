@@ -1,9 +1,9 @@
-title: Stack Problems
-description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I am freelance developer. Currently doing more in backend, focused in Python and Django.
-disqus_shortname: stackproblems
+title: Coding Study & Project
+description: My Personal Coding Study
+author: JeongSik Lee
+github: https://github.com/a2819z
+about: I am student. Now, i study C, C++ and Python
+disqus_shortname: codingstudy
 google_analytics: UA-XXXXXXXX-Y
 avatar_url: /static/img/avatar.jpg
 
@@ -16,19 +16,11 @@ collections:
     permalink: /project/:path/
 
 social:
-    - icon: fa-facebook
-      link: "#"
-    - icon: fa-twitter
-      link: "https://twitter.com/agusmakmun6"
-    - icon: fa-linkedin
-      link: "https://www.linkedin.com/in/summonagus"
-    - icon: fa-stack-exchange
-      link: "#"
     - icon: fa-github
-      link: "https://github.com/agusmakmun"
+      link: "https://github.com/a2819z"
 
 share:
-  twitter_username: agusmakmun6
+  twitter_username: a2819z
   fb_appid: 1749788565247320
 
 urls:
@@ -36,10 +28,8 @@ urls:
       url: /about/
     - text: My Projects
       url: /projects/
-    - text: XML Feed
-      url: /feed.xml
 
-url: "https://agusmakmun.github.io"
+url: "https://a2819z.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
