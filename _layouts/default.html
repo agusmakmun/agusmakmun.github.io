@@ -114,7 +114,7 @@ layout: compress
     <div class="container">
       <div class="col-sm-3">
         <div class="fixed-condition">
-          <a href="/"><img class="profile-avatar" src="{{ site.avatar_url }}" height="100px" width="200px" /></a>
+          <a href="/"><img class="profile-avatar" src="{{ site.avatar_url }}" height="100px" width=100% /></a>
           <h1 class="author-name">{{ site.author }}</h1>
           {% if site.about %}
             <div class="profile-about">
@@ -140,7 +140,7 @@ layout: compress
               <li><a class="about" href="{{ i.url }}">{{ i.text }}</a></li>
             {% endfor %}
           </ul>
-          <img src="{{ site.leftfooter_url }}" height="100px" width="300px" />
+          <img src="{{ site.leftfooter_url }}" height="100px" width=100% />
         </div>
         <!-- end /.fixed-condition -->
       </div>
