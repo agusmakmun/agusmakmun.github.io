@@ -1,11 +1,11 @@
-title: PeRsOnAl BlOg oF Azhar Khan urf MAK.
+title: Personal BlOg oF Azhar Khan urf MAK.
 description: Mohammad Azhar Khan's learning's, experiences and knowleage.
 author: Mohammad Azhar Khan aka MAK
 github: https://github.com/itz-azhar
 about: Software Engineer. Loves Python. Knows Python, Flask, Django, Node.js, serverless,AWS lambda and many more.
 disqus_shortname: itz-azhar
 google_analytics: UA-58536691-1
-avatar_url: /static/img/avatar.jpg
+avatar_url: /static/img/avatar.gif
 
 enableTags: true
 tagarray: [python, django, unix, linux, ubuntu, macos]
@@ -45,7 +45,7 @@ paginate: 20
 per_page: 20
 paginate_path: "/page/:num/"
 markdown: kramdown
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-gist
 
