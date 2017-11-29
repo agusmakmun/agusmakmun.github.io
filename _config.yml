@@ -6,6 +6,7 @@ about: Software Engineer. Loves Python. Knows Python, Flask, Django, Node.js, se
 disqus_shortname: itz-azhar
 google_analytics: UA-58536691-1
 avatar_url: /static/img/avatar.gif
+leftfooter_url: /static/img/leftfootergif.gif
 
 enableTags: true
 tagarray: [python, django, unix, linux, ubuntu, macos]
