@@ -16,10 +16,15 @@ layout: compress
     <meta content="{{ site.share.fb_appid }}" property="fb:app_id">
     <meta content="{{ site.title }}" property="og:site_name">
 
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');}
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     {% if page.noindex %}
       <meta name="robots" content="noindex">
     {% endif %}
-
     {% if page.title %}
       <meta content="{{ page.title }}" property="og:title">
       <meta content="article" property="og:type">
@@ -48,7 +53,6 @@ layout: compress
     {% else %}
       <meta content="{{ site.url }}{{ site.avatar_url }}" property="og:image">
     {% endif %}
-
     {% if page.categories %}
       {% for category in page.categories limit:1 %}
         <meta content="{{ category }}" property="article:section">
@@ -140,6 +144,10 @@ layout: compress
               <li><a class="about" href="{{ i.url }}">{{ i.text }}</a></li>
             {% endfor %}
           </ul>
+          <a href="https://twitter.com/Mohd_Azhar_Khan" class="twitter-follow-button" data-show-count="false" data-size="small">@Mohd_Azhar_Khan</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          <br>
+          <script type="text/javascript" src="https://www.brainyquote.com/link/quotebr.js"></script>
           <img src="{{ site.leftfooter_url }}" height="100px" width=100% />
         </div>
         <!-- end /.fixed-condition -->
