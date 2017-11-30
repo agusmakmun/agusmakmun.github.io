@@ -19,11 +19,11 @@ collections:
 social:
     - icon: fa-facebook
       link: "https://www.facebook.com/mohammadazharkhan78601"
-    - icon: fa-twitter
+    - icon: fa fa-spin fa-twitter
       link: "https://twitter.com/mohd_azhar_khan"
     - icon: fa-linkedin
       link: "https://www.linkedin.com/in/azharkhan78601"
-    - icon: fa-stack-exchange
+    - icon: fa fa-spin fa-stack-exchange
       link: "https://stackexchange.com/users/6957651/azhar-khan"
     - icon: fa-github
       link: "https://github.com/itz-azhar"
