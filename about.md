@@ -4,6 +4,6 @@ title: About
 permalink: /about/
 ---
 
-I am freelance developer. Currently doing more in backend, focused in Python and Django.
+I am developer. Currently doing more in backend, focused in PHP.
 
-email: agus[at]python.web.id
+email: dongha9878@naver.com
