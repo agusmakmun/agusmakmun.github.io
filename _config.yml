@@ -36,8 +36,6 @@ urls:
       url: /category/jekyll
     - text: About Me
       url: /about/
-    - text: About Me
-      url: /about/
     - text: My Projects
       url: /projects/
     - text: XML Feed
