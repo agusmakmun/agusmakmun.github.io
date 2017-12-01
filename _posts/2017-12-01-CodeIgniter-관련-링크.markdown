@@ -1,27 +1,10 @@
 ---
 layout: post
-title:  "자바스크립트 숫자만 입력받기"
-date:   2017-12-01 00:35:00 +0900
-categories: [javascript]
+title:  "CodeIgniter 관련 링크"
+date:   2017-12-01 00:35:01 +0900
+categories: [codeigniter]
 ---
 
-자바스크립트 숫자만 입력받기 예제:
-<iframe width="100%" height="350" src="//jsfiddle.net/ted19/u3uasqds/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
-아래 예제는 html tag에 직접 붙여쓸수 있을 경우 :
-
-{% highlight html %}
-<input id="id_price" type="number" min=0 onkeypress="return isNumber(event)"/>
-<script type="text/javascript">
-function isNumber(evt) {
-    evt = (evt) ? evt : window.event;
-    var charCode = (evt.which) ? evt.which : evt.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        return false;
-    }
-    return true;
-}
-</script>
-{% endhighlight %}
-
-**Refference:** [http://stackoverflow.com/a/7295864](http://stackoverflow.com/a/7295864)
+**홈페이지:** [http://www.codeigniter.com](http://www.codeigniter.com)
+**메뉴얼:** [http://www.codeigniter.com/user_guide](http://www.codeigniter.com/user_guide)
+**한국사용자포럼:** [http://codeigniter-kr.org](http://codeigniter-kr.org)
