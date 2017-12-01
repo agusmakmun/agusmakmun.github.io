@@ -92,7 +92,7 @@ layout: compress
     {% endif %}
 
     <!-- Font awesome icons -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- syntax highlighting CSS -->
     <link rel="stylesheet" href="/static/css/syntax.css">
     <!-- Bootstrap core CSS -->
@@ -140,10 +140,10 @@ layout: compress
           </div>
           <hr />
           <ul class="sidebar-nav">
-            <strong>Navigation</strong>
-            <li><a href="/">Home</a></li>
+            <strong>Navigation</strong><br>
+            <i class='fa fa-eercast fa-spin'></i>&nbsp;<a href="/">&nbsp;Home</a><br>
             {% for i in site.urls %}
-              <li><a class="about" href="{{ i.url }}">{{ i.text }}</a></li>
+              <i class='fa fa-eercast fa-spin'></i>&nbsp;<a class="about" href="{{ i.url }}">&nbsp;{{ i.text }}</a><br>
             {% endfor %}
           </ul>
           <a href="https://twitter.com/Mohd_Azhar_Khan" class="twitter-follow-button" data-show-count="false" data-size="small">@Mohd_Azhar_Khan</a>
