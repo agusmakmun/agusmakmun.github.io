@@ -32,6 +32,10 @@ share:
   fb_appid: 167148314027573
 
 urls:
+    - text: Category
+      url: /category/jekyll
+    - text: About Me
+      url: /about/
     - text: About Me
       url: /about/
     - text: My Projects
