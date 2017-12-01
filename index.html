@@ -11,7 +11,6 @@ layout: default
       <li><i class='fa fa-eercast fa-spin' style="color:#D16F32"></i><a href="{{ post.url }}">&nbsp;&nbsp;{{ post.title }}</a> &raquo; <i><span>{{ post.date | date_to_string }}</span></i></li>
     {% endfor %}
   </ol>
-
   <!-- Pagination links -->
   {% if paginator.total_pages > 1 %}
     <ul class="pagination pagination-sm">
