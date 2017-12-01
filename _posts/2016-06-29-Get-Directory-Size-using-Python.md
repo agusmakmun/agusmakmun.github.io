@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Get Directory Size using Python"
-date:   2016-06-30 14:41:47 +0530
+date:   2016-06-29 14:41:47 +0530
 categories: [python, python3]
 tags: [python, python3]
 image: PythonLogo1.png
