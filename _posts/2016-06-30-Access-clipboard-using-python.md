@@ -3,6 +3,7 @@ layout: post
 title:  "Access clipboard using python"
 date:   2016-06-30 14:41:47 +0530
 categories: [python, python3]
+image: PythonLogo2.png
 ---
 
 

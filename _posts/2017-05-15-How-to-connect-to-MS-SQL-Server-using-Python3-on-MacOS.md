@@ -3,6 +3,7 @@ layout: post
 title:  "How to connect to MS SQL Server using Python3 on MacOS"
 date:   2017-05-15 14:41:47 +0530
 categories: [python,Python3, MsSql, MacOS]
+image: PythonLogo1.png
 ---
 ![MS SQL Server](https://4.bp.blogspot.com/-2N5U9axXi1Q/WRmNtf7o2hI/AAAAAAAAEtA/tQkxn-oOJ-gnmNSmjOBWnE56hvYOfKCnwCLcB/s640/mssql.png)
 

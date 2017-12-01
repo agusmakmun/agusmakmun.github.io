@@ -3,6 +3,7 @@ layout: post
 title:  "Playing with birthday using Python"
 date:   2016-06-30 15:41:47 +0530
 categories: [python, python3]
+image: PythonLogo1.png
 ---
 
 I always wondered how to access calendar and work with dates in programming languages,
