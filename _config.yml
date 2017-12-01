@@ -1,14 +1,15 @@
-title: Stack Problems
-description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I am freelance developer. Currently doing more in backend, focused in Python and Django.
-disqus_shortname: stackproblems
-google_analytics: UA-XXXXXXXX-Y
-avatar_url: /static/img/avatar.jpg
+title: Personal blOg oF Azhar Khan urf MAK.
+description: Mohammad Azhar Khan's learning's, experiences and knowleage.
+author: Mohammad Azhar Khan aka MAK
+github: https://github.com/itz-azhar
+about: Software Engineer. Loves Python. Knows Python, Flask, Django, Node.js, serverless,AWS lambda and many more.
+disqus_shortname: itz-azhar
+google_analytics: UA-58536691-1
+avatar_url: /static/img/avatar.gif
+leftfooter_url: /static/img/leftfootergif.gif
 
 enableTags: true
-tagarray: []
+tagarray: [python, django, unix, linux, ubuntu, macos]
 
 collections:
   project:
@@ -17,19 +18,19 @@ collections:
 
 social:
     - icon: fa-facebook
-      link: "#"
-    - icon: fa-twitter
-      link: "https://twitter.com/agusmakmun6"
+      link: "https://www.facebook.com/mohammadazharkhan78601"
+    - icon: fa fa-spin fa-twitter
+      link: "https://twitter.com/mohd_azhar_khan"
     - icon: fa-linkedin
-      link: "https://www.linkedin.com/in/summonagus"
-    - icon: fa-stack-exchange
-      link: "#"
+      link: "https://www.linkedin.com/in/azharkhan78601"
+    - icon: fa fa-spin fa-stack-exchange
+      link: "https://stackexchange.com/users/6957651/azhar-khan"
     - icon: fa-github
-      link: "https://github.com/agusmakmun"
+      link: "https://github.com/itz-azhar"
 
 share:
-  twitter_username: agusmakmun6
-  fb_appid: 1749788565247320
+  twitter_username: mohd_azhar_khan
+  fb_appid: 1547971165269151
 
 urls:
     - text: About Me
@@ -39,13 +40,13 @@ urls:
     - text: XML Feed
       url: /feed.xml
 
-url: "https://agusmakmun.github.io"
+url: "https://itz-azhar.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
 paginate_path: "/page/:num/"
 markdown: kramdown
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-gist
 
