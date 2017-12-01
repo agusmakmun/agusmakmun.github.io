@@ -2,7 +2,7 @@
 layout: post
 title:  "자바스크립트 숫자만 입력받기"
 date:   2017-12-01 00:35:00 +0900
-categories: [others]
+categories: [javascript]
 ---
 
 자바스크립트 숫자만 입력받기 예제:
