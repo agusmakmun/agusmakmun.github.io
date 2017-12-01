@@ -6,6 +6,7 @@ categories: [javascript]
 ---
 
 자바스크립트 숫자만 입력받기 예제 :
+
 <iframe width="100%" height="350" src="//jsfiddle.net/ted19/u3uasqds/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 아래 예제는 html tag에 직접 붙여쓸수 있을 경우 :
