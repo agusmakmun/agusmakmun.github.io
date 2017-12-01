@@ -9,7 +9,7 @@ categories: [codeigniter]
 
 Controller 확장방법
 
-application/core 디렉토리에 MY_Controller.php 파일을 만들고 아래와 같이 클래스를 만든다. 
+application/core 디렉토리에 MY_Controller.php 파일을 만들고 아래와 같이 클래스를 만든다.
 
 {% highlight html %}
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
@@ -25,10 +25,12 @@ Model 확장방법
 application/core 디렉토리에 MY_Model.php 파일을 만들고 아래와 같이 클래스를 만든다.
 
 {% highlight html %}
+\`
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class MY_Model extends CI_Model {
     function __construct() {
         parent::__construct();      
     }    
 }
+\`
 {% endhighlight %}
