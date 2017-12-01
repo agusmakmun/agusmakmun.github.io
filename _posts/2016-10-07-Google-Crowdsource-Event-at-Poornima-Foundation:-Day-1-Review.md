@@ -3,6 +3,7 @@ layout: post
 title:  "Google Crowdsource Event at Poornima Foundation: Day 1 Review"
 date:   2016-10-07 14:41:47 +0530
 categories: [google, Crowdsource, google maps]
+tags: [google, Crowdsource, google maps]
 ---
 ![Google Crowdsource](https://1.bp.blogspot.com/-jsSWF9sZ6jg/V_KrUTG396I/AAAAAAAAEhk/HBZpwmX59xImFzuxqnoN9gIXK4YCWeobwCPcB/s1600/Google-Crowdsource.png)
 

@@ -3,6 +3,7 @@ layout: post
 title:  "Nancy: The Virtual Assistant (Python Virtual Assistant)"
 date:   2017-01-15 18:34:10 +0700
 categories: [python, linux, unix, macos]
+tags: [python, linux, unix, macos]
 ---
 
 ![Nancy: The Virtual Assistant (Python Virtual Assistant) Mac OS Ubuntu](https://3.bp.blogspot.com/-AIhXD9oFoUI/WHtDULYS8OI/AAAAAAAAElQ/ueVvBAjHGSwaaxONVKhOlw2jQvvGLd2UgCLcB/s1600/logo.png)

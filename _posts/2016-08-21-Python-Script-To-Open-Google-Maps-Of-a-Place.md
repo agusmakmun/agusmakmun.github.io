@@ -3,6 +3,7 @@ layout: post
 title:  "Python Script To Open Google Maps Of a Place"
 date:   2016-08-21 14:41:47 +0530
 categories: [google, python, python3, google maps]
+tags: [google, python, python3, google maps]
 image: PythonLogo1.png
 ---
 ![pythonProgramming](https://2.bp.blogspot.com/-HcQQFJBUzes/V7nlHFibAmI/AAAAAAAAEgw/RPxtYcg7Eo09uJeMdB15xrlYoV_AxHIswCLcB/s1600/python-programming.png)

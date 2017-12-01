@@ -3,6 +3,7 @@ layout: post
 title:  "Google Crowdsource Event at Poornima Foundation: Day 2 Review"
 date:   2016-10-09 14:41:47 +0530
 categories: [google, Crowdsource, google maps]
+tags: [google, Crowdsource, google maps]
 ---
 ![Google Crowdsource](https://1.bp.blogspot.com/-jsSWF9sZ6jg/V_KrUTG396I/AAAAAAAAEhk/HBZpwmX59xImFzuxqnoN9gIXK4YCWeobwCPcB/s1600/Google-Crowdsource.png)
 The Google Translate Community made their remarkable presence in Poornima Foundation on day 2 also, by connecting and interacting with a total of approx 2000+ enthusiastic students, conducting 4 joyous sessions. The day started with a brief introduction about translate community, a video for better understanding and a few questions to make it more interactive like-
