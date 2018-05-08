@@ -57,9 +57,13 @@ a:hover {
 
 /* 상단 추가 이미지*/
 .parallax-container{
-    height: 400px;
+    height: 450px;
     overflow: hidden;
     position: relative;
+}
+.parallax img{
+    position: absolute;
+    top: -280px;
 }
 
 /* Content */
