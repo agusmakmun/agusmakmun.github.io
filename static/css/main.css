@@ -79,7 +79,12 @@ a:hover {
 .text-lighten{
   text-align: center;
   color: #ffff!important;
-  font-size: 55px;
+}
+h1-text{
+  font-size: 60px;
+}
+h2-text{
+  font-size: 30px;
 }
 
 /* Content */
