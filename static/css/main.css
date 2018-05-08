@@ -166,7 +166,6 @@ div.col-sm-3 img.profile-avatar {
 /* Responsive Conditional */
 @media (min-width: 1024px) {
   .fixed-condition {
-    position: fixed;
     max-width: 255px;
   }
 }
