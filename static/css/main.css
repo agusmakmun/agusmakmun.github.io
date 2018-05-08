@@ -58,19 +58,28 @@ a:hover {
 
 /* 상단 추가 이미지*/
 .parallax-container{
-    height: 450px;
+    height: 400px;
     overflow: hidden;
     position: relative;
 }
+.parallax{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
 .parallax img{
     position: absolute;
-    top: -280px;
+    top: -330px;
     transform: translateX(-50%);
     left: 50%
 }
 .text-lighten-2{
   text-align: center;
   color: #ffff!important;
+  font-size: 55px;
 }
 
 /* Content */
