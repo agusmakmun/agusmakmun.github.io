@@ -68,6 +68,10 @@ a:hover {
     transform: translateX(-50%);
     left: 50%
 }
+.text-lighten-2{
+  text-align: center;
+  color: #ffff!important;
+}
 
 /* Content */
 div.content pre {
