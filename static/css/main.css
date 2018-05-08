@@ -55,6 +55,12 @@ a:hover {
   margin-right: .5em;
 }
 
+/* 상단 추가 이미지*/
+.parallax-container{
+    height: 400px;
+    overflow: hidden;
+}
+
 /* Content */
 div.content pre {
   background: #333333;
