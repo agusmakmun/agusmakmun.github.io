@@ -80,10 +80,10 @@ a:hover {
   text-align: center;
   color: #ffff!important;
 }
-h1-text{
+.h1-text{
   font-size: 60px;
 }
-h2-text{
+.h2-text{
   font-size: 30px;
   font-weight: 300;
 }
