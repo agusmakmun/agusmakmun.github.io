@@ -76,7 +76,7 @@ a:hover {
     transform: translateX(-50%);
     left: 50%
 }
-.text-lighten-2{
+.text-lighten{
   text-align: center;
   color: #ffff!important;
   font-size: 55px;
