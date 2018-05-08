@@ -59,6 +59,7 @@ a:hover {
 .parallax-container{
     height: 400px;
     overflow: hidden;
+    position: relative;
 }
 
 /* Content */
