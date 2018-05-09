@@ -37,6 +37,9 @@ a:hover {
   color: #B3B3B3;
   text-decoration: underline;
 }
+nav{
+  text-align: center;
+}
 
 /* Layout */
 .main-layout {
