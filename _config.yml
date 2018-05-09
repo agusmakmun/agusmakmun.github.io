@@ -31,6 +31,8 @@ share:
 urls:
     - text: About Me
       url: /about/
+    - text: 파이썬
+      url: /category/python
     - text: 알고리즘
       url: /category/argorithm
     - text: My Projects
