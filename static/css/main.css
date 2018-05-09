@@ -194,6 +194,8 @@ div.col-sm-3 img.profile-avatar {
 @media (min-width: 1024px) {
   .fixed-condition {
     max-width: 255px;
+    margin-left: 25%;
+    margin-right: 25%;
   }
 }
 @media (max-width: 768px) {
