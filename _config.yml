@@ -29,10 +29,10 @@ share:
   fb_appid: 1749788565247320
 
 urls:
-    - text: Portfolio
-      url: /portfolio/
+    - text: About Me
+      url: /about/
     - text: 알고리즘
-      url: /argorithm/
+      url: /category/argorithm
     - text: My Projects
       url: /projects/
     - text: XML Feed
