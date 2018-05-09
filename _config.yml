@@ -32,7 +32,7 @@ urls:
     - text: Portfolio
       url: /portfolio/
     - text: 알고리즘
-      url: //
+      url: /argorithm/
     - text: My Projects
       url: /projects/
     - text: XML Feed
