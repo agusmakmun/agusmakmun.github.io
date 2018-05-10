@@ -155,20 +155,27 @@ layout: compress
       </div>
       <div class="col-sm-7 col-offset-1 main-layout">
         {{ content }}
-        <footer>
-          &copy; {{ site.author }}
-          {% if site.github %}
-            - <a href="{{ site.github }}">{{ site.github }}</a> - Powered by Jekyll.
-          {% endif %}
-          <div class="btn-github" style="float:right;">
-            <iframe src="https://ghbtns.com/github-btn.html?user=agusmakmun&repo=agusmakmun.github.io&type=star&count=true" frameborder="0" scrolling="0" width="85" height="20px"></iframe>
-            <iframe src="https://ghbtns.com/github-btn.html?user=agusmakmun&repo=agusmakmun.github.io&type=fork&count=true" frameborder="0" scrolling="0" width="85" height="20px"></iframe>
-          </div>
-        </footer>
       </div>
       <!-- end /.col-sm-8 -->
     </div>
     <!-- end /.container -->
+    <footer>
+      <div class="wrapper">
+        <h3 class="footer-headgin">
+        &copy; {{ site.author }}
+        {% if site.github %}
+          - <a href="{{ site.github }}">{{ site.github }}</a> - Powered by Jekyll.
+        {% endif %}
+        </h3>
+        <div class="site-contact">
+          <p>
+            <strong>Contact</strong>
+          </p>
+          <ul class="social-media-list">
+            {% for i in site.contact}
+            <li><a href="{{i.link}}"><i class="fa {{i.icon}}"></i><span>{{i.text}}</span></a></li>
+      </div>
+    </footer>
 
     <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->
