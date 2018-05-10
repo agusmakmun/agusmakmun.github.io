@@ -194,6 +194,26 @@ div.col-sm-3 img.profile-avatar {
   max-width: 100%
 }
 
+/* footer 설정*/
+footer{
+  float: left;
+  background-color: rgba(51,51,51,0.03);
+  min-height: 180px;
+}
+.wrapper{
+  max-width: 48em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer-heading{
+  font-size: 1.44em;
+  margin-bottom: 20px;
+}
+.social-media-list{
+  list-style-type: none;
+  padding: 0;
+}
+
 /* Responsive Conditional */
 @media (min-width: 1024px) {
   .fixed-condition {
