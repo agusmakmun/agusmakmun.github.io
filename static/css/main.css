@@ -194,7 +194,6 @@ footer{
   padding-bottom: 10px;
   float: left;
   background-color: rgba(51,51,51,0.03);
-  min-height: 180px;
 }
 .wrapper{
   max-width: 48em;
