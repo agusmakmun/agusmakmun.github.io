@@ -31,12 +31,6 @@ contact:
     - icon: fa-facebook
       link: "#"
       text: Seung Sae Gill
-    - icon: fa-linkedin
-      link: "https://www.linkedin.com/in/summonagus"
-      text: Seung Sae Gill
-    - icon: fa-github
-      link: "https://github.com/rlftmdtp"
-      text: rlftmdtp
 
 share:
   twitter_username: agusmakmun6
