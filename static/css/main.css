@@ -216,6 +216,10 @@ footer{
   list-style-type: none;
   padding: 0;
 }
+.site-contact, .site-introduce{
+  width: 50%;
+  float: left;
+}
 
 /* Responsive Conditional */
 @media (min-width: 1024px) {
