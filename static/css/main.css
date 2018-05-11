@@ -105,21 +105,6 @@ div.content .highlight {
 	background: #333333;
 }
 
-/* Footer */
-footer {
-  border-top: 1px solid #F7F1F1;
-  width: 100%;
-  margin-top: 10px;
-  padding-top: 10px;
-  color: #C2C2C2;
-  font-size: 11px;
-  bottom: 0;
-  padding-bottom: 10px;
-}
-.footer-heading{
-  font-size: 1.44em;
-}
-
 /* Left column */
 div.col-sm-3 {
   margin-top: 100px;
@@ -199,6 +184,14 @@ div.col-sm-3 img.profile-avatar {
 
 /* footer 설정*/
 footer{
+  border-top: 1px solid #F7F1F1;
+  width: 100%;
+  margin-top: 30px;
+  padding-top: 10px;
+  color: #C2C2C2;
+  font-size: 11px;
+  bottom: 0;
+  padding-bottom: 10px;
   float: left;
   background-color: rgba(51,51,51,0.03);
   min-height: 180px;
