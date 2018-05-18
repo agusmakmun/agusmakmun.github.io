@@ -51,6 +51,7 @@ email: agus[at]python.web.id
       </tbody>
 </table>
 
+
 **Project**
 
 **1.** [마인드 마이닝을 이용한 뷰티 웹페이지](https://rlftmdtp.github.io/project/cool-project/)
