@@ -72,7 +72,7 @@ email: agus[at]python.web.id
 **3.** [모바일 탈출게임](https://rlftmdtp.github.io/project/cool-project/)
 
 <video width="400" height="400" controls>
-  <source src="mov_bbb.mp4" type="video/mp4">
-  <source src="mov_bbb.ogg" type="video/ogg">
+  <source src="https://youtu.be/lwmm-79zkd0" type="video/mp4">
+  <source src="https://youtu.be/lwmm-79zkd0" type="video/ogg">
   Your browser does not support HTML5 video.
 </video>
