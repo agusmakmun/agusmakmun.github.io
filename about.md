@@ -73,4 +73,5 @@ email: agus[at]python.web.id
 
 [![Perception Escape](https://img.youtube.com/vi/lwmm-79zkd0/0.jpg)](https://www.youtube.com/watch?v=lwmm-79zkd0)
 
-<iframe width="560" height="315" src="https://youtu.be/lwmm-79zkd0" frameborder="0" allowfullscreen></iframe>
+<iframe width="420" height="315" src="https://youtu.be/lwmm-79zkd0" frameborder="0" allowfullscreen></iframe>
+
