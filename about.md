@@ -51,6 +51,13 @@ email: agus[at]python.web.id
       </tbody>
 </table>
 
+**Certificate&Award**
+
+* **정보처리기사**
+* Mos Master
+* ~~Toeic(810)(기간만료ㅠㅠ)~~
+* 한국멀티미디어학회 춘계학술대회 **우수논문상**
+* Clapt 아이디어 경진대회 금상
 
 **Project**
 
