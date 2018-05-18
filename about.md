@@ -70,4 +70,4 @@ email: agus[at]python.web.id
 
 **3.** [모바일 탈출게임](https://rlftmdtp.github.io/project/cool-project/)
 
-<video src="https://youtu.be/lwmm-79zkd0" width="100%" height="400"></video>
+<video src="https://youtu.be/lwmm-79zkd0"></video>
