@@ -66,7 +66,7 @@ email: agus[at]python.web.id
 ![뷰티 웹페이지](https://rlftmdtp.github.io/static/img/project/뷰티%20웹페이지.png)![뷰티 웹페이지](https://rlftmdtp.github.io/static/img/project/뷰티%20웹페이지2.png)
 
 **2.** [증강현실을 위한 비디오 리컬러링](https://rlftmdtp.github.io/project/cool-project/)
-![비디오 리컬러링](https://rlftmdtp.github.io/static/img/project/뷰티%20웹페이지2.png)
+![비디오 리컬러링](https://rlftmdtp.github.io/static/img/project/비디오%20리컬러링.gif)
 
 **3.** [모바일 탈출게임](https://rlftmdtp.github.io/project/cool-project/)
 
