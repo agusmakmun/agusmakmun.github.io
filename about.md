@@ -71,4 +71,5 @@ email: agus[at]python.web.id
 
 **3.** [모바일 탈출게임](https://rlftmdtp.github.io/project/cool-project/)
 
-<iframe width="560" height="315" src="https://youtu.be/lwmm-79zkd0" frameborder="0" allowfullscreen></iframe>
+[![Perception Escape](https://img.youtube.com/vi/lwmm-79zkd0/0.jpg)](https://www.youtube.com/watch?v=lwmm-79zkd0)
+
