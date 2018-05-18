@@ -65,6 +65,7 @@ permalink: /about/
 **3.** [모바일 탈출게임](https://rlftmdtp.github.io/project/cool-project/)
 
 * 게임시연 동영상
+
 [![Perception Escape](https://img.youtube.com/vi/lwmm-79zkd0/0.jpg)](https://www.youtube.com/watch?v=lwmm-79zkd0)
 ![Perception Escape](https://rlftmdtp.github.io/static/img/project/모바일%20탈출게임.png)
 
