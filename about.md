@@ -13,5 +13,17 @@ email: agus[at]python.web.id
 
 **Career**
 
-* 대학 연합 코딩 동아리 CADI-B (2015.03 ~ 2015.08)
+* 대학 연합 코딩 동아리 CADI-B 활동 (2015.03 ~ 2015.08)
+* 성결대학교 산학협력단 연구원 (2016.06 ~ 2017.06)
+* 한국 소프트웨어 진흥협회(KOSTA) Java Framework 과정수료(2017.07 ~ 2017.12)
+* 성결대학교 **멀티미디어공학부** 졸업 (2012.03 ~ 2018.02)
+* 한국특허정보원(SW개발 및 운영) 인턴 (2018.02 ~ )
+
+**SKILL**
+
+* Java, JavaScript, Servlet/JSP, HTML5, CSS
+* C, C#, Unity
+* SQL, Spring, Git/GitHub
+* 알고리즘, 자료구조 수강
+
 
