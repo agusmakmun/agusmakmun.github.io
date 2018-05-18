@@ -30,34 +30,27 @@ email: agus[at]python.web.id
 | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: |
 | 2012 | 1학기 | 자료구조 | 전필 | 3 | A+ | 4.5 |
 
-<table class="table">
-      <caption>Optional table caption.</caption>
+<table class="table table-hover">
       <thead>
         <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th>학년도</th>
+          <th>학기</th>
+          <th>과목명</th>
+          <th>이수구분</th>
+          <th>학점</th>
+          <th>등급</th>
+          <th>평점</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
+          <th scope="row">2012</th>
+          <td>1학기</td>
+          <td>자료구조</td>
+          <td>전필</td>
+          <td>3</td>
+          <td>A+</td>
+          <td>4.5</td>
         </tr>
       </tbody>
     </table>
