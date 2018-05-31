@@ -5,7 +5,7 @@
 		"image": "뷰티 웹페이지.png",
 		"url": "#",
 		"date": "November 2016",
-		"tags": ["Apache Solr","HTML","Java","API"]
+		"tags": ["Apache Solr","HTML","Java","DB","API"]
 	},
 	{
 		"slug": "image-analysis-project",
@@ -28,6 +28,6 @@
 		"name": "스마트 기차여행 웹 솔루션",
 		"image": "starRail.png",
 		"date": "December 2017",
-		"tags": ["Spring","HTML","Java","API"]
+		"tags": ["Spring","MyBatis","HTML","Java","API"]
 	}
 ]
