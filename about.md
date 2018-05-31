@@ -71,4 +71,5 @@ permalink: /about/
 ![Perception Escape](https://rlftmdtp.github.io/static/img/project/모바일%20탈출게임.png)
 
 **4.** [스마트 기차여행 웹 솔류션](https://rlftmdtp.github.io/project/smart-rail-project/)
+
 ![StarRail](https://rlftmdtp.github.io/static/img/project/starRail.png)
