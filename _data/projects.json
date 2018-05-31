@@ -1,11 +1,11 @@
 [
 	{
-		"slug": "cool-project",
-		"name": "Cool project 1",
-		"image": "placeholder.jpg",
+		"slug": "beauty-project",
+		"name": "마인드 마이닝을 이용한 뷰티 웹페이지",
+		"image": "뷰티 웹페이지.png",
 		"url": "https://www.google.com",
-		"date": "Jan 2014",
-		"tags": ["Angular JS","API"]
+		"date": "May 2016",
+		"tags": ["Apache Solr","HTML","API"]
 	},
 	{
 		"name": "Cool project 2",
