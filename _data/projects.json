@@ -5,7 +5,7 @@
 		"image": "뷰티 웹페이지.png",
 		"url": "#",
 		"date": "November 2016",
-		"tags": ["Apache Solr","HTML","API"]
+		"tags": ["Apache Solr","HTML","Java","API"]
 	},
 	{
 		"slug": "image-analysis-project",
@@ -25,9 +25,9 @@
 	},
 	{
 		"slug": "star-rail-project",
-		"name": "Cool project 4",
-		"image": "placeholder.jpg",
-		"date": "Oct 2016",
-		"tags": ["Python","nodejs"]
+		"name": "스마트 기차여행 웹 솔루션",
+		"image": "starRail.png",
+		"date": "Oct 2017",
+		"tags": ["Spring","HTML","Java","API"]
 	}
 ]
