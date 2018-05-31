@@ -1,6 +1,5 @@
 ---
 layout: project_single
-title:  "Cool Project"
-slug: "cool-project"
+title:  "마인드 마이닝 뷰티 웹페이지"
+slug: "beauty-project"
 ---
-Just a demo text for now, which signifies there is lot of scope for improvement.
