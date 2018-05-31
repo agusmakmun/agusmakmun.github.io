@@ -3,38 +3,29 @@
 		"slug": "beauty-project",
 		"name": "마인드 마이닝 뷰티 웹페이지",
 		"image": "뷰티 웹페이지.png",
-		"url": "https://www.google.com",
-		"date": "May 2016",
+		"url": "#",
+		"date": "November 2016",
 		"tags": ["Apache Solr","HTML","API"]
 	},
 	{
-		"name": "Cool project 2",
-		"image": "placeholder.jpg",
+		"slug": "image-analysis-project",
+		"name": "증강현실 비디오 리컬러링",
+		"image": "비디오 리컬러링.gif",
 		"url": "#",
-		"date": "May 2014",
-		"tags": ["Python","Django"]
+		"date": "February 2017",
+		"tags": ["Unity","C#"]
 	},
 	{
-		"name": "Cool project 3",
-		"image": "placeholder.jpg",
+		"slug": "mobile-escape-project",
+		"name": "모바일 탈출게임",
+		"image": "모바일 탈출게임.png",
 		"url": "#",
-		"date": "June 2014",
-		"tags": ["HTML","JQuery","Django"]
+		"date": "November 2017",
+		"tags": ["Unity","C#","Django"]
 	},
 	{
+		"slug": "star-rail-project",
 		"name": "Cool project 4",
-		"image": "placeholder.jpg",
-		"date": "Oct 2016",
-		"tags": ["Python","nodejs"]
-	},
-	{
-		"name": "Cool project 5",
-		"image": "placeholder.jpg",
-		"date": "Oct 2016",
-		"tags": ["Python","nodejs"]
-	},
-	{
-		"name": "Cool project 6",
 		"image": "placeholder.jpg",
 		"date": "Oct 2016",
 		"tags": ["Python","nodejs"]
