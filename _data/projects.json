@@ -19,7 +19,7 @@
 		"slug": "mobile-escape-project",
 		"name": "모바일 탈출게임",
 		"image": "모바일 탈출게임.png",
-		"url": "#",
+		"url": "mobile-escape-project",
 		"date": "November 2017",
 		"tags": ["Unity","C#"]
 	},
