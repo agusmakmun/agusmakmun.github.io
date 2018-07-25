@@ -39,44 +39,42 @@ The rules are very simple and as follows:
 ### How a typical POJO class would look like?
 
 ```java
-	public class EmployeeRecord {
-		/*the private data members inside a class that is public*/
-		private int empId;
-		private String empName;
-		private String empAddr;
-		private int empSal;
-
+public class EmployeeRecord {
+	/*the private data members inside a class that is public*/
+	private int empId;
+	private String empName;
+	private String empAddr;
+	private int empSal;
 		public int getEmpId() {
-			return empId;
-		}
-		public void setEmpId(int idIn) {
-			empId = idIn;
-		}
-
-		public String getEmpName() {
-			return empName;
-		}
-
-		public void setEmpName(String nameIn) {
-			empName = nameIn;
-		}
-
-		public String getEmpAddr() {
-			return empAddr;
-		}
-
-		public void setEmpAddr(String addrIn) {
-			empAddr = addrIn;
-		}
-
-		public int getEmpSal() {
-			empSal;
-		}
-
-		public void setEmpSal(int salaryIn) {
-			empSal = salaryIn;
-		}
+		return empId;
 	}
+
+	public void setEmpId(int idIn) {
+		empId = idIn;
+	}
+		public String getEmpName() {
+		return empName;
+	}
+		public void setEmpName(String nameIn) {
+		empName = nameIn;
+	}
+
+	public String getEmpAddr() {
+		return empAddr;
+	}
+
+	public void setEmpAddr(String addrIn) {
+		empAddr = addrIn;
+	}
+
+	public int getEmpSal() {
+		empSal;
+	}
+
+	public void setEmpSal(int salaryIn) {
+		empSal = salaryIn;
+	}
+}
 ```
 
 In J2EE environment, POJO based programming model helps a lot to achieve the functionalities of dependency injection and inversion of control. Also this type of practice helps writing modules that are high cohesive and low coupled thereby making the project robust. Spring, one of the most popular Java framework in the industry always promotes the POJO based development. 
