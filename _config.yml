@@ -1,7 +1,7 @@
-title: Stack Problems
+title: Benghak
 description: My Personal Stack Problems
 author: Agus Makmun
-github: https://github.com/agusmakmun
+github: https://github.com/benghak
 about: I am freelance developer. Currently doing more in backend, focused in Python and Django.
 disqus_shortname: stackproblems
 google_analytics: UA-XXXXXXXX-Y
@@ -19,17 +19,17 @@ social:
     - icon: fa-facebook
       link: "#"
     - icon: fa-twitter
-      link: "https://twitter.com/agusmakmun6"
+      link: ""
     - icon: fa-linkedin
-      link: "https://www.linkedin.com/in/summonagus"
+      link: ""
     - icon: fa-stack-exchange
       link: "#"
     - icon: fa-github
-      link: "https://github.com/agusmakmun"
+      link: "https://github.com/benhak"
 
 share:
-  twitter_username: agusmakmun6
-  fb_appid: 1749788565247320
+  twitter_username: 
+  fb_appid: 100002603361069
 
 urls:
     - text: About Me
@@ -39,7 +39,7 @@ urls:
     - text: XML Feed
       url: /feed.xml
 
-url: "https://agusmakmun.github.io"
+url: "https://benghak.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
