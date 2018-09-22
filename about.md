@@ -4,6 +4,6 @@ title: About
 permalink: /about/
 ---
 
-I am freelance developer. Currently doing more in backend, focused in Python and Django.
+Brokerage General Agency for life insurance, long term care insurance, disability insurance, and fixed/indexed annuities.
 
-email: agus[at]python.web.id
+email: support@back9ins.com
