@@ -19,8 +19,6 @@ social:
       link: "https://twitter.com/agusmakmun6"
     - icon: fa-linkedin
       link: "https://www.linkedin.com/in/james-j-p-clark-738b4b121"
-    - icon: fa-stack-exchange
-      link: "#"
     - icon: fa-github
       link: "https://github.com/jc7553a"
 
@@ -38,9 +36,9 @@ urls:
 
 url: "https://jc7553a.github.io"
 baseurl: ""
-paginate: 20
-per_page: 20
-paginate_path: "/page/:num/"
+# paginate: 20
+# per_page: 20
+# paginate_path: "/page/:num/"
 markdown: kramdown
 gems:
   - jekyll-paginate
@@ -50,5 +48,5 @@ compress_html:
   clippings: all
   comments: ["<!-- ", " -->"]
   endings: all
-  ignore:
-    envs: ['development']
+  kramdown:
+      auto_ids: true
