@@ -2,6 +2,10 @@
 layout: default
 permalink: /
 ---
+<!-- <h1>{{ site.title }}</h1> -->
+<br><br>
+
+---
 
 
 B.S.  Computer Science Concentration in Computational Science
