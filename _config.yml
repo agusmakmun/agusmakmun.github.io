@@ -2,10 +2,8 @@ title: Stack Problems
 description: My Personal Stack Problems
 author: James Clark
 github: https://github.com/jc7553a
-about: Software Engineer @ Lockheed Martin Space American University Alumni, Interested in HPC and Machine Learning for Data Streams.
-
-disqus_shortname: stackproblems
-google_analytics: UA-XXXXXXXX-Y
+about: Software Engineer @ Lockheed Martin Space American University Alumni
+contact: james.p.clark@lmco.com
 avatar_url: /static/img/avatar.jpg
 
 enableTags: true
