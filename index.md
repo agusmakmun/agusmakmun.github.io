@@ -13,8 +13,10 @@ I am currently a software engineer at Lockheed Martin Space where I work on high
 <br>
 # Education
 ---
+American University, Washington D.C.
 
 B.S.  Computer Science Concentration in Computational Science
+
 Minor in Mathematics
 
 Cum Laude
