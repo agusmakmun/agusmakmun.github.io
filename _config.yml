@@ -2,7 +2,8 @@ title: Stack Problems
 description: My Personal Stack Problems
 author: James Clark
 github: https://github.com/jc7553a
-about: I am freelance developer. Currently doing more in backend, focused in Python and Django.
+about: Software Engineer @ Lockheed Martin Space American University Alumni, Interested in HPC and Machine Learning for Data Streams.
+
 disqus_shortname: stackproblems
 google_analytics: UA-XXXXXXXX-Y
 avatar_url: /static/img/avatar.jpg
@@ -16,20 +17,20 @@ collections:
     permalink: /project/:path/
 
 social:
-    - icon: fa-facebook
-      link: "#"
-    - icon: fa-twitter
-      link: "https://twitter.com/agusmakmun6"
-    - icon: fa-linkedin
-      link: "https://www.linkedin.com/in/summonagus"
-    - icon: fa-stack-exchange
-      link: "#"
-    - icon: fa-github
-      link: "https://github.com/agusmakmun"
+        #- icon: fa-facebook
+        #link: "#"
+        #- icon: fa-twitter
+        #link: "https://twitter.com/agusmakmun6"
+        #- icon: fa-linkedin
+        #link: "https://www.linkedin.com/in/summonagus"
+        #- icon: fa-stack-exchange
+        #link: "#"
+        - icon: fa-github
+      link: "https://github.com/jc7553a"
 
-share:
-  twitter_username: agusmakmun6
-  fb_appid: 1749788565247320
+      #share:
+      #twitter_username: agusmakmun6
+      #fb_appid: 1749788565247320
 
 urls:
     - text: About Me
@@ -39,7 +40,7 @@ urls:
     - text: XML Feed
       url: /feed.xml
 
-url: "https://agusmakmun.github.io"
+url: "https://jc7553a.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
