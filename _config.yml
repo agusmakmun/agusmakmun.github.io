@@ -17,12 +17,10 @@ collections:
     permalink: /project/:path/
 
 social:
-    - icon: fa-facebook
-      link: "#"
     - icon: fa-twitter
       link: "https://twitter.com/agusmakmun6"
     - icon: fa-linkedin
-      link: "https://www.linkedin.com/in/summonagus"
+      link: "https://www.linkedin.com/in/james-j-p-clark-738b4b121"
     - icon: fa-stack-exchange
       link: "#"
     - icon: fa-github
