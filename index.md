@@ -1,3 +1,9 @@
+---
+layout: default
+permalink: /
+---
+
+
 B.S.  Computer Science Concentration in Computational Science
 
 Publications:
