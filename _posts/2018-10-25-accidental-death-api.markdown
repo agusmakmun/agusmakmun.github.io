@@ -5,7 +5,7 @@ date:   2018-10-25 14:00:00 +0700
 categories: [Reid_Tattersall]
 ---
 ### Introduction
-One small step for [BOSS](https://app.back9ins.com), one giant leap for the life insurance industry :full_moon_with_face:. The [accidental death API endpoint](https://docs.back9ins.com) allows you to sell life insurance to your users using just an API (previously agents had to utilize our Quote & Apply front end by embedding a Quote & Apply script within their website). Simply send us a request and we'll return back a DocuSign envelope ID :envelope: which has the state specific filled application for guaranteed and instant issue accidental death life insurance :money_with_wings:.
+One small step for [BOSS](https://app.back9ins.com), one giant leap for the life insurance industry :full_moon_with_face:. The [accidental death API endpoint](https://docs.back9ins.com) allows you to sell life insurance to your users using just an API (previously agents had to utilize our [Quote & Apply](https://www.inslock.com) front end by embedding a [Quote & Apply](https://www.inslock.com) script within their website). Simply send us a request and we'll return back a DocuSign envelope ID :envelope: which has the state specific filled application for guaranteed and instant issue accidental death life insurance :money_with_wings:.
 
 ### The API
 You can view our documentation which shows a sample request and response within our [API docs](https://docs.back9ins.com).
