@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <hr />
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+
+    {% assign p_array = "" | split:"|"  %}
+    <!--{% for snippet in site.snippet %}-->
+      <!--{% capture p_slug %}{{ snippet.url | split:"/" | last }},{{ snippet.url }}{% endcapture %}-->
+      <!--{% assign p_slug_arr = p_slug | split:"," %}-->
+      <!--{% assign p_array = p_array | push: p_slug_arr  %}-->
+    <!--{% endfor %}-->
+
+    <div class="projects">
+      <!--{% include project_tags.html %}-->
+
+      {% for i in site.data.snippets %}
+        {% if p_url == nil %}{% assign p_url = i.url %}{% endif %}
+        {% if p_url %}
+          <a class="project-detail" href="{{ p_url }}">
+        {% endif %}
+          <h3 class="project-headlines">{{ i.name }}</h3>
+        {% if p_url %}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</article>

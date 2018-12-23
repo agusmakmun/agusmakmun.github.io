@@ -3,6 +3,7 @@ layout: post
 title:  "Download recrusive files inside index-of in Linux using wget"
 date:   2016-04-19 19:39:02 +0700
 categories: [bash]
+published: false
 ---
 ```
 $ wget -r --no-parent --reject "index.html*" http://125.160.17.22/dokumen/IGN/Panduan_OpenOffice.org_2.0/

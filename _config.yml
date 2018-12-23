@@ -1,9 +1,10 @@
-title: Stack Problems
-description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I am freelance developer. Currently doing more in backend, focused in Python and Django.
-disqus_shortname: stackproblems
+title: Власов С.
+description: Блог. Записи о программировании
+author: Сергей Власов
+github: https://github.com/g10k - когда будешь писать на github тогда можешь открыть его
+github_on: false
+about: Заметки для себя, которые могут быть полезны
+#disqus_shortname: stackproblems - мне не нужно
 google_analytics: UA-XXXXXXXX-Y
 avatar_url: /static/img/avatar.jpg
 
@@ -14,6 +15,9 @@ collections:
   project:
     output: true
     permalink: /project/:path/
+  snippet:
+    output: true
+    permalink: /snippet/:path/
 
 social:
     - icon: fa-facebook
@@ -36,6 +40,10 @@ urls:
       url: /about/
     - text: My Projects
       url: /projects/
+      hidden: true
+    - text: My snippets
+      url: /snippets/
+
     - text: XML Feed
       url: /feed.xml
 

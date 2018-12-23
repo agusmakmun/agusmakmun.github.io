@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% for project in site.data.projects %}
+      {% if project.slug == page.slug %}
+        <span class="time">{{ project.date }}</span> &raquo;
+        {% for tag in project.tags %}
+          <span class="tags tag-filter">{{ tag }}</span>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </header>
+
+  <div class="content">
+    {% for project in site.data.projects %}
+      {% if project.slug == page.slug %}
+        <a href="/static/projects/{{ project.image }}" class="thickbox">
+          <img src="/static/projects/{{ project.image }}" alt="{{ page.title }}" title="{{ page.title }}">
+        </a>
+      {% endif %}
+    {% endfor %}
+    <hr />
+    {{ content }}
+  </div>
+</article>
