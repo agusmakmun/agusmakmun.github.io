@@ -10,6 +10,8 @@ permalink: /
 
 I am currently a software engineer at Lockheed Martin Space where I work on high performance computing. I mostly work on simulation and modeling projects where I program in mostly C and Fortran where I apply multithreading libraries such as OpenMP and MPI for parallelization and optimzation of algorithms. At American University I studied under Dr. Nathalie Japkowicz in the data science lab where I worked on applying one class learning techniques to data streams where there exists a class imbalance and concept drift.
 
+I also like Pickles for breakfast
+
 <br>
 # Education
 ---
