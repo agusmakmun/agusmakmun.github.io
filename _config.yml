@@ -1,9 +1,8 @@
 title: Stack Problems
 description: My Personal Stack Problems
 author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django.
-disqus_shortname: stackproblems
+github: https://github.com/agozdogan
+about: I am me.
 google_analytics: UA-XXXXXXXX-Y
 avatar_url: /static/img/avatar.jpg
 
@@ -19,13 +18,13 @@ social:
     - icon: fa-facebook
       link: "#"
     - icon: fa-twitter
-      link: "#"
+      link: "https://twitter.com/agozdogan"
     - icon: fa-linkedin
       link: "#"
-    - icon: fa-stack-exchange
+    - icon: fa-stack-overflow
       link: "#"
     - icon: fa-github
-      link: "https://github.com/agusmakmun"
+      link: "https://github.com/agozdogan"
 
 share:
   twitter_username: github.io
