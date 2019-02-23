@@ -1,6 +1,6 @@
-title: Stack Problems
+title: Hallederiz
 description: My Personal Stack Problems
-author: Agus Makmun
+author: Görkem Özdoğan
 github: https://github.com/agozdogan
 about: I am me.
 google_analytics: UA-XXXXXXXX-Y
@@ -15,14 +15,12 @@ collections:
     permalink: /project/:path/
 
 social:
-    - icon: fa-facebook
-      link: "#"
     - icon: fa-twitter
       link: "https://twitter.com/agozdogan"
     - icon: fa-linkedin
-      link: "#"
+      link: "https://www.linkedin.com/in/agozdogan/"
     - icon: fa-stack-overflow
-      link: "#"
+      link: "https://meta.stackoverflow.com/users/989272/gorkem"
     - icon: fa-github
       link: "https://github.com/agozdogan"
 
