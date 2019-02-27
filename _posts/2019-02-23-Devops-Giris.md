@@ -10,5 +10,5 @@ categories: [Devops]
   
 Yine paylaşmayanı dövdükleri, Devops Yaşam döngüsü şemasına göre 8 adımlı bir sürecin sonsuz döngüde, bir arada mutlu mesut ve "el değmeden" dönmesi yukarıda bahsettiğim kültürün yeşerip büyümesine vesile oluyor. 
 
-![Devops Lifecyle]("https://github.com/agozdogan/agozdogan.github.io/blob/27-%C5%9Eubat-2019/static/img/DevOps-cycle-PPT-COLOURS.png" "Devops Lifecycle")
+![Devops Lifecyle]("http://blog.xebialabs.com/wp-content/uploads/2016/03/DevOps-cycle-PPT-COLOURS.png" "Devops Lifecycle")
 
