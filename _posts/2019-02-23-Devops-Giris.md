@@ -31,6 +31,8 @@ Birlikte gitmeyi göz ardı etmiş kuruluşlarda aşağıdaki "acı noktaları" 
 
 ![Serious Outages](https://github.com/agozdogan/agozdogan.github.io/blob/27-%C5%9Eubat-2019/static/img/Serious%20Outages.png "Serious Outages")
 
-Kaynak: [2] https://app.pluralsight.com/library/courses/devops-big-picture
+[2] Kaynak: https://app.pluralsight.com/library/courses/devops-big-picture
+
+
 
 
