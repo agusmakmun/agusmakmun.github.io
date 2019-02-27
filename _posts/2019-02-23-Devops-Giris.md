@@ -22,5 +22,11 @@ Bu bazılarının yan yatmış sekiz, bazıların sonsuz işareti diye tanıttı
 Bir afrika atasözü diyor ki:
 >Hızlı gitmek istiyorsan yalnız, uzağa gitmek istiyorsan birlikte git.
 
+![No Incremental Value](https://github.com/agozdogan/agozdogan.github.io/blob/27-%C5%9Eubat-2019/static/img/No%20Incremental%20Value.png "No Incremental Value")
+
+![Excessive Infighting](https://github.com/agozdogan/agozdogan.github.io/blob/27-%C5%9Eubat-2019/static/img/Excessive%20InFighting.png "Excessive Infighting")
+
+![Serious Outages](https://github.com/agozdogan/agozdogan.github.io/blob/27-%C5%9Eubat-2019/static/img/Serious%20Outages.png "Serious Outages")
+
 
 
