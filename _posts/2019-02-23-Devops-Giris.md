@@ -18,6 +18,9 @@ Yine paylaşmayanı dövdükleri, Devops Yaşam döngüsü şemasına göre 8 ad
 ## Yan yatmış sekizin öyküsü
 
 Bu bazılarının yan yatmış sekiz, bazıların sonsuz işareti diye tanıttığı şema neyi anlatıyor? Aslında bu şemaya sahip bir **SDLC** süreci yakalayabilmiş kurumlarda, ürün teslimatı yağ gibi akacak ve vaad edilmiş çevik süreçler planlamadan üretime geçişe kadar olan süreçte bir bütünlük ve otomasyon sağlamış olacaktır. Bu söylem, herkesin ruhlarını okşayacak, gergin bünyelere pasiflora etkisi yapacak derecede etkili. Dolayısıyla bu fikri satmaya çalışmak gerçekten kolay. Ufak bir sunum mühendisliğiyle herhangi bir seviyedeki "karar verici" yi etkilemek mümkün. Zaten ayaklarına vurulmuş prangalardan habersiz organizasyonlar gayet naif bir şekilde bu fikri alıp, stockholm sendromuna doğru tek yön biletiyle giden trene binecektir. Kültür kelimesi söylemek 6 hece, yazmak 6 harf, fikri satmak 6 saat iken "hayal gerçek" dengesini kanıksamak yıllar alıyor. 
+
 Bir afrika atasözü diyor ki:
 >Hızlı gitmek istiyorsan yalnız, uzağa gitmek istiyorsan birlikte git.
+
+
 
