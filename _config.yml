@@ -1,9 +1,9 @@
-title: Stack Problems
-description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django.
-disqus_shortname: stackproblems
+title: Tech blog
+description: My Personal blog about tech topics
+author: Guillaume Beuzeboc
+github: https://github.com/Guillaumebeuzeboc
+about: Interested in robotics, I am working on software mainly with linux
+disqus_shortname: BeuzebocBlob
 google_analytics: UA-XXXXXXXX-Y
 avatar_url: /static/img/avatar.jpg
 
@@ -16,30 +16,23 @@ collections:
     permalink: /project/:path/
 
 social:
-    - icon: fa-facebook
-      link: "#"
     - icon: fa-twitter
-      link: "#"
+      link: "https://twitter.com/BeuzebocG"
     - icon: fa-linkedin
-      link: "#"
-    - icon: fa-stack-exchange
-      link: "#"
+      link: "https://www.linkedin.com/in/guillaume-beuzeboc/"
     - icon: fa-github
-      link: "https://github.com/agusmakmun"
+      link: "https://github.com/Guillaumebeuzeboc"
 
 share:
-  twitter_username: github.io
-  fb_appid: 1749788565247320
+  twitter_username: BeuzebocG
 
 urls:
     - text: About Me
       url: /about/
     - text: My Projects
       url: /projects/
-    - text: XML Feed
-      url: /feed.xml
 
-url: "https://agusmakmun.github.io"
+url: "https://guillaumebeuzeboc.github.io/"
 baseurl: ""
 paginate: 20
 per_page: 20
