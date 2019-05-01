@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Debug a remote (on a robot) C++ app"
-date:   2018-05-1 00:00:00 +0700
+date:   2019-05-1 00:00:00 +0700
 categories: [c++, qtcreator]
 image: Broadcast_Mail.png
 ---
