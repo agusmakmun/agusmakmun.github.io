@@ -82,4 +82,4 @@ admin.site.register(models.BroadCast_Email, BroadCast_Email_Admin)
 
 **3.** And then, you can see. we have **Submit BroadCast** selection, just click button **Go** to submit broadcast mail.
 
-![Screenshot broadcast](https://raw.githubusercontent.com/agusmakmun/agusmakmun.github.io/master/static/img/_posts/Broadcast_Mail.png  "Screenshot broadcast")
+![Screenshot broadcast](/static/img/posts/mouton.png "Screenshot broadcast")
