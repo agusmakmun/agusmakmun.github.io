@@ -1,11 +1,11 @@
-title: Stack Problems
-description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django.
-disqus_shortname: stackproblems
+title: Home
+description: My Progress in Programming
+author: Terence Lim
+github: https://github.com/terryyylim
+about: I currently work in Boxed Wholesale as a Data Science & Engineering Intern. I'm a student from National University of Singapore (NUS) studying Business Analytics in the School of Computing.
+disqus_shortname: Blog Posts
 google_analytics: UA-XXXXXXXX-Y
-avatar_url: /static/img/avatar.jpg
+avatar_url: /static/img/portfolio.jpeg
 
 enableTags: true
 tagarray: []
@@ -16,20 +16,13 @@ collections:
     permalink: /project/:path/
 
 social:
-    - icon: fa-facebook
-      link: "#"
-    - icon: fa-twitter
-      link: "#"
+    - icon: fa-medium
+      link: "https://medium.com/@terencelimxp"
     - icon: fa-linkedin
-      link: "#"
-    - icon: fa-stack-exchange
-      link: "#"
+      link: "https://www.linkedin.com/in/terence-lim-365a39123/"
     - icon: fa-github
-      link: "https://github.com/agusmakmun"
+      link: "https://github.com/terryyylim"
 
-share:
-  twitter_username: github.io
-  fb_appid: 1749788565247320
 
 urls:
     - text: About Me
@@ -39,7 +32,7 @@ urls:
     - text: XML Feed
       url: /feed.xml
 
-url: "https://agusmakmun.github.io"
+url: "https://terryyylim.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
