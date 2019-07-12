@@ -8,6 +8,9 @@ avatar_url: /static/img/190524_resize.jpg
 enableTags: true
 tagarray: []
 
+enableCat: true
+catarray: []
+
 collections:
   project:
     output: true
