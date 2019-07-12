@@ -7,13 +7,7 @@ permalink: /about/
 테스트 $$x^2=4123$$
 
 ### 이력사항
-| 헤더1 | 헤더2 | 헤더3 |
-|:--------|:-------:|--------:|
-| 컬럼1   | 컬럼2   | 컬럼3   |
-| 컬럼4   | 컬럼5   | 컬럼6   |
-|----
-| 컬럼1   | 컬럼2   | 컬럼3   |
-| 컬럼4   | 컬럼5   | 컬럼6   |
-|=====
-| Foot1   | Foot2   | Foot3
-{: rules="groups"}
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
