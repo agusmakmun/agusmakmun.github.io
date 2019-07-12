@@ -14,8 +14,6 @@ collections:
     permalink: /project/:path/
 
 social:
-    - icon: /static/img/190524_resize.jpg
-      link: "#"
     - icon: fa-github
       link: "https://github.com/HiddenBeginner"
 
