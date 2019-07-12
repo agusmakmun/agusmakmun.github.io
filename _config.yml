@@ -1,10 +1,8 @@
-title: Stack Problems
-description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django.
-disqus_shortname: stackproblems
-google_analytics: UA-XXXXXXXX-Y
+title: 재야의 숨은 초보
+description: 재야의 숨은 고수가 되고 싶은 초심자
+author: HiddenBeginner (이동진)
+github: https://github.com/HiddenBeginner
+about: 안녕하세요. 아주대학교에서 수학을 전공하고 있는 이동진입니다. 빅 데이터 분석 및 산업수학 문제 해결에 관심을 가지고 공부하고 있습니다.
 avatar_url: /static/img/avatar.jpg
 
 enableTags: true
@@ -36,8 +34,6 @@ urls:
       url: /about/
     - text: My Projects
       url: /projects/
-    - text: XML Feed
-      url: /feed.xml
 
 url: "https://hiddenbeginner.github.io"
 baseurl: ""
