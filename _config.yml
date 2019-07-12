@@ -14,7 +14,7 @@ collections:
     permalink: /project/:path/
 
 social:
-    - icon: fa-kaggle
+    - icon: fa-font
       link: "#"
     - icon: fa-github
       link: "https://github.com/HiddenBeginner"
@@ -45,3 +45,11 @@ compress_html:
   endings: all
   ignore:
     envs: ['development']
+
+
+.fa-font:before {
+        font-family: roboto;
+        color: #429bf4;
+        font-size: 1.2em;
+        content: "k";   #any letter of your choice but for kaggle "k"
+}
