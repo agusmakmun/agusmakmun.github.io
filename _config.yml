@@ -39,7 +39,7 @@ urls:
     - text: XML Feed
       url: /feed.xml
 
-url: "https://agusmakmun.github.io"
+url: "https://hiddenbeginner.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
