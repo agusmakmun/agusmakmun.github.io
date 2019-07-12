@@ -5,4 +5,4 @@ math_use: true
 permalink: /about/
 ---
 
-$x^2 = 4$
+$$ x*2 = 4 $$
