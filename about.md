@@ -16,9 +16,3 @@ $
 \end{matrix}
 $
 <br/>
-$
-\begin{matrix}
-1 & 2 & 3 \\
-1 & 2 & 3 
-\end{matrix}
-$
