@@ -1,5 +1,5 @@
 ---
-layout: posts_by_category
+layout: post
 title:  "Welcome to Simply Grey"
 date:   2013-12-23 00:18:23 +0700
 categories: [jekyll]
