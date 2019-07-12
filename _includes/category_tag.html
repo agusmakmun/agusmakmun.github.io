@@ -1,0 +1,26 @@
+{% if site.enableCat ==  true %}
+	<div id="cat-filter" class="cat-group">
+		<span class="cat-filter cat-cloud all active">All</span>
+		
+    {% assign catarray = site.catarray %}
+    {% for post in site.posts %}
+      {% for cat in post.categories %}
+        {% assign catarray = catarray | push: cat %}
+      {% endfor %}
+    {% endfor %}
+
+    {% assign cats = catarray[1] %}
+    {% for item in catarray %}
+      {% assign catDown = item | downcase %}
+      {% assign catComp = cats | downcase %}
+      {% unless CatComp contains catDown %}
+        {% capture cats %}{{ cats }}|{{ item }}{% endcapture %}
+      {% endunless %}
+    {% endfor %}
+
+    {% assign catlist = cats | split: '|' | sort %}
+    {% for cat in catlist %}
+      <span class="cat-filter cat-cloud" data-cat="{{ cat | downcase }}">{{ cat }}</span>
+    {% endfor %}
+	</div>
+{% endif %}
