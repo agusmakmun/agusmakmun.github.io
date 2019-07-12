@@ -1,8 +1,8 @@
 ---
 layout: page
-use_math = true
 title: About
 permalink: /about/
+use_math: true
 ---
 
 $x^2 = 4$
