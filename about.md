@@ -24,11 +24,3 @@ $
 \end{matrix}
 $
 <br/>
-
-| P | Q | P * Q |
-| - | - | - |
-| T | T | T |
-| T | F | F |
-| F | T | F |
-| F | F | F |
-{: .tablelines}
