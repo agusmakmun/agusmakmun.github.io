@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-테스트 $x^2=463$
+테스트 $$x^2=41263$$
