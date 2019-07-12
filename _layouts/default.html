@@ -16,6 +16,10 @@ layout: compress
     <meta content="{{ site.share.fb_appid }}" property="fb:app_id">
     <meta content="{{ site.title }}" property="og:site_name">
 
+    {% if page.use_math %}
+      {% include mathjax_support.html %}
+    {% endif %}
+    
     {% if page.noindex %}
       <meta name="robots" content="noindex">
     {% endif %}
