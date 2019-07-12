@@ -3,7 +3,7 @@ description: 재야의 숨은 고수가 되고 싶은 초심자
 author: HiddenBeginner (이동진)
 github: https://github.com/HiddenBeginner
 about: 안녕하세요. 아주대학교에서 수학을 전공하고 있는 이동진입니다. 빅 데이터 분석 및 산업수학 문제 해결에 관심을 가지고 공부하고 있습니다.
-avatar_url: /static/img/avatar.jpg
+avatar_url: /static/img/190524_resize.jpg
 
 enableTags: true
 tagarray: []
@@ -32,7 +32,7 @@ share:
 urls:
     - text: About Me
       url: /about/
-    - text: My Projects
+    - text: Posts
       url: /projects/
 
 url: "https://hiddenbeginner.github.io"
