@@ -37,10 +37,6 @@ gems:
   - jekyll-gist
 # Conversion 
 markdown: kramdown
-highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
 
 compress_html:
   clippings: all
