@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+use_math: true
 ---
 ### 인사글
 안녕하세요. 아주대학교에서 수학을 전공하고 있는 학부생 이동진입니다. <br/>
