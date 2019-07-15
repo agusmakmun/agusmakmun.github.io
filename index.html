@@ -8,9 +8,9 @@ layout: default
   <ol class="posts">
     {% include category_tag.html %}
     {% for post in paginator.posts %}
-    <li class="project-item project-outer" data-tags='{{ post.categories | jsonify | downcase }}'>
-      <dev><a href="{{ post.url }}">{{ post.title }}</a> &raquo; <i><span>{{ post.date | date_to_string }}</span></i></dev>
-    </li>
+    <ol class="project-item project-outer" data-tags='{{ post.categories | jsonify | downcase }}'>
+      <li><a href="{{ post.url }}">{{ post.title }}</a> &raquo; <i><span>{{ post.date | date_to_string }}</span></i></dev>
+    </ol>
     {% endfor %}
   </ol>
 
