@@ -7,14 +7,15 @@ layout: default
   <hr />
   
   <ol class="posts">
-  {% include category_tag.html %}
-  {% for post in paginator.posts %}
-  <div class="project-item project-outer" data-tags='{{ post.tags | jsonify | downcase }}'>
+    {% include category_tag.html %}
+    {% for post in paginator.posts %}
+    <div class="project-item project-outer" data-tags='{{ post.tags | jsonify | downcase }}'>
       <div class="project-inner">
         <li><a href="{{ post.url }}">{{ post.title }}</a> &raquo; <i><span>{{ post.date | date_to_string }}</span></i></li>
       </div>
-  </div>
-  {% endfor %}
+      <hr>
+    </div>
+    {% endfor %}
   </ol>
 
   <!-- Pagination links -->
