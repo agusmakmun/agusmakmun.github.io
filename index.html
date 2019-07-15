@@ -5,14 +5,14 @@ layout: default
 <div id="home">
   <h1>{{ site.title }}</h1>
   <hr />
-  <div class="posts">
+  <ol class="posts">
     {% include category_tag.html %}
     {% for post in paginator.posts %}
-    <ol class="project-item project-outer" data-tags='{{ post.categories | jsonify | downcase }}'>
+    <div style="width:600px; height:25px;" data-tags='{{ post.categories | jsonify | downcase }}'>
       <li><a href="{{ post.url }}">{{ post.title }}</a> &raquo; <i><span>{{ post.date | date_to_string }}</span></i></li>
-    </ol>
+    </div>
     {% endfor %}
-  </div>
+  </ol>
 
   <!-- Pagination links -->
   {% if paginator.total_pages > 1 %}
