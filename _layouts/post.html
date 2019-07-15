@@ -53,3 +53,4 @@ comments: true
     <a class="next" href="{{ page.next.url }}">{{ page.next.title }} &raquo;</a>
   {% endif %}
 </div>
+{% if site.disqus-shortname %}{% include disqus.html %}{% endif %}
