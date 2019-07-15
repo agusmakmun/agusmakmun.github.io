@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Python] 두 집합의 차집합 구하기, 두 리스트 원소 비교"
+title:  "[Python] 두 집합의 차집합 구하기"
 date:   2019-07-15 15:32
 categories: [python]
 use_math: true
