@@ -37,3 +37,5 @@ print(diff_set)
 
 마무리로 `list(diff_set)` 을 통해 원하는 차집합을 구할 수 있다. 이 코드는 두 집합의 크기가 꽤나 커도 실행 속도가 굉장히 빠르다.<br/>
 출처 : [StackOverflow : Get difference between two lists](https://stackoverflow.com/questions/3462143/get-difference-between-two-lists)
+
+{% if site.disqus-shortname %}{% include disqus.html %}{% endif %}
