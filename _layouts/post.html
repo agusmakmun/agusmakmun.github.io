@@ -44,10 +44,9 @@ layout: default
 </div>
 {% endif %}
 
-{% if page.comments %}<a href="https://hiddenbeginner.github.io{{ page.url }}#disqus_thread"></a>{% endif %}
-<div class="comments">
+{% if page.comments %}
   {% include disqus.html %}
-</div>
+{% endif %}
 
 <div class="PageNavigation">
   {% if page.previous.url %}
