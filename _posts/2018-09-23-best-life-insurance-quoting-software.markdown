@@ -11,9 +11,9 @@ In this roundup, we tested some of the most popular life insurance quoting softw
 ### [Compulife](http://www.compulife.net/)
 **Pros:** Extremely fast at returning quotes. Can be embedded within your website and has built in forms for lead capture. One of the longest standing life insurance quoting engines that's used by a significant amount of agents. Compulife offers a server edition (aka Internet Engine) if you want more customizations and has one of the largest sets of carrier rates of all quoting engines.
 
-**Cons:** No built in eApplication so you'll have to manually complete a paper or eApplication. No support for table ratings or flat extras although that may be coming soon. Limited to term, return of premium, and guaranteed universal life. There's limited analytics data provided on your website's usage.
+**Cons:** No built in eApplication so you'll have to manually complete a paper or eApplication. Limited to term, return of premium, and guaranteed universal life. There's limited analytics data provided on your website's usage.
 
-**Pricing:** Starts at $99/year and they offer a free trial!
+**Pricing:** Starts at $96 per year, and first time users can get 4 months for free!
 
 **Bottom Line:** A very affordable and comprehensive quoting engine with a desktop application for agents and a quoting widget for your website.
 
