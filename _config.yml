@@ -5,7 +5,6 @@ github: https://github.com/agusmakmun
 about: I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django.
 disqus_shortname: stackproblems
 google_analytics: UA-XXXXXXXX-Y
-avatar_url: /static/img/avatar.jpg
 
 enableTags: true
 tagarray: []

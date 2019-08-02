@@ -96,15 +96,6 @@ div.col-sm-3 div.profile-about {
   margin-top: 10px;
   color: #8C8C8C;
 }
-div.col-sm-3 img.profile-avatar {
-  border-radius: 150px;
-  -webkit-border-radius: 150px;
-  -moz-border-radius: 150px;
-  -ms-border-radius: 150px;
-  -o-border-radius: 150px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 /* Pagination */
 .PageNavigation {

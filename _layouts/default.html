@@ -45,8 +45,6 @@ layout: compress
 
     {% if page.image %}
       <meta content="{{ site.url }}/static/img/posts/{{ page.image }}" property="og:image">
-    {% else %}
-      <meta content="{{ site.url }}{{ site.avatar_url }}" property="og:image">
     {% endif %}
 
     {% if page.categories %}
@@ -116,8 +114,7 @@ layout: compress
     <div class="container">
       <div class="col-sm-3">
         <div class="fixed-condition">
-          <a href="/"><img class="profile-avatar" src="{{ site.avatar_url }}" height="75px" width="75px" /></a>
-          <h1 class="author-name">{{ site.author }}</h1>
+          <h1 class="author-name"><a href="/">{{ site.author }}</a></h1>
           {% if site.about %}
             <div class="profile-about">
               {{ site.about }}
