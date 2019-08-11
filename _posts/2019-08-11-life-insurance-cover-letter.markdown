@@ -11,7 +11,7 @@ You know those things in your life that know you should be doing, but in reality
 ![gif](https://d1usw6tyldpxhi.cloudfront.net/2019-08-11-cover_letter_giphy.gif "GIF")
 
 ### Let's do this❗️
-During the agent's DocuSign session, an empty cover letter will appear. It's optional, but we suggest providing details on anything you think the underwriter might question.
+During the agent's Quote & Apply DocuSign session, an empty cover letter will appear. It's optional, but we suggest providing details on anything you think the underwriter might question.
 
 ### Example Cover Letter
 To Whom It May Concern:
