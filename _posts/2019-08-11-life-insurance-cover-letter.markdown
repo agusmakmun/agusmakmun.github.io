@@ -4,7 +4,6 @@ title:  "Life Insurance Cover Letter"
 date:   2019-08-11 14:00:00 +0700
 categories: [Reid_Tattersall]
 ---
-### Introduction
 You know those things in your life that know you should be doing, but in reality are not? We want to help you with one of them. Although it didn't make your new years resolution list, implementing cover letters into your life insurance practice will save you time and get better results for your clients.
 
 ### Example
