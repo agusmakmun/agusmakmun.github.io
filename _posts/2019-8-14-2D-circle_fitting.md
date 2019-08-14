@@ -7,7 +7,7 @@ use_math: true
 comments: true
 ---
 
-2차원 좌표평면에 $n$개의 점이 주어졌다고 가정하자 : $\left\{(x_1, y_1), (x_2, y_2), \cdots ,(x_n, y_n) \right\}$ <br/>
+2차원 좌표평면에 $n$개의 점이 주어졌다고 가정하자 : $\{(x_1, y_1), (x_2, y_2), \cdots ,(x_n, y_n) \}$ <br/>
 이 때 이 데이터에 가장 잘 맞는 원을 어떻게 구할 수 있을까? 최소제곱법(method of least squares) 관점에서 문제를 해결해보자.<br/>
 <br/>
 데이터를 생각하기 전에 먼저 원의 방정식을 생각해보자. 다들 잘 알고 있는 것처럼 중심이 $(x_c, y_c)$이고 반지름이 $r$ 인 원의 방정식은 다음과 같다.<br/>
@@ -29,23 +29,23 @@ where $c_0 = r^2 - x_c^2 - y_c^2$, $c_1 = 2x_c$, $c_2 = 2y_c$<br/>
 <br/>
 여기서 $x$와 $y$가 데이터로 주어졌다면, 즉, $x$, $y$, $x^2 + y^2$ 이 어떤 숫자로 정해져있다면 위 방정식을 미지수가 $c_0$, $c_1$, $c_2$인 연립방정식으로 볼 수 있다. 즉, 원의 방정식을 찾는다는 것은 $\mathbf{c}$를 찾는 것이다.<br/>
 <br/>
-이를 유념하면서 $n$개의 데이터 $\left\{(x_1, y_1), (x_2, y_2), \cdots ,(x_n, y_n) \right\}$ 이 원 위에 있다고 가정하여 $n$개의 연립방정식이 있다고 가정하면, 다음과 같은 선형계로 표현할 수 있을 것이다.  
+이를 유념하면서 $n$개의 데이터 $\{(x_1, y_1), (x_2, y_2), \cdots ,(x_n, y_n) \}$ 이 원 위에 있다고 가정하여 $n$개의 연립방정식이 있다고 가정하면, 다음과 같은 선형계로 표현할 수 있을 것이다.  
 
 $$A\mathbf{c} = \mathbf{b}$$
 이 때
 $A = 
 \begin{bmatrix}
-1 & x_1 & y_1 \\
-1 & x_2 & y_2 \\
-\vdots & \vdots & \vdots \\
-1 & x_n & y_n \\
+1 & x_1 & y_1 \\\
+1 & x_2 & y_2 \\\
+\vdots & \vdots & \vdots \\\
+1 & x_n & y_n \\\
 \end{bmatrix},
 \mathbf{b} =
 \begin{bmatrix}
-x_1^2 + y_1^2 \\
-x_2^2 + y_2^2 \\
-\vdots \\
-x_n^2 + y_n^2 \\
+x_1^2 + y_1^2 \\\
+x_2^2 + y_2^2 \\\
+\vdots \\\
+x_n^2 + y_n^2 \\\
 \end{bmatrix}
 $ 이다.<br/> 
 <br/>
@@ -119,17 +119,17 @@ plt.show()
 
 $A = 
 \begin{bmatrix}
-1 & x_1 & y_1 \\
-1 & x_2 & y_2 \\
-\vdots & \vdots & \vdots \\
-1 & x_n & y_n \\
+1 & x_1 & y_1 \\\
+1 & x_2 & y_2 \\\
+\vdots & \vdots & \vdots \\\
+1 & x_n & y_n \\\
 \end{bmatrix},
 \mathbf{b} =
 \begin{bmatrix}
-x_1^2 + y_1^2 \\
-x_2^2 + y_2^2 \\
-\vdots \\
-x_n^2 + y_n^2 \\
+x_1^2 + y_1^2 \\\
+x_2^2 + y_2^2 \\\
+\vdots \\\
+x_n^2 + y_n^2 \\\
 \end{bmatrix}
 $ 를 만들어보자
 
