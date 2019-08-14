@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "2차원 좌표평면에 주어진 데이터들로부터 가장 적합한 원의 방정식 구하기"
+title:  "좌표평면에 주어진 데이터들로부터 가장 적합한 원의 방정식 구하기"
 date:   2019-08-14 15:23
 categories: [python, MathematicalProgramming]
 use_math: true
 comments: true
 ---
-
+<br/>
 2차원 좌표평면에 $n$개의 점이 주어졌다고 가정하자 : $\{(x_1, y_1), (x_2, y_2), \cdots ,(x_n, y_n) \}$ <br/>
 이 때 이 데이터에 가장 잘 맞는 원을 어떻게 구할 수 있을까? 최소제곱법(method of least squares) 관점에서 문제를 해결해보자.<br/>
 <br/>
