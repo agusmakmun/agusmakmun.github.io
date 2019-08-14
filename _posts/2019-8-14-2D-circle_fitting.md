@@ -114,7 +114,7 @@ plt.show()
 ```
 
 
-![png](../static/img/_posts/2D_circle_fitting_files/2D_circle_fitting_4_0.png)
+![png](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2D_circle_fitting_files/2D_circle_fitting_4_0.png)
 
 
 $A = 
@@ -235,7 +235,7 @@ plt.show()
 ```
 
 
-![png](../static/img/_posts/2D_circle_fitting_files/2D_circle_fitting_15_0.png)
+![png](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2D_circle_fitting_files/2D_circle_fitting_15_0.png)
 
 
 **reference**<br/>
