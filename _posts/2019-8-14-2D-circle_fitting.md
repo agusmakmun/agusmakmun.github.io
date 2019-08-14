@@ -16,10 +16,10 @@ $$(x-x_c)^2 + (y - y_c)^2 = r^2$$
 <br/>
 이를 조금만 더 정리해서 선형대수스럽게 만들어보자.
 <br/>
-$$(x-x_c)^2 + (y - y_c)^2 = r^2$$
-$$x^2 + y^2 -2(xx_c + yy_c) + x_c^2 + y_c^2 = r^2$$
-$$2(xx_c + yy_c) + (r^2 - x_c^2 - y_c^2) =  x^2 + y^2$$
-$$2x_cx + 2y_cy + (r^2 - x_c^2 - y_c^2) =  x^2 + y^2$$
+$$(x-x_c)^2 + (y - y_c)^2 = r^2$$<br/>
+$$x^2 + y^2 -2(xx_c + yy_c) + x_c^2 + y_c^2 = r^2$$<br/>
+$$2(xx_c + yy_c) + (r^2 - x_c^2 - y_c^2) =  x^2 + y^2$$<br/>
+$$2x_cx + 2y_cy + (r^2 - x_c^2 - y_c^2) =  x^2 + y^2$$<br/>
 <br/>
 이 때, $\mathbf{c} = (c_0, c_1, c_2)$라고 하면 다음과 같이 쉽게 정리할 수 있다.<br/>
 <br/>
@@ -90,7 +90,7 @@ plt.show()
 ```
 
 
-![png](static/img/_posts/2D_circle_fitting_files/2D_circle_fitting_2_0.png)
+![png](../static/img/_posts/2D_circle_fitting_files/2D_circle_fitting_2_0.png)
 
 
 자 이제 원의 방정식에서 추출됐을 것으로 가정되는 데이터를 만들어보자. 우리는 circle 변수에 임의로 점을 추출해 노이즈를 추가하는 방식으로 데이터셋을 만들 것이다.
@@ -114,7 +114,7 @@ plt.show()
 ```
 
 
-![png](static/img/_posts/2D_circle_fitting_files/2D_circle_fitting_4_0.png)
+![png](../static/img/_posts/2D_circle_fitting_files/2D_circle_fitting_4_0.png)
 
 
 $A = 
@@ -235,13 +235,9 @@ plt.show()
 ```
 
 
-![png](static/img/_posts/2D_circle_fitting_files/2D_circle_fitting_15_0.png)
+![png](../static/img/_posts/2D_circle_fitting_files/2D_circle_fitting_15_0.png)
 
 
 **reference**<br/>
 [FITTING A CIRCLE TO CLUSTER OF 3D POINTS](https://meshlogic.github.io/posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points/)
 
-
-```python
-
-```
