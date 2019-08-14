@@ -17,7 +17,7 @@ Hi INSURED NAME,
 
 CARRIER NAME needs your medical records in order to make a decision on your life insurance application (POLICY NUMBER).
 
-Please use this invitation to connect your medical facility's patient portal with CARRIER NAME. You can learn about the medical records retrieval process by [clicking here](https://news.back9ins.com/reid_tattersall/2019/08/14/instant-aps.html).
+Please use this invitation to connect your medical facility's patient portal with CARRIER NAME. You can learn about the medical records retrieval process by [clicking here](https://news.back9ins.com/reid_tattersall/2019/08/14/about-instant-aps-for-insureds.html).
 
 Please contact me at AGENT PHONE or AGENT EMAIL with questions.
 
