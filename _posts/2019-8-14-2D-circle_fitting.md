@@ -90,7 +90,7 @@ plt.show()
 ```
 
 
-![png](../static/img/_posts/2D_circle_fitting_files/2D_circle_fitting_2_0.png)
+![png](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2D_circle_fitting_files/2D_circle_fitting_2_0.png)
 
 
 자 이제 원의 방정식에서 추출됐을 것으로 가정되는 데이터를 만들어보자. 우리는 circle 변수에 임의로 점을 추출해 노이즈를 추가하는 방식으로 데이터셋을 만들 것이다.
