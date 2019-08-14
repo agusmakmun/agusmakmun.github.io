@@ -1,5 +1,11 @@
-
-2차원 좌표평면에 주어진 데이터들로부터 가장 적합한 원의 방정식 구하기<br/>
+---
+layout: post
+title:  "2차원 좌표평면에 주어진 데이터들로부터 가장 적합한 원의 방정식 구하기"
+date:   2019-08-14 15:23
+categories: [python]
+use_math: true
+comments: true
+---
 
 2차원 좌표평면에 $n$개의 점이 주어졌다고 가정하자 : $\left\{(x_1, y_1), (x_2, y_2), \cdots ,(x_n, y_n) \right\}$ <br/>
 이 때 이 데이터에 가장 잘 맞는 원을 어떻게 구할 수 있을까? 최소제곱법(method of least squares) 관점에서 문제를 해결해보자.<br/>
@@ -84,7 +90,7 @@ plt.show()
 ```
 
 
-![png](2D_circle_fitting_files/2D_circle_fitting_2_0.png)
+![png](static/img/_posts/2D_circle_fitting_files/2D_circle_fitting_2_0.png)
 
 
 자 이제 원의 방정식에서 추출됐을 것으로 가정되는 데이터를 만들어보자. 우리는 circle 변수에 임의로 점을 추출해 노이즈를 추가하는 방식으로 데이터셋을 만들 것이다.
@@ -108,7 +114,7 @@ plt.show()
 ```
 
 
-![png](2D_circle_fitting_files/2D_circle_fitting_4_0.png)
+![png](static/img/_posts/2D_circle_fitting_files/2D_circle_fitting_4_0.png)
 
 
 $A = 
@@ -229,7 +235,7 @@ plt.show()
 ```
 
 
-![png](2D_circle_fitting_files/2D_circle_fitting_15_0.png)
+![png](static/img/_posts/2D_circle_fitting_files/2D_circle_fitting_15_0.png)
 
 
 **reference**<br/>
