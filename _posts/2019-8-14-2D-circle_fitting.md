@@ -2,7 +2,7 @@
 layout: post
 title:  "2차원 좌표평면에 주어진 데이터들로부터 가장 적합한 원의 방정식 구하기"
 date:   2019-08-14 15:23
-categories: [python]
+categories: [python, Mathematical_programming]
 use_math: true
 comments: true
 ---
