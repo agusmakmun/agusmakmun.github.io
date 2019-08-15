@@ -12,7 +12,7 @@ Instant APS takes care of the data integrations with medical facilities so your 
  Insurance carriers use your medical records in order to underwrite your life insurance application. Your medical records contain information such as your lab results, medications, and office visits which is used to determine the health class for your policy.
 
 ### Can I opt out?
-Yes, you can choose to not provide your electronic health records by notifying your agent. In that case, a copy service will contact your medical facility to obtain a digital or physical copy of your medical records. This process is not preferred because on average it takes two weeks.
+Yes, you can choose to not provide your electronic health records by notifying your agent. In that case, a copy service will contact your medical facility to obtain a digital or physical copy of your medical records. This process is not preferred because it takes typically takes 2-4 weeks.
 
 ### Costs
 There are no costs to the insured to use Instant APS.
