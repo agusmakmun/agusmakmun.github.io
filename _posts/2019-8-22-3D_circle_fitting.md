@@ -1,3 +1,11 @@
+---
+layout: post
+title:  "3차원 좌표공간에 주어진 데이터들로부터 가장 적합한 원의 방정식 구하기[원 적합, 3d circle fitting]"
+date:   2019-08-22 14:15
+categories: [python, MathematicalProgramming]
+use_math: true
+comments: true
+---
 
 # 3차원 원 적합(3d-circle fitting)
 &nbsp;&nbsp;&nbsp; 3차원 좌표공간에 원 모양의 데이터들이 주어졌을 때, 이 데이터에 가장 잘 맞는 원의 방정식은 어떻게 구할 수 있을까요?<br/>
@@ -213,7 +221,7 @@ f.tight_layout()
 ```
 
 
-![png](3D_circle_fitting_files/3D_circle_fitting_3_0.png)
+![png](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/3D_circle_fitting_files/3D_circle_fitting_3_0.png)
 
 
 &nbsp;&nbsp;&nbsp; 데이터는 만들었으니 이제 원 적합을 단계별로 진행해보도록 하겠습니다. 첫 단계는 [SVD를 이용한 가장 적합한 평면 찾기](#3) 단계입니다.<br/>
@@ -306,7 +314,7 @@ plt.show()
 ```
 
 
-![png](3D_circle_fitting_files/3D_circle_fitting_11_0.png)
+![png](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/3D_circle_fitting_files/3D_circle_fitting_11_0.png)
 
 
 &nbsp;&nbsp;&nbsp; 2차원에서 적합한 원의 중심과 반지름 알았으니 다시 원래의 평면으로 보내줍시다 !
@@ -383,7 +391,7 @@ ax[3].legend()
 
 
 
-![png](3D_circle_fitting_files/3D_circle_fitting_14_1.png)
+![png](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/3D_circle_fitting_files/3D_circle_fitting_14_1.png)
 
 
 마지막으로 3차원으로 결과를 확인해보도록 하겠습니다.
@@ -426,7 +434,7 @@ Image.open("Figure_1.png")
 
 
 
-![png](3D_circle_fitting_files/3D_circle_fitting_17_0.png)
+![png](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/3D_circle_fitting_files/3D_circle_fitting_17_0.png)
 
 
 
