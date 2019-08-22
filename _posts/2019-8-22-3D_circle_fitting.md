@@ -8,13 +8,13 @@ comments: true
 ---
 
 # 3차원 원 적합(3d-circle fitting)
-&nbsp;&nbsp;&nbsp; 3차원 좌표공간에 원 모양의 데이터들이 주어졌을 때, 이 데이터에 가장 잘 맞는 원의 방정식은 어떻게 구할 수 있을까요?<br/>
-&nbsp;&nbsp;&nbsp; 만약 주어진 데이터들이 정확하게 한 원 위에 있다는 것을 안다면 단순하게 연립방정식을 푸는 것에 지나지 않을 것입니다.<br/>
+&nbsp;&nbsp;&nbsp; 3차원 좌표공간에 원 모양의 데이터들이 주어졌을 때, 이 데이터에 가장 잘 맞는 원의 방정식은 어떻게 구할 수 있을까요? <br/>
+&nbsp;&nbsp;&nbsp; 만약 주어진 데이터들이 정확하게 한 원 위에 있다는 것을 안다면 단순하게 연립방정식을 푸는 것에 지나지 않을 것입니다. <br/>
 &nbsp;&nbsp;&nbsp; 하지만 현실 세계의 데이터는 관측 오차 등의 노이즈를 포함하고 있기 때문에 주어진 데이터들이 모두 한 원 위에 있기는 쉽지 않습니다. <br/>
-&nbsp;&nbsp;&nbsp; 그렇다면 우리는 현실과 타협하여 주어진 데이터들을 가장 잘 대표할 수 있는 원의 구하는 것으로 목표를 바꿔야할 것입니다.<br/>
+&nbsp;&nbsp;&nbsp; 그렇다면 우리는 현실과 타협하여 주어진 데이터들을 가장 잘 대표할 수 있는 원의 구하는 것으로 목표를 바꿔야할 것입니다. <br/>
 &nbsp;&nbsp;&nbsp; 이번 포스트에서는 3차원 좌표공간에 주어진 데이터들에 가장 적합한 원의 방정식을 찾는 것을 다뤄보도록 하겠습니다.<br/>
-<br/>
-&nbsp;&nbsp;&nbsp; 들어가기에 앞서 이 포스트는 참고문헌 [1](#ref1) 을 참고하여 재구성한 포스트임을 미리 말씀드립니다.<br/>
+ <br/>
+&nbsp;&nbsp;&nbsp; 들어가기에 앞서 이 포스트는 참고문헌 [1](#ref1) 을 참고하여 재구성한 포스트임을 미리 말씀드립니다. <br/>
 &nbsp;&nbsp;&nbsp; (This post is a reproducing of the reference [1](#ref1) in Korean. Some contents was added as needed )
 
 ---
@@ -30,30 +30,32 @@ comments: true
 
 <a name="2"></a>
 ## 3차원 좌표공간에 있는 원의 방정식
-&nbsp;&nbsp;&nbsp; 2차원 좌표평면에 있는 원의 방정식을 $<rcos\theta,rsin\theta> + <x_0,y_0>$와 같이 매개변수 방정식으로 나타낼 수 있는 것처럼, 3차원 좌표공간에 있는 원의 방정식 또한 다음과 같이 나타낼 수 있습니다.<br/>
+&nbsp;&nbsp;&nbsp; 2차원 좌표평면에 있는 원의 방정식을 $<rcos\theta,rsin\theta> + <x_0,y_0>$와 같이 매개변수 방정식으로 나타낼 수 있는 것처럼, 3차원 좌표공간에 있는 원의 방정식 또한 다음과 같이 나타낼 수 있습니다. <br/>
 
 <br/>
 $$\mathbf{P}_{\textbf{circle}}(\theta) = rcos\theta\mathbf{u} + rsin\theta(\mathbf{n}\times\mathbf{u})+\mathbf{C},\;0\le t \le 2\pi$$<br/>
 <br/>
 
-&nbsp;&nbsp;&nbsp; 이 때, 원의 반지름은 $r$, 원의 중심은 $\mathbf{C}=(x_0,y_0,z_0)$, 단위법선벡터는 $\mathbf{n}$이며, $\mathbf{u}$는 $\mathbf{n}$과 수직한 아무 벡터일 수 있습니다.<br/>
+&nbsp;&nbsp;&nbsp; 이 때, 원의 반지름은 $r$, 원의 중심은 $\mathbf{C}=(x_0,y_0,z_0)$, 단위법선벡터는 $\mathbf{n}$이며, $\mathbf{u}$는 $\mathbf{n}$과 수직한 아무 벡터일 수 있습니다. <br/>
 <br/>
 
-&nbsp;&nbsp;&nbsp; 위 매개변수 방정식은 2차원 좌표평면에 있는 원의 방정식과 비교하여 생각해보면 쉽게 이해할 수 있습니다. 먼저 2차원 좌표평면에 있는 원의 방정식을 다시 적어보면 다음과 같습니다.<br/><br/>
+&nbsp;&nbsp;&nbsp; 위 매개변수 방정식은 2차원 좌표평면에 있는 원의 방정식과 비교하여 생각해보면 쉽게 이해할 수 있습니다. 먼저 2차원 좌표평면에 있는 원의 방정식을 다시 적어보면 다음과 같습니다. <br/>
 
-$$rcos\theta<1, 0> + rsin\theta <0, 1> + <x_0, y_0>$$<br/>
+<br/>
+$$rcos\theta<1, 0> + rsin\theta <0, 1> + <x_0, y_0>$$ <br/>
 <br/>
 
-&nbsp;&nbsp;&nbsp; 이 때, $<1, 0>$는 $x$축을 나타내는 단위방향벡터이며 $<0, 1>$는 $y$축을 나타내는 단위방향벡터입니다. 이를 확장하여 $xy$ 평면 위에 있는 원을 3차원 좌표 공간에 나타내보겠습니다.<br/><br/>
+&nbsp;&nbsp;&nbsp; 이 때, $<1, 0>$는 $x$축을 나타내는 단위방향벡터이며 $<0, 1>$는 $y$축을 나타내는 단위방향벡터입니다. 이를 확장하여 $xy$ 평면 위에 있는 원을 3차원 좌표 공간에 나타내보겠습니다. <br/>
 
-$$rcos\theta<1, 0, 0> + rsin\theta <0, 1, 0> + <x_0, y_0, 0>$$<br/>
+<br/>
+$$rcos\theta<1, 0, 0> + rsin\theta <0, 1, 0> + <x_0, y_0, 0>$$ <br/>
 <br/>
 
-&nbsp;&nbsp;&nbsp; 3차원 좌표공간에서 $xy$ 평면의 법선벡터($\mathbf{n}$)는 $<0,0,1>$ 입니다. $x$축을 나타내는 방향벡터 $<1, 0, 0>$는 $\mathbf{n}$과 수직한 벡터입니다($\mathbf{u}$). 마지막으로 $y$축을 나타내는 방향벡터 $<0, 1, 0>$ 는 $\mathbf{n}$과 $\mathbf{u}$에 동시에 수직하는 벡터입니다 ($\mathbf{n}\times\mathbf{u}$).<br/><br/>
+&nbsp;&nbsp;&nbsp; 3차원 좌표공간에서 $xy$ 평면의 법선벡터($\mathbf{n}$)는 $<0,0,1>$ 입니다. $x$축을 나타내는 방향벡터 $<1, 0, 0>$는 $\mathbf{n}$과 수직한 벡터입니다($\mathbf{u}$). 마지막으로 $y$축을 나타내는 방향벡터 $<0, 1, 0>$ 는 $\mathbf{n}$과 $\mathbf{u}$에 동시에 수직하는 벡터입니다 ($\mathbf{n}\times\mathbf{u}$). <br/><br/>
 
-&nbsp;&nbsp;&nbsp; 이를 유념하면서 다시 3차원 원의 방정식을 보면 단순히 원이 이루는 평면의 법선벡터를 이용해서 새로운 축 $\mathbf{u}$과 $(\mathbf{n}\times\mathbf{u})$를 만들어서 표현한 것에 지나지 않는다는 것을 알 수 있습니다.<br/><br/>
+&nbsp;&nbsp;&nbsp; 이를 유념하면서 다시 3차원 원의 방정식을 보면 단순히 원이 이루는 평면의 법선벡터를 이용해서 새로운 축 $\mathbf{u}$과 $(\mathbf{n}\times\mathbf{u})$를 만들어서 표현한 것에 지나지 않는다는 것을 알 수 있습니다. <br/><br/>
 
-&nbsp;&nbsp;&nbsp; 지금까지 3차원 좌표공간에 있는 원의 방정식을 표현하는 방법을 알아보았습니다. 우리는 나중에 이 방정식을 통해 데이터 포인트를 샘플링을 할 것입니다.<br/><br/>
+&nbsp;&nbsp;&nbsp; 지금까지 3차원 좌표공간에 있는 원의 방정식을 표현하는 방법을 알아보았습니다. 우리는 나중에 이 방정식을 통해 데이터 포인트를 샘플링을 할 것입니다. <br/><br/>
 
 ---
 
@@ -64,22 +66,23 @@ $$rcos\theta<1, 0, 0> + rsin\theta <0, 1, 0> + <x_0, y_0, 0>$$<br/>
 &nbsp;&nbsp;&nbsp; 먼저 데이터 포인트들을 하나의 $n\times3$ 행렬 $A$로 나타낼 수 있습니다. <br/><br/>
 
 $$A = (\mathbf{P}_0-\mathbf{c}, \mathbf{P}_1-\mathbf{c}, \cdots, \mathbf{P}_n-\mathbf{c})^T$$ <br/>
+<br/>
 
-&nbsp;&nbsp;&nbsp; 이 때, 편의를 위해서 각 데이터에서 데이터의 중심 ($\mathbf{c} = \frac{1}{n}\sum_i{\mathbf{P}_i}$) 을 빼주었습니다.(이렇게 평행이동한 데이터들의 중심은 원점이 됩니다.)<br/><br/>
+&nbsp;&nbsp;&nbsp; 이 때, 편의를 위해서 각 데이터에서 데이터의 중심 ($\mathbf{c} = \frac{1}{n}\sum_i{\mathbf{P}_i}$) 을 빼주었습니다.(이렇게 평행이동한 데이터들의 중심은 원점이 됩니다.) <br/><br/>
 
 &nbsp;&nbsp;&nbsp; 평행이동된 점($\mathbf{P}_i - \mathbf{c}$) 과 평면사이의 거리는 법선벡터와 내적의 정의를 사용하면 $(\mathbf{P}_i - \mathbf{c})^T\mathbf{n}$ 인 것을 알 수 있습니다(데이터를 평면에 수직한 법선벡터 $\mathbf{n}$ 에 투영한 것이 내적이므로). 그렇다면 $A\mathbf{n}$은 각 포인트에서 평면까지의 거리들을 나타내는 벡터가 되는 것이고. 각 포인트와 평면사이 거리의 제곱의 합은 벡터 $A\mathbf{n}$의 유클리디안 크기인 $\lVert A\mathbf{n} \rVert^2$이 될 것입니다. 우리는 $\lVert A\mathbf{n} \rVert^2$ 을 최소로 만들어주는 평면을 찾고 싶은 것이므로, 우리는 다음을 만족하는 $\mathbf{n}$을 찾아주어야 합니다. <br/><br/>
 
-$$\mathbf{n} = \arg\!\min_{\mathbf{n}\in \mathbb{R}^3 \atop \|\mathbf{n}\|=1}  \| \mathbf{A} \mathbf{n} \|^2$$<br/>
+$$\mathbf{n} = \arg\!\min_{\mathbf{n}\in \mathbb{R}^3 \atop \|\mathbf{n}\|=1}  \| \mathbf{A} \mathbf{n} \|^2$$ <br/>
 <br/>
 
-&nbsp;&nbsp;&nbsp; 이를 만족하는 $\mathbf{n}$은 특이값분해(이하 SVD)를 통해 쉽게 구할 수 있습니다. SVD에 의해서 행렬 $A$는 다음과 같이 분해될 수 있습니다.<br/><br/>
+&nbsp;&nbsp;&nbsp; 이를 만족하는 $\mathbf{n}$은 특이값분해(이하 SVD)를 통해 쉽게 구할 수 있습니다. SVD에 의해서 행렬 $A$는 다음과 같이 분해될 수 있습니다. <br/><br/>
 
-$$A = U\Sigma V^T$$<br/>
+$$A = U\Sigma V^T$$ <br/>
 <br/>
 
-&nbsp;&nbsp;&nbsp; 이 때, $U$는 $n \times n$ orthonormal 행렬, $V$는 $3 \times 3$ orthonormal 행렬이고 각각은 $A$의 columns space와 row space의 orthogonal basis 입니다. 그리고 $\Sigma$는 특이값 $\sigma_1 \ge \sigma_2 \ge \sigma_3 \ge 0$ 을 원소로 갖는 대각행렬입니다. SVD에 대한 더 자세한 설명은 새로운 포스트에서 다뤄보도록 하겠습니다. 참고로 SVD는 $A$와 같은 직사각행렬에 대해서도 존재합니다.<br/><br/>
+&nbsp;&nbsp;&nbsp; 이 때, $U$는 $n \times n$ orthonormal 행렬, $V$는 $3 \times 3$ orthonormal 행렬이고 각각은 $A$의 columns space와 row space의 orthogonal basis 입니다. 그리고 $\Sigma$는 특이값 $\sigma_1 \ge \sigma_2 \ge \sigma_3 \ge 0$ 을 원소로 갖는 대각행렬입니다. SVD에 대한 더 자세한 설명은 새로운 포스트에서 다뤄보도록 하겠습니다. 참고로 SVD는 $A$와 같은 직사각행렬에 대해서도 존재합니다. <br/><br/>
 
-&nbsp;&nbsp;&nbsp; SVD를 이용하여 $\| \mathbf{A} \mathbf{n} \|^2$를 다음과 같이 다시 적어볼 수 있습니다.<br/><br/>
+&nbsp;&nbsp;&nbsp; SVD를 이용하여 $\| \mathbf{A} \mathbf{n} \|^2$를 다음과 같이 다시 적어볼 수 있습니다. <br/><br/>
 
 $$\begin{matrix}
 \| A \mathbf{n} \|^2 & = & A\mathbf{n} \cdot A\mathbf{n} \\\
@@ -91,12 +94,11 @@ $$\begin{matrix}
  & = & \Sigma V^T \mathbf{n} \cdots \Sigma V^T\mathbf{n} \\\
  & = & \|\Sigma V^T \mathbf{n}\|^2 \\\
  & = & (\sigma_1 b_1)^2 + (\sigma_2 b_2)^2 + (\sigma_3 b_3)^2 \\\
-\end{matrix}$$<br/>
-<br/>
+\end{matrix}$$ <br/> <br/>
 
-&nbsp;&nbsp;&nbsp; 이 때, $\mathbf{b} = V^T\mathbf{n}$ 입니다. 그리고 $\sigma_3$가 가장 작기 때문에 우리는 $\mathbf{b} = (0,0,1)^T$ 를 선택해줌으로써 $\| A \mathbf{n} \|^2$를 최소로 만들어 줄 수 있습니다.(Lagrange 승수법과 singular value와 선형변환된 벡터 사이의 부등식을 통해 유도할 수 있습니다.)<br/><br/>
+&nbsp;&nbsp;&nbsp; 이 때, $\mathbf{b} = V^T\mathbf{n}$ 입니다. 그리고 $\sigma_3$가 가장 작기 때문에 우리는 $\mathbf{b} = (0,0,1)^T$ 를 선택해줌으로써 $\| A \mathbf{n} \|^2$를 최소로 만들어 줄 수 있습니다.(Lagrange 승수법과 singular value와 선형변환된 벡터 사이의 부등식을 통해 유도할 수 있습니다.) <br/> <br/>
 
-&nbsp;&nbsp;&nbsp; 따라서 우리는 $\|A \mathbf{n} \|^2$를 최소로 만들어주는 $\mathbf{n}$을 다음과 같이 구할 수 있습니다.<br/><br/>
+&nbsp;&nbsp;&nbsp; 따라서 우리는 $\|A \mathbf{n} \|^2$를 최소로 만들어주는 $\mathbf{n}$을 다음과 같이 구할 수 있습니다. <br/><br/>
 
 $$\begin{matrix}
 V^T \mathbf{n} & = & \mathbf{b} \\\
@@ -104,9 +106,9 @@ V V^T \mathbf{n} & = & V \mathbf{b} \\\
 \mathbf{n} & = & V \mathbf{b} \\\
  & = & V \left( \begin{smallmatrix} 0\\0\\1 \end{smallmatrix} \right) \\\
  & = & V(:,3)
-\end{matrix}$$<br/>
+\end{matrix}$$ <br/>
 
-즉, 법선벡터 $\mathbf{n}$을 $V$의 세 번 째 열 벡터로 선택함으로써 우리가 찾는 평면을 찾을 수 있습니다.<br/><br/>
+즉, 법선벡터 $\mathbf{n}$을 $V$의 세 번 째 열 벡터로 선택함으로써 우리가 찾는 평면을 찾을 수 있습니다. <br/><br/>
 
 지금까지 주어진 데이터로부터 가장 적합한 평면을 SVD 를 통해 찾아보았습니다. 다음 단계는 찾은 평면의 법선벡터와 $xy$ 평면 사이의 각도를 구하고 데이터들을 모두 회전시켜주고 $xy$ 평면에 투영시켜주는 단계입니다. <br/><br/>
 
@@ -114,17 +116,18 @@ V V^T \mathbf{n} & = & V \mathbf{b} \\\
 
 <a name="4"></a>
 ## 벡터들의 축 회전 : Rodrigues rotation
-&nbsp;&nbsp;&nbsp; 위 단계에서 우리는 SVD를 사용하여 주어진 데이터들에 가장 적합한 평면을 찾아보았습니다. 다음으로 우리는 주어진 데이터는 잠시 잊고 평면 위에 있는 벡터를 $xy$ 평면으로 회전시키는 방법에 대해서 알아보겠습니다.이를 위해서 우리는 `Rodrigues' rotation formula` 를 사용할 것입니다.<br/><br/>
+&nbsp;&nbsp;&nbsp; 위 단계에서 우리는 SVD를 사용하여 주어진 데이터들에 가장 적합한 평면을 찾아보았습니다. 다음으로 우리는 주어진 데이터는 잠시 잊고 평면 위에 있는 벡터를 $xy$ 평면으로 회전시키는 방법에 대해서 알아보겠습니다.이를 위해서 우리는 `Rodrigues' rotation formula` 를 사용할 것입니다. <br/><br/>
 
 &nbsp;&nbsp;&nbsp; `Rodrigues' rotation formula` 는 주어진 벡터 $P$ 를 특정한 축을 기준으로 $\theta$만큼 축 회전한 벡터 $P_{rot}$ 를 구하는 공식입니다. 이 때 축을 나타내는 단위벡터를 $k$ 라고 하면 `Rodrigues' rotation formula` 는 다음과 같습니다. <br/><br/>
 
-$$P_{rot} = P cos\theta + (\mathbf{k} \times P) sin\theta + \mathbf{k} \; (\mathbf{k} \cdot P) (1 - cos\theta)$$<br/>
+$$P_{rot} = P cos\theta + (\mathbf{k} \times P) sin\theta + \mathbf{k} \; (\mathbf{k} \cdot P) (1 - cos\theta)$$ <br/>
+<br/>
 
-&nbsp;&nbsp;&nbsp; `Rodrigues' rotation formula` 에 대해서는 다음 포스트에서 다루는 것으로 하고 일단은 받아들이고 진행하겠습니다. (유도는 어렵지 않기 때문에 궁금하신 분들께서는 참고문헌 [3]((#ref3)) 을 참조시면 좋을 것 같습니다.) 우리의 경우 회전할 각 $\theta$는 구한 평면의 법선벡터 $\mathbf{n}$와 $xy$ 평면의 법선벡터 $(0,0,1)^T$ 의 각을 구하면 되고 회전 축은 그 둘의 외적을 사용하면 됩니다. $\mathbf{k} = \mathbf{n} \times (0,0,1)^T$<br/><br/>
+&nbsp;&nbsp;&nbsp; `Rodrigues' rotation formula` 에 대해서는 다음 포스트에서 다루는 것으로 하고 일단은 받아들이고 진행하겠습니다. (유도는 어렵지 않기 때문에 궁금하신 분들께서는 참고문헌 [3]((#ref3)) 을 참조시면 좋을 것 같습니다.) 우리의 경우 회전할 각 $\theta$는 구한 평면의 법선벡터 $\mathbf{n}$와 $xy$ 평면의 법선벡터 $(0,0,1)^T$ 의 각을 구하면 되고 회전 축은 그 둘의 외적을 사용하면 됩니다. $\mathbf{k} = \mathbf{n} \times (0,0,1)^T$ <br/><br/>
 
-&nbsp;&nbsp;&nbsp; 주어진 데이터들을 위에서 구한 $\theta$와 $\mathbf{k}$로 `Rodrigues' rotation`을 해준 다음 $z$ 좌표를 0으로 만들어주면 데이터들을 $xy$ 평면으로 프로젝션 시킨 것과 같습니다. 이 때, 회전 변환은 거리 정보는 유지해준채 회전하는 것이기 때문에 원이 그대로 유지될 수 있습니다.<br/><br/>
+&nbsp;&nbsp;&nbsp; 주어진 데이터들을 위에서 구한 $\theta$와 $\mathbf{k}$로 `Rodrigues' rotation`을 해준 다음 $z$ 좌표를 0으로 만들어주면 데이터들을 $xy$ 평면으로 프로젝션 시킨 것과 같습니다. 이 때, 회전 변환은 거리 정보는 유지해준채 회전하는 것이기 때문에 원이 그대로 유지될 수 있습니다. <br/><br/>
 
-&nbsp;&nbsp;&nbsp; 지금까지 우리는 주어진 데이터들을 거리 정보는 유지한채 $xy$ 평면으로 프로젝션 시키는 방법을 알아보았습니다. 즉, 3차원 공간의 데이터들을 2차원 좌표평면에 프로젝션 시켰습니다. 우리는 이제 [이전 포스트](https://hiddenbeginner.github.io/python/mathematicalprogramming/2019/08/14/2D-circle_fitting.html)에서 알아본 2차원 원 적합 방법을 통해 원의 방정식을 구할 수 있습니다. 이렇게 구한 원의 방정식에서 원의 중심을 다시 `Rodrigues' rotation formula` 을 이용하여 3차원 좌표 공간으로 돌려놓으면 3차원 원 적합 문제는 해결될 수 있습니다.<br/><br/>
+&nbsp;&nbsp;&nbsp; 지금까지 우리는 주어진 데이터들을 거리 정보는 유지한채 $xy$ 평면으로 프로젝션 시키는 방법을 알아보았습니다. 즉, 3차원 공간의 데이터들을 2차원 좌표평면에 프로젝션 시켰습니다. 우리는 이제 [이전 포스트](https://hiddenbeginner.github.io/python/mathematicalprogramming/2019/08/14/2D-circle_fitting.html)에서 알아본 2차원 원 적합 방법을 통해 원의 방정식을 구할 수 있습니다. 이렇게 구한 원의 방정식에서 원의 중심을 다시 `Rodrigues' rotation formula` 을 이용하여 3차원 좌표 공간으로 돌려놓으면 3차원 원 적합 문제는 해결될 수 있습니다. <br/><br/>
 
 &nbsp;&nbsp;&nbsp; 마지막으로 지금까지의 과정을 파이썬 코드를 통해 어떻게 구현될 수 있는지 알아보도록 하겠습니다.
 
