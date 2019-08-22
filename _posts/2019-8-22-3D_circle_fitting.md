@@ -104,7 +104,7 @@ $\begin{matrix}
 V^T \mathbf{n} & = & \mathbf{b} \\\
 V V^T \mathbf{n} & = & V \mathbf{b} \\\
 \mathbf{n} & = & V \mathbf{b} \\\
- & = & V \left( \begin{smallmatrix} 0\\0\\1 \end{smallmatrix} \right) \\\
+ & = & V \left( \begin{smallmatrix} 0\\\0\\\1 \end{smallmatrix} \right) \\\
  & = & V(:,3)
 \end{matrix}$ <br/>
 
