@@ -41,12 +41,12 @@ $$\mathbf{P}_{\textbf{circle}}(\theta) = rcos\theta\mathbf{u} + rsin\theta(\math
 
 &nbsp;&nbsp;&nbsp; 매개변수 방정식은 2차원 좌표평면에 있는 원의 방정식과 비교하여 생각해보면 쉽게 이해할 수 있습니다. 먼저 2차원 좌표평면에 있는 원의 방정식을 다시 적어보면 다음과 같습니다.<br/><br/>
 
-$$ rcos\theta<1, 0> + rsin\theta <0, 1> + <x_0, y_0>$$<br/>
+$$rcos\theta<1, 0> + rsin\theta <0, 1> + <x_0, y_0>$$<br/>
 <br/>
 
 &nbsp;&nbsp;&nbsp; 이 때, $<1, 0>$는 $x$축을 나타내는 단위방향벡터이며 $<0, 1>$는 $y$축을 나타내는 단위방향벡터입니다. 이를 확장하여 $xy$ 평면 위에 있는 원을 3차원 좌표 공간에 나타내보겠습니다.<br/><br/>
 
-$$ rcos\theta<1, 0, 0> + rsin\theta <0, 1, 0> + <x_0, y_0, 0>$$<br/>
+$$rcos\theta<1, 0, 0> + rsin\theta <0, 1, 0> + <x_0, y_0, 0>$$<br/>
 <br/>
 
 &nbsp;&nbsp;&nbsp; 3차원 좌표공간에서 $xy$ 평면의 법선벡터($\mathbf{n}$)는 $<0,0,1>$ 입니다. $x$축을 나타내는 방향벡터 $<1, 0, 0>$는 $\mathbf{n}$과 수직한 벡터입니다($\mathbf{u}$). 마지막으로 $y$축을 나타내는 방향벡터 $<0, 1, 0>$ 는 $\mathbf{n}$과 $\mathbf{u}$에 동시에 수직하는 벡터입니다 ($\mathbf{n}\times\mathbf{u}$).<br/><br/>
@@ -63,7 +63,7 @@ $$ rcos\theta<1, 0, 0> + rsin\theta <0, 1, 0> + <x_0, y_0, 0>$$<br/>
 
 &nbsp;&nbsp;&nbsp; 먼저 데이터 포인트들을 하나의 $n\times3$ 행렬 $A$로 나타낼 수 있습니다. <br/><br/>
 
-$$ A = (\mathbf{P}_0-\mathbf{c}, \mathbf{P}_1-\mathbf{c}, \cdots, \mathbf{P}_n-\mathbf{c})^T$$ <br/>
+$$A = (\mathbf{P}_0-\mathbf{c}, \mathbf{P}_1-\mathbf{c}, \cdots, \mathbf{P}_n-\mathbf{c})^T$$ <br/>
 
 &nbsp;&nbsp;&nbsp; 이 때, 편의를 위해서 각 데이터에서 데이터의 중심 ($\mathbf{c} = \frac{1}{n}\sum_i{\mathbf{P}_i}$) 을 빼주었습니다.(이렇게 평행이동한 데이터들의 중심은 원점이 됩니다.)<br/><br/>
 
@@ -81,8 +81,7 @@ $$A = U\Sigma V^T$$<br/>
 
 &nbsp;&nbsp;&nbsp; SVD를 이용하여 $\| \mathbf{A} \mathbf{n} \|^2$를 다음과 같이 다시 적어볼 수 있습니다.<br/><br/>
 
-$$
-\begin{matrix}
+$$\begin{matrix}
 \| A \mathbf{n} \|^2 & = & A\mathbf{n} \cdot A\mathbf{n} \\\
  & = & (A\mathbf{n})^TA\mathbf{n} \\\
  & = & (U\Sigma V^T \mathbf{n})^TU\Sigma V^T\mathbf{n} \\\
@@ -92,23 +91,20 @@ $$
  & = & \Sigma V^T \mathbf{n} \cdots \Sigma V^T\mathbf{n} \\\
  & = & \|\Sigma V^T \mathbf{n}\|^2 \\\
  & = & (\sigma_1 b_1)^2 + (\sigma_2 b_2)^2 + (\sigma_3 b_3)^2 \\\
-\end{matrix}
-$$<br/>
+\end{matrix}$$<br/>
 <br/>
 
 &nbsp;&nbsp;&nbsp; 이 때, $\mathbf{b} = V^T\mathbf{n}$ 입니다. 그리고 $\sigma_3$가 가장 작기 때문에 우리는 $\mathbf{b} = (0,0,1)^T$ 를 선택해줌으로써 $\| A \mathbf{n} \|^2$를 최소로 만들어 줄 수 있습니다.(Lagrange 승수법과 singular value와 선형변환된 벡터 사이의 부등식을 통해 유도할 수 있습니다.)<br/><br/>
 
 &nbsp;&nbsp;&nbsp; 따라서 우리는 $| A \mathbf{n} \|^2$를 최소로 만들어주는 $\mathbf{n}$을 다음과 같이 구할 수 있습니다.<br/><br/>
 
-$$
-\begin{matrix}
+$$\begin{matrix}
 V^T \mathbf{n} & = & \mathbf{b} \\\
 V V^T \mathbf{n} & = & V \mathbf{b} \\\
 \mathbf{n} & = & V \mathbf{b} \\\
  & = & V \left( \begin{smallmatrix} 0\\0\\1 \end{smallmatrix} \right) \\\
  & = & V(:,3)
-\end{matrix}
-$$<br/>
+\end{matrix}$$<br/>
 
 즉, 법선벡터 $\mathbf{n}$을 $V$의 세 번 째 열 벡터로 선택함으로써 우리가 찾는 평면을 찾을 수 있습니다.<br/><br/>
 
