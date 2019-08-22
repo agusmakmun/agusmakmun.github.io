@@ -425,13 +425,6 @@ plt.show()
 ```
 
 
-```python
-from PIL import Image
-Image.open("Figure_1.png")
-```
-
-
-
 
 ![png](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/3D_circle_fitting_files/3D_circle_fitting_17_0.png)
 
