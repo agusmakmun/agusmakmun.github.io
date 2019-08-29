@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "3차원 좌표공간에 주어진 데이터들로부터 가장 적합한 원의 방정식 구하기[원 적합, 3d circle fitting]"
+title:  "[Python]3차원 좌표공간에 주어진 데이터들로부터 가장 적합한 원의 방정식 구하기(원 적합, 3d circle fitting)"
 date:   2019-08-22 14:10
 categories: [python, MathematicalProgramming]
 use_math: true
