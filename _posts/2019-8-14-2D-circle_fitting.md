@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "좌표평면에 주어진 데이터들로부터 가장 적합한 원의 방정식 구하기[원 적합, circle fitting]"
+title:  "[Python]좌표평면에 주어진 데이터들로부터 가장 적합한 원의 방정식 구하기(원 적합, circle fitting)"
 date:   2019-08-14 15:23
 categories: [python, MathematicalProgramming]
 use_math: true
