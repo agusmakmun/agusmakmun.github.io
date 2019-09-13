@@ -15,6 +15,9 @@ Pacific Life's Promise [Term](https://plexpress.pacificlife.com/term/landing.htm
 - PacLife Life is enabled by default so you don't need to made adjustments to your Quote & Apply for them to appear.
 - Sorry New York, it's not available.
 
+### Webinar
+Join our webinar 9/17/2019 at 10 AM PT using [this link](https://attendee.gotowebinar.com/register/3443035301979238412).
+
 ### Any❓'s
 Call us at (800) 790-1951 or email your marketing manager.
 
