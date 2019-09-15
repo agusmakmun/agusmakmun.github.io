@@ -1,6 +1,7 @@
 ---
 layout: posts_by_category
-categories: MathematicalProgramming
+categories: mathematicalprogramming
 title: MathematicalProgramming
-permalink: /category/MathematicalProgramming
+permalink: /category/mathematicalprogramming
 ---
+
