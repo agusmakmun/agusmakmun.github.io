@@ -1,6 +1,6 @@
 ---
 layout: posts_by_category
-categories: mathematicalprogramming
+categories: MathematicalProgramming
 title: MathematicalProgramming
 permalink: /category/mathematicalprogramming
 ---
