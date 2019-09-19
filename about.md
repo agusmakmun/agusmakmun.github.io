@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Về Tôi
+title: About
 subtitle: Các bạn có thể gọi tôi là Tuấn Nơ <3
 permalink: /about/
 ---
