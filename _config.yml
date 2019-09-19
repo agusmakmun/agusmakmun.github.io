@@ -16,7 +16,7 @@ collections:
 
 social:
     - icon: fa-facebook
-      link: "#"
+      link: "https://www.facebook.com/TuanNMNo"
     - icon: fa-twitter
       link: "#"
     - icon: fa-linkedin
@@ -24,7 +24,7 @@ social:
     - icon: fa-stack-exchange
       link: "#"
     - icon: fa-github
-      link: "https://github.com/agusmakmun"
+      link: "#"
 
 share:
   twitter_username: github.io
@@ -38,7 +38,7 @@ urls:
     - text: XML Feed
       url: /feed.xml
 
-url: "https://agusmakmun.github.io"
+url: "https://nocode.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
