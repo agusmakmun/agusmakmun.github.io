@@ -7,7 +7,7 @@ tags: [libgdx, game]
 image: libgdx.png
 ---
 
-##Sơ lược về Libgdx
+##Sơ lược về Libgdx  
   Đây là bài đầu tiên trong series học lập trình game với **libgdx**. Nếu bạn chưa biết libgdx là gì thì -> [libgdx wiki](https://en.wikipedia.org/wiki/LibGDX)  
 Về cơ bản thì libgdx là một framework để lập trình game, hỗ trợ _**đa nền tảng**_.
 
