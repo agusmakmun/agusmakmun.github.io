@@ -2,6 +2,7 @@
 layout: page
 title: Về Tôi
 subtitle: Các bạn có thể gọi tôi là Tuấn Nơ <3
+permalink: /about/
 ---
 
 Tôi là Nguyễn Minh Tuấn. Sở thích của tôi thì chẳng có gì nhiều ngoài xem phim, nghe nhạc và Code.
