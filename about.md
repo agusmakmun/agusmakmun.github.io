@@ -4,6 +4,6 @@ title: About
 permalink: /about/
 ---
 
-I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django. Now, I am doing more on backend.
+Tôi là sinh viên công nghệ thông tin của học viện công nghệ bưu chính viễn thông.
 
 email: agus[at]python.web.id
