@@ -48,7 +48,7 @@ comments: true
 - Gradient descent는 $\theta$를 미지수로 갖는 목적함수 $J(\theta)$를 최소화시키는 방법이다.
     - 어떤 위치에 있는 $\theta$를  그 위치에서의 gradient인 $\nabla_{\theta}J(\theta)$의 반대 방향으로 이동시켜준다.
     - 일반적인 gradient descent의 업데이트 식은 다음과 같다.<br/><br/>
-    $$\theta_{t+1} = \theta_t - \eta\nabla_{\theta}J(\theta)$$<br/>
+    $$\theta_{t+1} = \theta_t - \eta\nabla_{\theta}J(\theta)$$<br/><br/>
     - 여기서 $\eta$는 learning rate로 gradient 반대 방향으로 얼마나 업데이트할 것인지 결정한다.
         - 작은 $\eta$는 수렴 속도를 늦출 것이고, 큰 $\eta$는 minimum을 그냥 지나쳐버릴 수 있고 심하면 발산한다.
 <br/><br/>
@@ -62,7 +62,7 @@ comments: true
             - 그게 나였다.<br/><br/>
             
         - 여러분이 알고있는 기본적인 gradient descent가 바로 batch gradient descent이다.
-            - 손실함수는 보통 $J = \sum_{i=1}{N}{error}$ 로 정의되는데 
+            - 손실함수는 보통 $J = \sum_{i=1}^{N}{error}$ 로 정의되는데 
             - $\sum_{i=1}{N}$ 이 데이터 N개 모두를 사용해서 손실함수를 만든다는 의미이다.<br/><br/>
             
         - 따라서, 한 번의 업데이트를 위해 모든 데이터가 계산에 포함되므로 속도가 느리다는 단점이 있다.
@@ -141,7 +141,7 @@ comments: true
     - 물론 이전에 있던 모든 gradient들을 있는 그대로 고려해준다면, 아주 긴 평평한 땅에서도 SGD는 절대 멈추지 않을 것이다.
         - 그래서 Momentum은 이전 gradient들의 영향력을 매 업데이트마다 $\gamma$배 씩 감소시킨다.<br/><br/>
         $$v_t = \gamma v_{t-1} + \eta \nabla_{\theta_t}J(\theta_t)$$<br/>
-        $$\theta_{t+1} = \theta_t - v_t$$<br/>
+        $$\theta_{t+1} = \theta_t - v_t$$<br/><br/>
         - 점화식으로 표현되어있어서 감소한다는 것이 와닿지 않을 수도 있다.<br/>
             - $g_t = \eta\nabla_{\theta_t}(\theta_t)$ 그리고 $v_1 = g_1$ 이라고 하면
             - $v_2 = g_2 + \gamma g_1$
@@ -185,13 +185,13 @@ comments: true
             - momentum 업데이트 식을 보면 $\theta_{t+1} = \theta_t - v_t$이므로 $\nabla_{\theta_{t}}J(\theta_{t+1})$ 계산하려는 시도인 것이다.
                 - 즉, 미래를 보려고 노력하는 느낌이다.
             - 하지만 현재의 gradient를 구하기 전까지는 현재의 모멘텀을 알 수 없기 때문에 $\gamma v_{t-1}$을 $v_t$ 대신 사용해준다.
-            - 즉, $\nabla_{\theta_t}J(\theta_t - \gamma v_{t-1})를 식에 사용한다.$
+            - 즉, $\nabla_{\theta_t}J(\theta_t - \gamma v_{t-1})$를 식에 사용한다.
         - 다음으로 현재의 모멘텀을 계산해준다. → $v_t = \gamma v_{t-1} + \eta \nabla_{\theta_t}J(\theta_t - \gamma v_{t-1})$
         - 그리고 모멘턴만큼 업데이트를 해준다. → $\theta_{t+1} = \theta_t - v_t$<br/><br/>
         
     - 글이 길어졌지만, 다음과 같이 2줄의 식으로 요약할 수 있다.<br/><br/>
     $$v_t = \gamma v_{t-1} + \eta \nabla_{theta_t}(theta_t - \gamma v_{t-1})$$<br/>
-    $$\theta_{t+1} = \theta_t - v_t$$<br/>
+    $$\theta_{t+1} = \theta_t - v_t$$<br/><br/>
     
 - NAG는 SGD가 관성에 의해 수렴 지점에서 요동치는 것을 방지해준다.
     - RNN의 성능을 향상시켰다는 소문이 있다.
@@ -209,7 +209,7 @@ comments: true
     - 이것이 어떤 문제가 될까 싶겠지만, sparse한 데이터를 예시를 들어 알아보자.
         - $i$번 째 레이어의 인풋 노드 값을 차례대로 $a_1, a_2, \cdots, a_n $ 이라고 하자.
         - 이미 잘 알고 있는 것처럼 $i+1$번 째 레이어로 넘어가기 전에 파라미터들과 선형결합을 해준다.<br/><br/>
-        $$w_0 + w_1a_1 + w_2a_2 + \cdots + w_na_n$$<br/>
+        $$w_0 + w_1a_1 + w_2a_2 + \cdots + w_na_n$$<br/><br/>
         - 이 때, 다른 얘들은 괜찮은데 유독 $a_2$ 는 sparse해서 주로 0값이 많이 나온다고 하자
             - 그러면 $a_2 = 0$일 때, $w_0 + w_1a_1 + 0 +w_3a_3 + \cdots + w_na_n$이 되고,
             - 이 때, 손실함수에서도 $w_2$ term은 없어질 것이다.
@@ -233,15 +233,15 @@ comments: true
         - $t$번 째 step의 $i$ 번 파라미터를 $\theta_{t,i}$
         - $t$ 시점에서 $\theta_{t,i}$에 대한 gradient 벡터를 $g_{t,i} = \nabla_{\theta_t}J(\theta_{t,i})$라 하자.
         - 이 새로운 노테이션으로 SGD의 업데이트 식을 다시 적어보면 다음과 같다.<br/><br/>
-        $$\theta_{t+1, i} = \theta_{t,i} - \eta g_{t,i}$$<br/>
+        $$\theta_{t+1, i} = \theta_{t,i} - \eta g_{t,i}$$<br/><br/>
     - Adagrad는 다음과 같은 업데이트식을 사용한다.<br/><br/>
-    $$\theta_{t+1, i} = \theta_{t,i} - \frac{\eta}{\sqrt{G_{t,ii} + \epsilon}}g_{t,i}$$<br/>
+    $$\theta_{t+1, i} = \theta_{t,i} - \frac{\eta}{\sqrt{G_{t,ii} + \epsilon}}g_{t,i}$$<br/><br/>
         - $G_t$는 $i$번 째 대각원소로 $t$시점까지의 $\theta_i$에 대한 gradient들의 제곱의 총합을 갖는 대각행렬이다.
             - 즉, $G_{t,ii} = g_{1,i}^2+g_{2,i}^2+\cdots+g_{t,i}^2$ 이다.
         - 그리고 $\epsilon$은 분모가 0이 되는 것을 방지해주는 용도로 $10^{-8}$와 같이 아주 작은 값을 사용한다.
         - 신기한 것은, 분모에 루트를 씌어주지 않으면 알고리즘의 성능이 매우 구려진다고 한다.
     - vectorize form으로 다시 써보면 다음과 같다.<br/><br/>
-    $$\theta_{t+1} = \theta_{t} - \frac{\eta}{\sqrt{G_{t} + \epsilon}}\odot g_{t}$$<br/>
+    $$\theta_{t+1} = \theta_{t} - \frac{\eta}{\sqrt{G_{t} + \epsilon}}\odot g_{t}$$<br/><br/>
         - $\odot$은 matrix vector 곱셈이다.
         - 그리고 분모에 어떻게 행렬이 들어가?라고 생각할 수 있는데
             - 대각행렬이기 때문에 성분들을 모두 역수 취하고 $\epsilon$ 더해주고 루트 씌워서 $\eta$를 곱한 새로운 행렬이라고 생각하자
@@ -267,9 +267,9 @@ comments: true
 - Adagrad와 또 다른 점은 gradient의 제곱의 합을 저장하지 않고, gradient의 제곱에 대한 기댓값을 저장한다는 것이다. → $E[g^2]_t$
 - 또한 과거의 gradient 정보의 영향력을 감소시키기 위해 다음과 같은 식을 사용했다.
     - 이를 **decaying average of squared gradient** 라고 표현한다. <br/><br/>
-    $$E[g^2]_t = \gamma E[g^2]_{t-1} + (1-\gamma)g_t^2$$<br/>
+    $$E[g^2]_t = \gamma E[g^2]_{t-1} + (1-\gamma)g_t^2$$<br/><br/>
     - 이 정보를 사용해서 $\Delta\theta_t$를 다음과 같이 결정한다.<br/><br/>
-    $$\Delta\theta_t = -\frac{\eta}{\sqrt{E[g^2]_t + \epsilon}}g_t$$<br/>
+    $$\Delta\theta_t = -\frac{\eta}{\sqrt{E[g^2]_t + \epsilon}}g_t$$<br/><br/>
     - $RMS$(root mean square)가 $\sqrt{\frac{x_1^2+x_2^2+\cdots+x_n^2}{n}}$ 이므로 다음처럼 더 간략히 표현할 수 있다.<br/><br/>
     $$\Delta\theta_t = -\frac{\eta}{RMS[g]_t}g_t$$
 <br/><br/>
@@ -277,23 +277,23 @@ comments: true
 - 논문의 저자는 first order method를 사용해서 parameter $\theta$를 업데이트할 경우 $\theta$와 $\Delta\theta$의 단위(unit)가 맞지 않다는 것에 주목했다.
     - 예를 들어 미터($m$) 단위를 갖는 함수 $f$를 $m/s$ 단위인 $\nabla_t f$를 사용해서 업데이트하면 안 된다는 것이다.
         - 함수 f의 단위를 $unit(f)$, 정의역 $t$을 단위를 $unit(t)$라고 하면 first order method는<br/><br/>
-        $$\frac{d}{dt} f(t)\Big|_{t=t_0} \approx \frac{f(t)-f(t_0)}{t-t_0}$$<br/>
+        $$\frac{d}{dt} f(t)\Big|_{t=t_0} \approx \frac{f(t)-f(t_0)}{t-t_0}$$<br/><br/>
         - 이므로 단위는 $\frac{unit(f)}{unit(t)}$이 되고, 확장하여 $\frac{d^nf}{dt^n}$의 단위는 $\frac{unit(f)}{unit(t)^n}$ 이다.
         - 우리의 파라미터 업데이트 식 $\theta_t = \theta_{t-1} + \Delta\theta$ 에서 $\Delta\theta$ 는 $g = \nabla_{\theta_t} J(\theta_t)$ 를 포함하므로<br/><br/>
-        $$\Delta\theta \propto g \propto \frac{\partial J}{\partial\theta} \propto \frac{1}{\text{unit of } \theta}$$<br/>
+        $$\Delta\theta \propto g \propto \frac{\partial J}{\partial\theta} \propto \frac{1}{\text{unit of } \theta}$$<br/><br/>
         - 마치 $m$을 변화시키는데 $m/s$를 사용하는 것으로 볼 수 있다.(편의를 위해 $J$의 단위가 없다고 하자.)<br/><br/>
         
     - 따라서 $\Delta\theta = -\frac{\eta}{RMS[g]}g$에 second order method 행렬인 헤시안 행렬을 도입함으로써 unit을 맞춰줄 것이다.<br/><br/>
-        $$\Delta\theta \propto H^{-1}g \propto \frac{\partial J/\partial\theta}{\partial^2 J/\partial\theta^2} \propto \text{unit of } \theta$$<br/>
+        $$\Delta\theta \propto H^{-1}g \propto \frac{\partial J/\partial\theta}{\partial^2 J/\partial\theta^2} \propto \text{unit of } \theta$$<br/><br/>
         - 여기서 $\frac{1}{\partial^2 J/\partial\theta^2} = - \frac{\Delta \theta}{\partial J/\partial\theta}$ 임을 이용했다.(Newton's Method)
         - 우변의 분모에 해당하는 텀( $RMS[g]$ )은 가지고 있으므로 분자($\Delta\theta$) 텀을 만들기 위해 똑같이 다음을 생각한다.<br/><br/>
-        $$E[\Delta\theta^2]_t = \gamma E[\Delta\theta^2]_{t-1} + (1-\gamma)\Delta\theta_t^2$$<br/>
+        $$E[\Delta\theta^2]_t = \gamma E[\Delta\theta^2]_{t-1} + (1-\gamma)\Delta\theta_t^2$$<br/><br/>
         - 다시 RMS를 사용해 간단히 적으면<br/><br/>
-        $$\Delta\theta_t = -\frac{{RMS[\Delta\theta]_t}}{RMS[g]_t}g_t$$<br/>
-        - 이다. 하지만 현재($t$)는 업데이트 전이므로 $RMS[\Delta\theta]_t$ 값을 알 수 없기 때문에 대신 $RMS[\Delta\theta]_{t-1}$을 근사값으로 사용한다.<br/><br/>
-        $$\Delta\theta_t = -\frac{{RMS[\Delta\theta]_{t-1}}}{RMS[g]_t}g_t$$<br/>
+        $$\Delta\theta_t = -\frac{RMS[{\Delta\theta}]_t}{RMS[g]_t}g_t$$<br/><br/>
+        - 이다. 하지만 현재($t$)는 업데이트 전이므로 $RMS[{\Delta \theta}]_t$ 값을 알 수 없기 때문에 대신 $RMS[{\Delta\theta}]_{t-1}$을 근사값으로 사용한다.<br/><br/>
+        $$\Delta\theta_t = -\frac{RMS[{\Delta\theta}]_{t-1}}{RMS[g]_t}g_t$$<br/><br/>
     - 최종적으로 업데이트식은<br/><br/>
-    $$\theta_{t+1} = \theta_t + \Delta\theta_t$$<br/>
+    $$\theta_{t+1} = \theta_t + \Delta\theta_t$$<br/><br/>
 - 위의 단위를 맞춰주는 과정을 통해 우리는 더 이상 learning rate가 필요하지 않게 되었다.(문제 $2$ 해결)
 <br/><br/>
 
@@ -314,7 +314,7 @@ comments: true
     
 - 사실, Adadelta에서 이야기했던 첫 번 째 업데이트식과 같다.<br/><br/>
 $$E[g^2]_t = 0.9 E[g^2]_{t-1} + 0.1g_t^2$$<br/>
-$$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2] + \epsilon}}g_t$$<br/>
+$$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2] + \epsilon}}g_t$$<br/><br/>
     - Adadelta와 비슷한 시기에 Geof Hinton이 그의 코세라 강의에서 제안한 방법
     - 적절한 $\gamma$ 값으로 0.9를, $\eta$ 값으로 0.001을 제안
 <br/><br/>
@@ -342,12 +342,12 @@ $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2] + \epsilon}}g_t$$<br/>
     - $m_t$를 gradient의 1차 moment에 대한 추정치, $v_t$를 2차 moment에 대한 추정치라 하자.
     - 그리고 이제는 익숙한 가중평균식을 도입하면 다음과 같다.<br/><br/>
     $$m_t = \beta_1m_{t-1} + (1-\beta_1)g_t$$<br/>
-    $$v_t = \beta_2v_{t-1} + (1-\beta_2)g_t^2$$<br/>
+    $$v_t = \beta_2v_{t-1} + (1-\beta_2)g_t^2$$<br/><br/>
     - $m_t$와 $v_t$의 초기값을 0벡터로 주면, 학습 초기에 가중치들이 0으로 편향되는 경향이 있다.
         - 특히 decay rate 가 작으면, 즉 $\beta_1$과  $\beta_2$가 1에 가까우면 편향이 더 심해진다.
         - 편향을 잡아주기 위해 다음과 같이 bias-corrected를 계산한다.<br/><br/>
         $$\hat{m_t} = \frac{m_t}{1-\beta_1^t}$$<br/>
-        $$\hat{v_t} = \frac{v_t}{1-\beta_2^t}$$<br/>
+        $$\hat{v_t} = \frac{v_t}{1-\beta_2^t}$$<br/><br/>
     - 최종적으로 업데이트 식은 다음과 같다.<br/><br/>
     $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\hat{v_t}}+\epsilon}\hat{m_t}$$<br/>
       - 저자는 $\beta_1=0.9$, $\beta_2=0,999$, $\epsilon=10^{-8}$을 default 값으로 설정하였다.
@@ -363,20 +363,20 @@ $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2] + \epsilon}}g_t$$<br/>
 - 요약하자면 AdaMax는 Adam의 $v_t$ 텀에 다른 norm을 사용한 방법이다.
   - Adam의 $v_t$ term과 최종 업데이트식 다음과 같다.<br/><br/>
   $$v_t = \beta_2v_{t-1} + (1-\beta_2)g_t^2$$<br/>
-  $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\hat{v_t}}+\epsilon}\hat{m_t}$$<br/>
+  $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\hat{v_t}}+\epsilon}\hat{m_t}$$<br/><br/>
   - 현재 gradient g_t에 제곱이 있고, 최종 업데이트식에는 루트가 있다.
     - 즉, 현재 gradient의 $l_2$ norm을 사용했다.
   - 따라서 Adam의 $l_2$ norm을 $l_p$ norm으로 일반화한 방법을 생각할 수 있다.<br/><br/>
-  $$v_t = \beta_2^pv_{t-1} + (1-\beta_2^p)\|g_t\|^p$$<br/>
+  $$v_t = \beta_2^pv_{t-1} + (1-\beta_2^p)\|g_t\|^p$$<br/><br/>
     - 여기서 $\beta_2^p$는 $\beta_2$의 $p$ 제곱이 아니고 그냥 계수의 노테이션이다.
   - $l_p$ norm 값은 $p$이 커질수록 불안정(numerically unstable)해진다.
   - 하지만 $l_\infty$ norm은 일반적으로 안정적인 양상을 보인다.
   - 이런 이유로 AdaMax는 $v_t$에 $l_\infty$을 사용했고, stable한 값에 수렴한다는 것을 보였다.
   - Adam의 노테이션과 구분짓기 위하여 $u_t$를 사용해서 표현하면 다음과 같다.<br/><br/>
   $$u_t = \beta_2^{\infty}v_{t-1} + (1-\beta_2^{\infty})\| g_t \|^{\infty}$$<br/>
-  $$u_t = max(\beta_2v_{t-1}, \| g_t \|)$$<br/>
+  $$u_t = max(\beta_2v_{t-1}, \| g_t \|)$$<br/><br/>
   - 최종 업데이트식은 다음과 같다.<br/><br/>
-  $$\theta_{t+1} = \theta_t - \frac{\eta}{u_t}\hat{m_t}$$<br/>
+  $$\theta_{t+1} = \theta_t - \frac{\eta}{u_t}\hat{m_t}$$<br/><br/>
     - Adam과 다르게 max operation은 0으로의 편향이 없기 때문에 편향 보정을 해줄 필요가 없다.
     - 적절한 초기값은 $\eta = 0.002$, $\beta_1=0.9$, $\beta_2=0,999$ 이다.
     
@@ -398,7 +398,7 @@ $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2] + \epsilon}}g_t$$<br/>
     $$g_t = \nabla_{\theta_t}J(\theta_t)$$<br/>
     $$m_t = \gamma m_{t-1} + \eta g_t$$<br/>
     $$\theta_{t+1} = \theta_t - m_t$$<br/>
-    $$\therefore \theta_{t+1} = \theta_t - (\gamma m_{t-1} + \eta g_t)$$<br/>
+    $$\therefore \theta_{t+1} = \theta_t - (\gamma m_{t-1} + \eta g_t)$$<br/><br/>
     
   - NAG 또한 순서에 주의하며 복습해보자.
     - 현재의 위치 $\theta_t$에서 현재의 moment $m_t$만큼 움직인 자리의 gradient $\nabla_{\theta_t}J(\theta_t - m_t)$를 구하고,
@@ -409,7 +409,7 @@ $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2] + \epsilon}}g_t$$<br/>
     $$g_t = \nabla_{\theta_t}J(\theta_t - \gamma m_{t-1})$$<br/>
     $$m_t = \gamma m_{t-1} + \eta g_t$$<br/>
     $$\theta_{t+1} = \theta_t - m_t$$<br/>
-    $$\therefore \theta_{t+1} = \theta_t - (\gamma m_{t-1} + \eta g_t)$$<br/>
+    $$\therefore \theta_{t+1} = \theta_t - (\gamma m_{t-1} + \eta g_t)$$<br/><br/>
 
 - 이제 다시 NAdam으로 돌아가자.
   - NAdam은 NAV를 조금 변형했다.
@@ -419,19 +419,19 @@ $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2] + \epsilon}}g_t$$<br/>
     $$g_t = \nabla_{\theta_t}J(\theta_t)$$<br/>
     $$m_t = \gamma m_{t-1} + \eta g_t$$<br/>
     $$\theta_{t+1} = \theta_t - (\gamma m_{t} + \eta g_t)$$<br/>
-    $$\therefore \theta_{t+1} = \theta_t - m_{t+1}$$<br/>
+    $$\therefore \theta_{t+1} = \theta_t - m_{t+1}$$<br/><br/>
       - 위에서 본 식들과 3,4번 째 식의 순서가 다름에 주의하자.
       - 업데이트 식에서 $\gamma m_{t-1}$ 대신 $\gamma m_{t}$를 사용함으로써
       - 마치 $m_{t+1}$을 사용하여 미래의 momentum을 사용한 효과를 가졌다.
     - 이제 변형된 NAV와 Adam을 합쳐보자. 먼저, Adam의 업데이트식은 다음과 같다.<br/><br/>
     $$m_t = \beta_1m_{t-1} + (1-\beta_1)g_t$$<br/>
     $$\hat{m_t} = \frac{m_t}{1-\beta_1^t}$$<br/>
-    $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\hat{v_t}}+\epsilon}\hat{m_t}$$<br/>
+    $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\hat{v_t}}+\epsilon}\hat{m_t}$$<br/><br/>
     - 1,2번 식을 3번 식에 대입하면<br/><br/>
     $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\hat{v_t}}+\epsilon}(\frac{\beta_1 m_{t-1}}{1-\beta_1^t} + \frac{(1-\beta_1)g_t}{1-\beta_1^t})$$<br/>
-    $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\hat{v_t}}+\epsilon}(\beta_1\hat{m}_{t-1} + \frac{(1-\beta_1)g_t}{1-\beta_1^t})$$<br/>
+    $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\hat{v_t}}+\epsilon}(\beta_1\hat{m}_{t-1} + \frac{(1-\beta_1)g_t}{1-\beta_1^t})$$<br/><br/>
     - 으로 정리할 수 있고, 마지막으로 변형된 NAV처럼 $m_{t-1}$ 대신 $m_t$를 사용해주자<br/><br/>
-    $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\hat{v_t}}+\epsilon}(\beta_1\hat{m}_{t} + \frac{(1-\beta_1)g_t}{1-\beta_1^t})$$<br/>
+    $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\hat{v_t}}+\epsilon}(\beta_1\hat{m}_{t} + \frac{(1-\beta_1)g_t}{1-\beta_1^t})$$<br/><br/>
     
 <br/><br/>
 
@@ -451,8 +451,3 @@ $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2] + \epsilon}}g_t$$<br/>
     - Adam은 RMSProp에 1차 모먼트를 도입하여 RMSProp과 Momentum을 합친 효과를 볼 수 있었다.
     - AdaMax는 Adam의 2차 모먼트에 있는 gradient의 norm을 max norm으로 바꿔주었고
     - 마지막으로 NAdam은 ADAM에 NAG를 더해주어서 momentum을 보완해주었다.
-
-
-```python
-
-```
