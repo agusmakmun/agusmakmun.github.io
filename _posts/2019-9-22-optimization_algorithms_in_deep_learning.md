@@ -26,7 +26,7 @@ comments: true
 - 아! 잠깐 글이 엄청나게 길기 때문에 목차를 남긴다. 
     1. [서문](#서문)
     2. [Gradient Descent](#gradient_descent)
-    3. [Challenges](#challanges)
+    3. [Challenges](#challenges)
     4. [Gradient Descent Optimization Algorithms](#algorithms)
         - [Momentum](#momentum)
         - [Nesterov Accelerated Gradient](#NAG)
