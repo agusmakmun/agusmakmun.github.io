@@ -451,8 +451,3 @@ $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2] + \epsilon}}g_t$$<br/><br/>
     - Adam은 RMSProp에 1차 모먼트를 도입하여 RMSProp과 Momentum을 합친 효과를 볼 수 있었다.
     - AdaMax는 Adam의 2차 모먼트에 있는 gradient의 norm을 max norm으로 바꿔주었고
     - 마지막으로 NAdam은 ADAM에 NAG를 더해주어서 momentum을 보완해주었다.
-
-
-```python
-
-```
