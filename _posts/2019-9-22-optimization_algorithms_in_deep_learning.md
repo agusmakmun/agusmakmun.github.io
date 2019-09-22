@@ -63,7 +63,7 @@ comments: true
             
         - 여러분이 알고있는 기본적인 gradient descent가 바로 batch gradient descent이다.
             - 손실함수는 보통 $J = \sum_{i=1}^{N}{error}$ 로 정의되는데 
-            - $\sum_{i=1}{N}$ 이 데이터 N개 모두를 사용해서 손실함수를 만든다는 의미이다.<br/><br/>
+            - $\sum_{i=1}^{N}$ 이 데이터 N개 모두를 사용해서 손실함수를 만든다는 의미이다.<br/><br/>
             
         - 따라서, 한 번의 업데이트를 위해 모든 데이터가 계산에 포함되므로 속도가 느리다는 단점이 있다.
         - batch gradient descent는 손실함수가 convex할 경우 global minimum 수렴을 보장하고, nonconvex일 경우에도 local minimum이 보장된다.<br/><br/>
@@ -96,22 +96,22 @@ comments: true
             - 사실 내가 그랬다. 내가 처음 vanilla를 봤을 때 바닐라맛 아이스크림 밖에 떠오르지 않았다.
         - vanilla는 그냥 "아주 기본적인", "아무것도 건들이지 않은" 이런 느낌으로 사용되는 것 같다. <br/><br/>
 
-- 1. 적절한 learning rate를 설정해주어야 한다.
+- 적절한 learning rate를 설정해주어야 한다.
     - ML/DL을 하면서 learning rate가 꽤나 많이 중요하다는 것을 느낀다.
     - 잘 만든 내 모델이 학습이 안 돼서 속상할 때, learning rate를 줄여주면 학습이 되는 경우도 많이 보았다.<br/><br/>
     
         
-- 2. 수렴지점에서 더 정밀한 minimum을 찾기 위해서는 학습 중간에 learning rate를 조절해줘야한다.
+- 수렴지점에서 더 정밀한 minimum을 찾기 위해서는 학습 중간에 learning rate를 조절해줘야한다.
     - SGD는 한 번 정해진 learning rate를 현재 학습 상황에 따라 바꿔주는 기능을 갖고 있지 않다.
     - 따라서, 우리가 learning rate의 리스트를 만들어서 특정 에포크마다 learning rate를 줄여주어야 한다.
         - 물론 실제 코딩에서는 `decay`를 사용하여 중간에 learning rate를 줄여줄 수 있.<br/><br/>
         
-- 3. 모든 파라미터에 대해 동일한 learning rate를 적용해준다.
+- 모든 파라미터에 대해 동일한 learning rate를 적용해준다.
     - 각 파라미터의 중요도나 스케일 등이 모두 다를텐데, 모든 파라미터에 동일한 learning rate를 적용하는 것은 불합리해보인다.
     - 앞으로 배울 방법들 중에 **Ada**가 들어가는 방법은 파라미터에 따라 learning rate를 자동으로 조절해주는 기능이 있다.
         - 물론 초기 learning rate를 설정해주어야 한다.<br/><br/>
         
-- 4. local minimum이나 saddle point에서 빠져나오기 힘들다.
+- local minimum이나 saddle point에서 빠져나오기 힘들다.
     - SGD가 높은 미끄럼틀에서 쭉 미끄러지다가 이제 막 평평한 밑면을 지나고 있다고 생각하자.
         - 우리는 SGD가 현재 파라미터 위치에서의 gradient 크기만큼 움직인다는 것을 알고 있다.
         - 밑면이 평평하다는 의미는 gradient가 0이라는 것이다.(극단적으로)
@@ -142,11 +142,11 @@ comments: true
         - 그래서 Momentum은 이전 gradient들의 영향력을 매 업데이트마다 $\gamma$배 씩 감소시킨다.<br/><br/>
         $$v_t = \gamma v_{t-1} + \eta \nabla_{\theta_t}J(\theta_t)$$<br/>
         $$\theta_{t+1} = \theta_t - v_t$$<br/><br/>
-        - 점화식으로 표현되어있어서 감소한다는 것이 와닿지 않을 수도 있다.<br/>
+        - 점화식으로 표현되어있어서 감소한다는 것이 와닿지 않을 수도 있다.<br/><br/>
             - $g_t = \eta\nabla_{\theta_t}(\theta_t)$ 그리고 $v_1 = g_1$ 이라고 하면
             - $v_2 = g_2 + \gamma g_1$
             - $v_3 = g_3 + \gamma g_2 + \gamma^2 g_1$
-            - $v_4 = g_4 + \gamma g_3 + \gamma^2 g_2 + \gamma^3 g_1$
+            - $v_4 = g_4 + \gamma g_3 + \gamma^2 g_2 + \gamma^3 g_1$<br/><br/>
         - $\gamma$는 보통 0과 1사이의 값이기 때문에 이런 식으로 점점 오래된 gradient의 영향력을 줄이며 모멘텀을 만든다.<br/><br/>
     
     - Momentum의 힘 덕분에 이제 SGD는 관성을 사용해서 낮은 언덕정도는 탈출할 수 있게 되었다.
@@ -190,7 +190,7 @@ comments: true
         - 그리고 모멘턴만큼 업데이트를 해준다. → $\theta_{t+1} = \theta_t - v_t$<br/><br/>
         
     - 글이 길어졌지만, 다음과 같이 2줄의 식으로 요약할 수 있다.<br/><br/>
-    $$v_t = \gamma v_{t-1} + \eta \nabla_{theta_t}(theta_t - \gamma v_{t-1})$$<br/>
+    $$v_t = \gamma v_{t-1} + \eta \nabla_{\theta_t}(\theta_t - \gamma v_{t-1})$$<br/>
     $$\theta_{t+1} = \theta_t - v_t$$<br/><br/>
     
 - NAG는 SGD가 관성에 의해 수렴 지점에서 요동치는 것을 방지해준다.
@@ -451,3 +451,8 @@ $$\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2] + \epsilon}}g_t$$<br/><br/>
     - Adam은 RMSProp에 1차 모먼트를 도입하여 RMSProp과 Momentum을 합친 효과를 볼 수 있었다.
     - AdaMax는 Adam의 2차 모먼트에 있는 gradient의 norm을 max norm으로 바꿔주었고
     - 마지막으로 NAdam은 ADAM에 NAG를 더해주어서 momentum을 보완해주었다.
+
+
+```python
+
+```
