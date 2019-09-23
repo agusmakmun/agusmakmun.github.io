@@ -104,7 +104,7 @@ comments: true
 - 수렴지점에서 더 정밀한 minimum을 찾기 위해서는 학습 중간에 learning rate를 조절해줘야한다.
     - SGD는 한 번 정해진 learning rate를 현재 학습 상황에 따라 바꿔주는 기능을 갖고 있지 않다.
     - 따라서, 우리가 learning rate의 리스트를 만들어서 특정 에포크마다 learning rate를 줄여주어야 한다.
-        - 물론 실제 코딩에서는 `decay`를 사용하여 중간에 learning rate를 줄여줄 수 있.<br/><br/>
+        - 물론 실제 코딩에서는 `decay`를 사용하여 중간에 learning rate를 줄여줄 수 있다.<br/><br/>
         
 - 모든 파라미터에 대해 동일한 learning rate를 적용해준다.
     - 각 파라미터의 중요도나 스케일 등이 모두 다를텐데, 모든 파라미터에 동일한 learning rate를 적용하는 것은 불합리해보인다.
@@ -290,7 +290,7 @@ comments: true
         $$E[\Delta\theta^2]_t = \gamma E[\Delta\theta^2]_{t-1} + (1-\gamma)\Delta\theta_t^2$$<br/><br/>
         - 다시 RMS를 사용해 간단히 적으면<br/><br/>
         $$\Delta\theta_t = -\frac{RMS[{\Delta\theta}]_t}{RMS[g]_t}g_t$$<br/><br/>
-        - 이다. 하지만 현재($t$)는 업데이트 전이므로 $RMS[{\Delta\theta}]_{t}$ 값을 알 수 없기 때문에 대신 $RMS[{\Delta\theta}]_{t-1}$ 을 근사값으로 사용한다.<br/><br/>
+        - 이다. 하지만 현재($t$)는 업데이트 전이므로 $RMS{[{\Delta\theta}]}_{t}$ 값을 알 수 없기 때문에 대신 $RMS{[{\Delta\theta}]}_{t-1}$ 을 근사값으로 사용한다.<br/><br/>
         $$\Delta\theta_t = -\frac{RMS[{\Delta\theta}]_{t-1}}{RMS[g]_t}g_t$$<br/><br/>
     - 최종적으로 업데이트식은<br/><br/>
     $$\theta_{t+1} = \theta_t + \Delta\theta_t$$<br/><br/>
