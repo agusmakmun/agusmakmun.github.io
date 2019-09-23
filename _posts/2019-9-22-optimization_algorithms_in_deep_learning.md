@@ -288,9 +288,9 @@ comments: true
         - 여기서 $\frac{1}{\partial^2 J/\partial\theta^2} = - \frac{\Delta \theta}{\partial J/\partial\theta}$ 임을 이용했다.(Newton's Method)
         - 우변의 분모에 해당하는 텀( $RMS[g]$ )은 가지고 있으므로 분자($\Delta\theta$) 텀을 만들기 위해 똑같이 다음을 생각한다.<br/><br/>
         $$E[\Delta\theta^2]_t = \gamma E[\Delta\theta^2]_{t-1} + (1-\gamma)\Delta\theta_t^2$$<br/><br/>
-        - 다시 RMS를 사용해 간단히 적으면<br/><br/>
+        - 다시 RMS를 사용해 간단히 적으면 <br/><br/>
         $$\Delta\theta_t = -\frac{RMS[{\Delta\theta}]_t}{RMS[g]_t}g_t$$<br/><br/>
-        - 이다. 하지만 현재($t$)는 업데이트 전이므로 $RMS[{\Delta\theta}]_{t}$ 값을 알 수 없기 때문에 대신 $RMS[{\Delta\theta}]_{t-1}$을 근사값으로 사용한다.<br/><br/>
+        - 이다. 하지만 현재($t$)는 업데이트 전이므로 $RMS[{\Delta\theta}]_{t}$$ 값을 알 수 없기 때문에 대신 $RMS[{\Delta\theta}]_{t-1}$을 근사값으로 사용한다.<br/><br/>
         $$\Delta\theta_t = -\frac{RMS[{\Delta\theta}]_{t-1}}{RMS[g]_t}g_t$$<br/><br/>
     - 최종적으로 업데이트식은<br/><br/>
     $$\theta_{t+1} = \theta_t + \Delta\theta_t$$<br/><br/>
