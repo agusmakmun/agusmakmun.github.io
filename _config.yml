@@ -2,7 +2,7 @@ title: Stack Problems
 description: My Personal Stack Problems
 author: Zdenk Zdenolab
 github: https://github.com/agusmakmun
-about: I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django.
+about: I'm Programmer for VBA & Excel. I've made quite a few web apps, especially on Django.
 disqus_shortname: stackproblems
 google_analytics: UA-XXXXXXXX-Y
 
@@ -17,7 +17,7 @@ collections:
 social:
     - icon: fa-facebook
       link: "#"
-    - icon: fa-twitter
+    - icon: fa-tumblr
       link: "#"
     - icon: fa-linkedin
       link: "#"
