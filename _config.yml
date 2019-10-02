@@ -17,7 +17,7 @@ collections:
 social:
     - icon: fa-facebook
       link: "#"
-    - icon: fa-tumblr
+    - icon: fa-tumblr-square
       link: "#"
     - icon: fa-linkedin
       link: "#"
@@ -31,7 +31,7 @@ share:
   fb_appid: 1749788565247320
 
 urls:
-    - text: About Me
+    - text: About Meß
       url: /about/
     - text: My Projects
       url: /projects/
