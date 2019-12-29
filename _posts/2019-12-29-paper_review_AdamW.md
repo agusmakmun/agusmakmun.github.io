@@ -87,6 +87,7 @@ Adam을 빠르게 짚고 넘어가보자. Adam은 gradient의 1차 모먼트 $m_
 Adam은 위와 같이 weight 업데이트를 해준다. Adam에서는 L2 regularization과 weight decay가 다르다는 것을 보이기 위해 weight 업데이트 식을 다음과 같이 간략하게 표현해보자.
 <br/><br/><center>$$\mathbf{\theta}_{t+1} = \mathbf{\theta}_{t} - \alpha M_t \nabla f_t^{reg}(\mathbf{\theta}_t)$$</center><br/><br/>
 SGD에서 구한 $\nabla f_t^{reg}(\mathbf{\theta})$을 대입해보자.
+<center>
     $$
     \begin{matrix}
         \mathbf{\theta}_{t+1} & = & \mathbf{\theta}_{t} - \alpha M_t \nabla f_t^{reg}(\mathbf{\theta}_{t}) \\\
