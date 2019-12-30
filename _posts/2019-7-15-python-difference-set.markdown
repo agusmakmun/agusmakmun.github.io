@@ -2,7 +2,7 @@
 layout: post
 title:  "[Python] 두 집합의 차집합 구하기"
 date:   2019-07-15 15:32
-categories: [python]
+categories: [Python]
 use_math: true
 comments: true
 ---
