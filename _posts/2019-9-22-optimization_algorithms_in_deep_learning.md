@@ -2,7 +2,7 @@
 layout: post
 title:  "[딥러닝]딥러닝 최적화 알고리즘 알고 쓰자. 딥러닝 옵티마이저(optimizer) 총정리"
 date:   2019-9-22 15:30
-categories: [deeplearning]
+categories: [DeepLearning]
 use_math: true
 comments: true
 ---
