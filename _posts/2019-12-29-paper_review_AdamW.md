@@ -8,7 +8,7 @@ comments: true
 ---
 
 
-# <center>AdamW에 대해 알아보자!<br/> "Decoupled weight decay regularization 논문 리뷰 (1)"</center>
+# <center>AdamW에 대해 알아보자!<br/> "Decoupled weight decay regularization 논문 리뷰 (1)"</center><br/>
 
 얼마 전에 종료한 Kaggle 대회 ["Understanding Clouds from Satellite Images" ](https://www.kaggle.com/c/understanding_cloud_organization)에서 우리나라 분([pudae](https://www.kaggle.com/pudae81)님)께서 자랑스럽게 1등을 하셨다. 정말 친절하게 [1등 솔루션](https://www.kaggle.com/c/understanding_cloud_organization/discussion/118080)을 공유해주셨는데 optimizer로 AdamW를 사용하셨다고 한다. 물론 optimizer의 선택이 우승의 결정적인 요인이라고 할 수는 없겠지만, 다른 상위권 솔루션들이 최근 optimizer 중에서 잘 나가는 [RAdam](https://arxiv.org/abs/1908.03265)을 사용했기 때문에 AdamW가 무엇인지 궁금해졌다. 그럼 AdamW은 Adam의 어떤 문제점을 해결하며 등장했을까?<br/><br/>
 Adam은 "optimizer는 묻지도 따지지도 말고 Adam을 사용해라" 라는 격언이 있을 정도로 만능 optimizer처럼 느껴진다. 하지만 만능인 것 치고는 일부 task, 특히 컴퓨터 비젼 task에서는 momentum을 포함한 SGD에 비해 일반화(generalization)가 많이 뒤쳐진다는 결과들이 있었다. AdamW를 소개한 논문 ["Decoupled weight decay regularization"](https://arxiv.org/abs/1711.05101)에서는 `L2 regularization`과 `weight decay` 관점에서 Adam이 SGD이 비해 일반화 능력이 떨어지는 이유를 설명하고 있다.<br/><br/>
