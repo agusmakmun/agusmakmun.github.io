@@ -50,42 +50,42 @@ Learning rate annealing에는 다양한 방법이 있을 수 있다. 가장 쉬�
 ### 좋은 수렴 지점에 대한 직관적 이해
 일반화 (generalization) 능력이 좋은 모델은 훈련 데이터의 분포와 조금 다른 분포의 테스트 데이터가 들어와도 역할을 잘 수행할 수 있는 모델이다. 이를 유념하며 직관적인 예시 하나를 살펴보자. 아래 그림처럼 weight에 따른 loss 함수의 그래프가 있다고 하자. 그리고 훈련을 통해 최적의 weight $w_1$을 찾았다고 생각해보자<br/>
 
-![Figure4](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure4.PNG)<br/>
+![Figure4](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure4.png)<br/>
 
 위 그림의 갈색선은 "훈련 데이터로부터 만들어진 weight에 대한 loss 함수"의 그래프이다. "훈련 데이터"로부터 만들어진 loss 함수이기 때문에 훈련 데이터의 분포와 다른 분포의 테스트 데이터에 대해서는 다른 loss 함수가 만들어질 것이다. 예를 들어 아래 그림처럼 테스트 데이터의 분포가 훈련 데이터의 분포와 달라서 다음 그림과 같이 훈련 데이터(살구색)와 테스트 데이터(갈색)의 loss 함수 그래프가 다르게 나타났다고 하자.<br/>
 
-![Figure5](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure5.PNG)<br/>
+![Figure5](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure5.png)<br/>
 
 테스트 데이터에 대한 loss 함수는 훈련 데이터에 대한 loss 함수에 비해 아주 조금 달라졌지만, $w_1$에서의 테스트 데이터의 loss는 훈련 데이터의 loss와 굉장히 차이나게 된다. 즉, $w_1$처럼 가파른 local minimum에서는 테스트 데이터의 분포가 조금만 달라져도 error가 민감하게 변한다는 의미이다. 반대로, 모델이 훈련을 통해 최적의 weight를 $w_2$으로 찾았다고 생각해보자.<br/>
 
-![Figure6](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure6.PNG)<br/>
+![Figure6](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure6.png)<br/>
 
 하지만 이 경우 테스트 데이터에 대한 loss 함수가 훈련 데이터에 대한 loss 함수에 비해 달라졌다고 해도 $w_2$에서의 테스트 데이터의 loss는 훈련 데이터의 loss와 크게 달라지지 않는다.<br/>
 
-![Figure7](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure7.PNG)<br/>
+![Figure7](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure7.png)<br/>
 
 이런 평평한 지점의 weight들은 훈련 데이터의 분포와 다른 테스트 데이터가 들어와도 상대적으로 안정적인 loss 값을 얻을 수 있다. 즉, 보다 더 *일반화 (generalized)* 되었다고 말할 수 있다.<br/>
 
 ### Warm restart
 Warm restart는 위와 같은 문제를 해결하기 위한 한 가지 방법이다. 학습 중간중간에 learning rate를 증가시켜 큰 폭의 weight update를 만들어 가파른 local minimum에서 빠져나올 기회를 제공한다.<br/>
 
-![Figure8](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure8.PNG)<br/>
+![Figure8](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure8.png)<br/>
 
 예를 들어 위의 learning rate schedule은 initial learning rate를 0.01로 설정하고 cosine annealing을 사용하며 iteration 380과 iteration 760에서 learning rate를 증가시키는 warm restart이다. 이 learning schedule을 사용하여 다시 한 번 위의 예시를 살펴보자. 먼저 initial weight 지점에서 시작하여 gradient descent를 통해 local minimum $w_1$에 수렴하였다. 업데이트 폭이 점점 줄어드는 것은 cosine annealing을 사용한 것으로 볼 수 있다.<br/>
 
-![Figure9](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure9.PNG)<br/>
+![Figure9](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure9.png)<br/>
 
 이 때 cosine annealing만 사용하였다면 learning rate가 0에 가까워져 $w_1$에서 weight 업데이트 중지되었을 것이다. 하지만 다시 learning rate를 증가시키면 아래 그림처럼 가파른 local minimum을 탈출할 수 있게 된다. learning rate가 크기 때문에 업데이트 폭도 큰 것을 볼 수 있다.<br/>
 
-![Figure10](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure10.PNG)<br/>
+![Figure10](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure10.png)<br/>
 
 다시 cosine annealing에 따라 learning rate를 줄여가며 gradient descent를 하면 아래 그림처럼 $w_2$으로 가게된다.<br/>
 
-![Figure11](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure11.PNG)<br/>
+![Figure11](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure11.png)<br/>
 
 learing rate 증가시키는 iteration 지점을 2곳으로 설정했기 때문에 한 번 더 learning rate가 증가되게 된다. 하지만 이번에는 업데이트 폭이 커도 같은 local minimum 안의 weight로 업데이트되게 된다.<br/>
 
-![Figure12](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure12.PNG)<br/>
+![Figure12](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure12.png)<br/>
 
 지금까지 아주 단순한 예시로 warm restart가 무엇인지 그리고 왜 필요한지에 대해서 알아보았다. warm restart에 대한 수식은 논문의 부록에서 찾아볼 수 있다. 
 
@@ -94,7 +94,7 @@ learing rate 증가시키는 iteration 지점을 2곳으로 설정했기 때문�
 ## Normalized weight decay
 이전 포스트의 실험 3에서 Normalized weight decay이 등장하였다. 논문의 저자는 최적의 weight decay 상수 $\lambda$가 총 weight update 횟수에 종속적이라는 것을 실험을 통해 확인하였다. 아래 그림은 각각 CIFAR-10을 25번 학습하였을 때, 100번 학습하였을 때, 400번 학습하였을 때의 test error이다. 성능 상위 10개의 hyperparameter setting이 검은색 원으로 표시되어있다. epoch이 작을 수록 최적의 $\lambda$값은 크고, epoch이 클 수록 최적의 $\lambda$ 값이 작다는 것을 확인할 수 있다.<br/>
 
-![Figure13](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure13.PNG)<br/>
+![Figure13](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure13.png)<br/>
 
 파라미터 업데이트 횟수에 따라 최적의 $\lambda$ 값이 달라진다면 하이퍼파라미터튜닝하기가 더 어려울 것이다. Normalized weight decay는 파라미터 업데이트 횟수에 따라 사용할 $\lambda$ 값을 정하는 방법이다. 사용자는 하이퍼파라미터로 $\lambda$ 대신 $\lambda_{norm}$이라는 것을 설정해준다. 다음으로 $\lambda = \lambda_{norm}\sqrt{\frac{b}{BT}}$ 으로 계산한 $\lambda$를 weight decay 상수값으로 사용하게 된다. 여기서 $b$는 batch size, $B$는 훈련 데이터 개수, $T$는 총 에폭 횟수다. 예를 들어,<br/><br/>
 배치 사이즈가 클수록, 데이터가 적을 수록, Epoch 수가 적을 수록 총 파라미터 업데이트 횟수는 적다.
@@ -105,7 +105,7 @@ learing rate 증가시키는 iteration 지점을 2곳으로 설정했기 때문�
 
 사용자가 $\lambda_{norm}$만 설정해주면 총 파라미터 업데이트 횟수에 따라 사용할 $\lambda$ 값을 자동으로 선택해지기 때문에 Hyperparameter 튜닝하기가 한결 쉬워진다.<br>
 
-![Figure14](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure14.PNG)<br/>
+![Figure14](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure14.png)<br/>
 
 Normalized weight decay를 사용하는 경우 최적의 $\lambda_{norm}$값이 에폭에 따라 변하지 않는 것을 확인할 수 있다.
 
@@ -113,7 +113,7 @@ Normalized weight decay를 사용하는 경우 최적의 $\lambda_{norm}$값이 
 
 ### Experiment 4. AdamWR vs SGDWR vs AdamW vs SGDW vs Adam
 
-![Figure15](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure15.PNG)<br/><br/>
+![Figure15](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure15.png)<br/><br/>
 
 **실험 환경**<br/>
 - 1열: Epoch에 따른 Top-1 test error and training loss on CIFAR-10
