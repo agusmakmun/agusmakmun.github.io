@@ -19,8 +19,8 @@ Adam은 "optimizer는 묻지도 따지지도 말고 Adam을 사용해라" 라는
 **들어가기 전에** 
 - 이 post에서 언급하는 SGD는 momentum을 포함한 SGD 이다.
 - 이 post는 2부로 나누어서 포스팅할 예정이다.
-    - 1부: AdamW에 대해 알아보자! "Decoupled weight decay regularization 논문 리뷰 (1)"
-    - 2부: AdamWR에 대해 알아보자! "Decoupled weight decay regularization 논문 리뷰 (2)"
+    - 1부: [AdamW에 대해 알아보자! "Decoupled weight decay regularization 논문 리뷰 (1)"](https://hiddenbeginner.github.io/deeplearning/paperreview/2019/12/29/paper_review_AdamW.html)
+    - 2부: [AdamWR에 대해 알아보자! "Decoupled weight decay regularization 논문 리뷰 (2)"](https://hiddenbeginner.github.io/deeplearning/paperreview/2020/01/04/paper_review_AdamWR.html)
 
 ---
 
@@ -139,7 +139,7 @@ SGDW와 AdamW의 알고리즘이다. 지금까지 설명하지 않았던 $\eta$�
 ---
 
 ### Experiment 1. 서로 다른 learning rate schedule 에서의 Adam과 AdamW 성능 비교
-이 실험은 L2 regularization에 Adam을 적용했을 때와 weight decay까지 추가한 AdamW의 성능을 비교하는 실험이다. 이 논문에서 일반적인 learning rate schedule 에서 작동하는 알고리즘을 제안했기 때문에 다음과 같이 서로 다른 세 가지 lr schedule 에 대해서도 실험을 진행하였다. ($\color{red}{\text{cosine annealing은 2부에서 다뤄보도록 하겠습니다.}}$)
+이 실험은 L2 regularization에 Adam을 적용했을 때와 weight decay까지 추가한 AdamW의 성능을 비교하는 실험이다. 이 논문에서 일반적인 learning rate schedule 에서 작동하는 알고리즘을 제안했기 때문에 다음과 같이 서로 다른 세 가지 lr schedule 에 대해서도 실험을 진행하였다. (Learning rate schedule는 [2부](https://hiddenbeginner.github.io/deeplearning/paperreview/2020/01/04/paper_review_AdamWR.html)에서 다루고 있습니다.)
 - fixed learning rate
 - step-drop learning rate
 - cosine annealing
@@ -193,7 +193,7 @@ Experiment 3에서는 AdamW와 Adam의 일반화 능력을 비교하는 실험�
 </center><br/>
 
 **실험 환경:** CIFAR-10, 26 2x96d ResNet, Epochs 1800, learning rate = 0.001, normalized weight deacy 사용
-($\color{red}{\text{normalized weight decay 역시 2부에서 다뤄보도록 하겠습니다.}}$)
+(Normalied weight decay는 [2부](https://hiddenbeginner.github.io/deeplearning/paperreview/2020/01/04/paper_review_AdamWR.html)에서 다루고 있습니다.)
 
 **결과 해석**
 - 학습 초기에는 Adam과 AdamW과 비슷한 loss를 보이지만 학습이 진행될 수록 AdamW의 훈련 손실과 test 에러가 더 낮아진다.
