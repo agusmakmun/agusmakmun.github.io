@@ -53,3 +53,5 @@ compress_html:
   endings: all
   ignore:
     envs: ['development']
+    
+google_analytics: 'UA-155743928-2'
