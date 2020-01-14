@@ -11,7 +11,7 @@ comments: true
 
 AdamW를 소개하는 논문 ["Decoupled weight decay regularization"](https://arxiv.org/abs/1711.05101) 논문에는 AdamW 이외에도 AdamWR 이라는 최적화 알고리즘을 소개하고 있다. AdamWR은 저자의 이전 [논문](https://arxiv.org/abs/1608.03983)에서 소개한 warm restart with cosine annealing을 AdamW에 적용한 최적화 알고리즘이다.<br/><br/>
 AdamWR을 이해하기 위해서는 learning rate annealing과 warm restarts가 무엇인지 그리고 왜 사용되는지 알아야하기 때문에 이렇게 따로 2부를 준비해보았다. 글의 대부분은 [A Newbie’s Guide to Stochastic Gradient Descent With Restarts](https://towardsdatascience.com/https-medium-com-reina-wang-tw-stochastic-gradient-descent-with-restarts-5f511975163)을 참고하여 작성하였다.<br/><br/>
-![Figure1](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure1.PNG)
+![Figure1](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-01-04-paper_review_AdamWR/figure1.PNG){: width="300" height="300"){: .center}
 <center>[에포크에 따른 ImageNet32x32 Top 5 테스트 에러]</center><br/><br/>
 위 사진은 내 마음대로 선정한 2부의 메인 figure이다. ImageNet32x32 Top5 테스트 에러를 나타내는 learning curve이고, Adam. AdamW, SGDW, AdamWR, SGDWR 순서로 성능이 좋은 것을 알 수 있다. warm restart를 사용하는 AdamWR, SGDWR의 경우 테스트 에러가 학습 중간중간 폴짝 뛰는 모습을 보이는데, 이것은 학습 중간중간에 learning rate를 점프시키기 때문이다. 이 작용으로 AdamWR과 SGDWR은 일반화를 더 잘하는 local minimum을 찾을 수 있다.<br/>
 

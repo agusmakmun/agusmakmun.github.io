@@ -106,6 +106,11 @@ div.col-sm-3 img.profile-avatar {
   margin-right: auto;
 }
 
+.center {
+  display: block;
+  margin: auto;
+}
+
 /* Pagination */
 .PageNavigation {
   font-size: 14px;
