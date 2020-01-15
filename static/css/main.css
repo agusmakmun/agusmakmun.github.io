@@ -1,6 +1,7 @@
 body {
   font-family: "Roboto Condensed", Arial, sans-serif;
   background: url("/static/img/subtle_dots.png");
+  text-indent: 1.0em;	
   line-height: 2.0em;
   font-weight: 300;
   font-size: 16px;
