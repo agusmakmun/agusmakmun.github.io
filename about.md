@@ -66,12 +66,12 @@ use_math: true
   - 케글 Understanding Clouds from Satellite Image 참여
   - 머신러닝 알고리즘 강의
 
-**2019년 9월 ~** [딥러닝 논문 읽기 모임](https://github.com/Lilcob/-DL_PaperReadingMeeting/blob/master/readme.md)
+**2019년 9월 ~ 0000년 0월** [딥러닝 논문 읽기 모임](https://github.com/Lilcob/-DL_PaperReadingMeeting/blob/master/readme.md)
 
 - [Radam: On the variance of the adaptive learning rate and beyond](https://youtu.be/_F5_hgX_lSE)
 - [AdamW: Decoupled weight decay regularization](https://youtu.be/-Sd_zH_LHBo)
 
-**2020년 1월 ~ ** 수원 영통역 케글 스터디
+**2020년 1월 ~ 0000년 0월** 수원 영통역 케글 스터디
 
 
 
