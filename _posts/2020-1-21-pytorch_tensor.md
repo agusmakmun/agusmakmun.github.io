@@ -44,7 +44,7 @@ a_{n1} & a_{n2} & \cdots & a_{nd}
 \end{bmatrix}$
 을 행렬이라고 부른다. 그리고 이들 행렬을 쌓아올린 직육면체 형태의 자료구조도 생각해볼 수 있다. 그리고 상상은 할 수 없겠지만 직육면체들을 쌓아올린 4차원 형태의 자료구조도 분명히 있을 것이다. 텐서는 이러한 자료구조들을 일반적으로 가리키는 단어이다. 벡터는 1차원 텐서, 행렬은 2차원 텐서, 직육면체 형태의 자료구조는 3차원 텐서이다. 텐서를 `numpy`스럽게 말하면 다차원 배열(multidimensional array)이라고 부를 수 있다. 아래 그림처럼 $N$차원 텐서에 저장되어 있는 값에 접근하기 위해서는 $N$개의 인덱스가 필요하다.<br/><br/>
 
-![figure1](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-1-23-pytorch_tensor/figure1.png)
+![figure1](figure1.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;우리는 Python에서 list를 사용해서 텐서를 쉽게 만들 수 있다. list에 값을 순서대로 넣으면 1차원 텐서를 만들 수 있고, list에 또 다른 list들을 차례대로 넣으면 2차원 텐서(list of list)를 만들 수 있다, 마찬가지로 list에 list of list들을 순서대로 넣으면 3차원 텐서를 만들 수 있을 것이다. 하지만 우리는 텐서를 다룰 때 파이썬 list of list를 사용하지 않고 `NumPy`, `PyTorch`, `TensorFlow` 등과 같은 라이브러리들을 사용한다. 이들 라이브러리들과 파이썬 list는 텐서를 다룰 때 어떠한 차이가 있는 것이 분명하다. 다음 장에서는 python list이 왜 텐서를 다루는데 비효율적인지 알아보자
 
@@ -56,7 +56,7 @@ a_{n1} & a_{n2} & \cdots & a_{nd}
 
 ### 1. Numbers in Python are full-fledged objects.
 &nbsp;&nbsp;&nbsp;&nbsp;마땅히 의역할 수 있는 적절한 문장이 없어서 그대로 가져왔다. C언어에서 `int`나 `float` 자료형에 4바이트를 할당하는 것과 다르게 파이썬에서는 최소 8바이트를 할당한다. 최소인 이유는 파이썬에서는 숫자의 길이에 따라 8바이트보다 더 많은 메모리를 할당하기 때문이다. 예를 들어, C언어에서는 123와 같은 작은 숫자를 담는 변수를 선언할 때, 평범하게 `int`를 사용해서 4바이트를 할당하거나 또는 `short`를 사용해서 2바이트만 할당할 수 있다. 하지만 파이썬에서는 8바이트를 할당하는 `double`을 사용하는 셈이다. 요새 언어로 파이썬은 "메모리를 Flex해버렸지 뭐야"라고 할 수 있다. 데이터의 개수가 적다면 숫자들 각각에 8바이트를 할당하는 것이 별로 큰 문제가 되지 않겠지만, 몇 백 만개의 데이터를 분석해야 하는 상황에서는 8바이트를 할당하는 것은 굉장히 비효율적일 것이다.<br/><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;밑의 코드는 위의 내용에 대한 내가 진행한 팩트 체크이다. `getsizeof`는 할당된 메모리의 바이트를 반환해주는 함수이다.
+&nbsp;&nbsp;&nbsp;&nbsp;밑의 코드는 위의 내용에 대한 내가 진행한 팩트 체크이다. `sys`의 `getsizeof`는 할당된 메모리의 바이트를 반환해주는 함수이다.
 
 
 ```python
@@ -77,16 +77,16 @@ print("Size of a in bytes: ", getsizeof(a))
 ### 3. Python 느리다.
 &nbsp;&nbsp;&nbsp;&nbsp;어우 컴파일 이야기까지 나와서 생략. 아무튼 파이썬은 느리기 때문에 대규모 수학연산을 빠르게 수행하기 위해서는 C언어와 같은 low level 언어를 사용해서 효율적인 코딩을 해야한다.<br/><br/>
 
-&nbsp;&nbsp;&nbsp;&nbsp;이러한 이유로 텐서를 다루는데 파이썬은 적합하지 않다. 다행히도 `NumPy`나 `PyTorch`같은 라이브러리들은 텐서를 효율적으로 다루기 위해 알맞은 자료구조를 사용하고 또 low-level implementation으로 효율적인 텐서 연산을 제공한다. 다음 장에서는 `NumPy`나 `PyTorch`이 어떤 자료구조를 사용해서 텐서를 다루는지 알아볼 것이다.
+&nbsp;&nbsp;&nbsp;&nbsp;이러한 이유로 텐서를 다루는데 파이썬은 적합하지 않다. 다행히도 `NumPy`나 `PyTorch`같은 라이브러리들은 메모리상에서 텐서를 효율적으로 다룰 수 있는 자료구조를 사용한다. 뿐만 아니라 low-level implementation으로 효율적인 텐서 연산을 제공한다. 다음 장에서는 `NumPy`나 `PyTorch`이 어떤 자료구조를 사용해서 텐서를 다루는지 알아볼 것이다.
 
 ---
 
 
 <a name='section3'></a>
 ## 효율적으로 텐서를 다루는 방법 - 메모리
-&nbsp;&nbsp;&nbsp;&nbsp;`PyTorch`의 텐서나 `NumPy`의 다차원 배열은 파이썬 list와 다르게 메모리를 할당한다. 파이썬의 list나 tuple은 메모리 이곳저곳에 따로따로 저장되어 있는 원소들의 집합이다. 반면, `PyTorch`의 텐서나 `NumPy`의 다차원 배열의 원소들은 C언어의 자료형을 갖으며 메모리 상에서 인접한 곳에 블럭 형태로 저장된다. 아래 그림을 보면 조금 이해가 편할 것이다.
+&nbsp;&nbsp;&nbsp;&nbsp;`PyTorch`의 텐서나 `NumPy`의 다차원 배열은 파이썬 list와 다른 방법으로 메모리를 할당한다. 파이썬의 list에 있는 원소들은 메모리의 이곳저곳에 따로따로 저장되어 있다. 반면, `PyTorch`의 텐서나 `NumPy`의 다차원 배열의 원소들은 C언어의 자료형을 갖으며 메모리 상에서 인접한 곳에 블럭 형태로 저장된다. 아래 그림을 보면 조금 이해가 편할 것이다.
 
-![figure2](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-1-23-pytorch_tensor/figure2.png)<br/>
+![figure2](figure2.png)<br/>
 
 
 
@@ -140,6 +140,8 @@ a0, a1, a2의 주소가 아니며 게다가 같은 주소를 가리키고 있는
 - torch.int32 (torch.int): 부호를 포함하는 32비트 정수
 - torch.int64 (torch.long): 부호를 포함하는 64비트 정수
 
+<br/>
+
 &nbsp;&nbsp;&nbsp;&nbsp; 메모리 관련하여 한 가지의 코드 예시를 더 살펴보자
 
 
@@ -179,6 +181,7 @@ print(a)
             [-999.,    4.],
             [   5.,    6.]])
     
+---
 
 <a name='section4'></a>
 ## 효율적으로 텐서를 다루는 방법 - 자료구조
@@ -187,7 +190,7 @@ print(a)
 
 &nbsp;&nbsp;&nbsp;&nbsp;다차원 텐서를 1차원 `storage`를 다루기 때문에 서로 다른 두 텐서가 같은 모습을 `storage`를 만들 수 있다. 하지만 두 `storage`의 offset과 stride가 서로 다를 것이다. 다음 그림을 통해 이해해보자.<br/>
 
-![figure3](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-1-23-pytorch_tensor/figure3.png)
+![figure3](figure3.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;그림의 두 텐서는 분명히 다르지만 이들의 `storage`는 서로 같다. 그럼 `storage`만 보고는 이 둘을 구분지을 수 없을 것이다. 빨간색으로 나타낸 정보가 두 텐서를 구분지을 수 있을 것이다.<br/><br/>
 
@@ -252,7 +255,7 @@ print("Strides: ", b.stride())
 
 다음과 같은 한 가지 예시를 더 살펴보자.<br/>
 
-![figure4](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-1-23-pytorch_tensor/figure4.png)
+![figure4](figure4.png)
 
 
 ```python
@@ -333,7 +336,7 @@ print(id(a.storage()), id(b.storage()))
 
 &nbsp;&nbsp;&nbsp;&nbsp;하지만 `storage`만 사용하면 strides만 뒤짚어주면 전치 연산이 끝나게 된다. 그것이 전치의 정의이기 때문이다. 그림을 참고하자.<br/>
 
-![figure5](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-1-23-pytorch_tensor/figure5.png)
+![figure5](figure5.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp; 코드로도 확인해보자
 
@@ -399,8 +402,12 @@ print("Strides: ", b.stride())
 
 &nbsp;&nbsp;&nbsp;&nbsp;전치의 예시를 통해 1차원 배열 `storage`를 사용하여 효율적인 텐서 연산을 할 수 있다는 것을 알 수 있었다. 다른 연산에 대해서도 다차원 텐서를 사용하는 것보다 `storage`를 사용하면 더 효율적으로 연산을 수행할 수 있을 것이다. 책에는 전치 연산만 소개하고 있기 때문에 다른 연산은 어떻게 수행되는지에 대해서는 다루지 않도록 하겠다.
 
+---
+
 ## 결론
 &nbsp;&nbsp;&nbsp;&nbsp;이번 포스팅에서는 텐서가 무엇인지 알아보고 텐서를 효율적으로 다루는 방법을 메모리와 자료구조 관점에서 바라보았다. 내 결론은 이거다. 이 책 너무 좋다 ~!
+
+---
 
 ## 참고한 자료들
 [1] [Deep learning with Pytorch](https://www.manning.com/books/deep-learning-with-pytorch)<a name='ref1'></a><br/>
