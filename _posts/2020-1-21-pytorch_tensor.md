@@ -45,7 +45,7 @@ a_{n1} & a_{n2} & \cdots & a_{nd}
 \end{bmatrix}$
 을 행렬이라고 부른다. 그리고 이들 행렬을 쌓아올린 직육면체 형태의 자료구조도 생각해볼 수 있다. 그리고 상상은 할 수 없겠지만 직육면체들을 쌓아올린 4차원 형태의 자료구조도 분명히 있을 것이다. 텐서는 이러한 자료구조들을 일반적으로 가리키는 단어이다. 벡터는 1차원 텐서, 행렬은 2차원 텐서, 직육면체 형태의 자료구조는 3차원 텐서이다. 텐서를 `numpy`스럽게 말하면 다차원 배열(multidimensional array)이라고 부를 수 있다. 아래 그림처럼 $N$차원 텐서에 저장되어 있는 값에 접근하기 위해서는 $N$개의 인덱스가 필요하다.<br/><br/>
 
-![figure1](figure1.png)
+![figure1](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-1-21-pytorch_tensor/figure1.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;우리는 Python에서 list를 사용해서 텐서를 쉽게 만들 수 있다. list에 값을 순서대로 넣으면 1차원 텐서를 만들 수 있고, list에 또 다른 list들을 차례대로 넣으면 2차원 텐서(list of list)를 만들 수 있다, 마찬가지로 list에 list of list들을 순서대로 넣으면 3차원 텐서를 만들 수 있을 것이다. 하지만 우리는 텐서를 다룰 때 파이썬 list of list를 사용하지 않고 `NumPy`, `PyTorch`, `TensorFlow` 등과 같은 라이브러리들을 사용한다. 이들 라이브러리들과 파이썬 list는 텐서를 다룰 때 어떠한 차이가 있는 것이 분명하다. 다음 장에서는 python list이 왜 텐서를 다루는데 비효율적인지 알아보자
 
@@ -87,7 +87,7 @@ print("Size of a in bytes: ", getsizeof(a))
 ## 효율적으로 텐서를 다루는 방법 - 메모리
 &nbsp;&nbsp;&nbsp;&nbsp;`PyTorch`의 텐서나 `NumPy`의 다차원 배열은 파이썬 list와 다른 방법으로 메모리를 할당한다. 파이썬의 list에 있는 원소들은 메모리의 이곳저곳에 따로따로 저장되어 있다. 반면, `PyTorch`의 텐서나 `NumPy`의 다차원 배열의 원소들은 C언어의 자료형을 갖으며 메모리 상에서 인접한 곳에 블럭 형태로 저장된다. 아래 그림을 보면 조금 이해가 편할 것이다.
 
-![figure2](figure2.png)<br/>
+![figure2](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-1-21-pytorch_tensor/figure2.png)<br/>
 
 
 
@@ -191,7 +191,7 @@ print(a)
 
 &nbsp;&nbsp;&nbsp;&nbsp;다차원 텐서를 1차원 `storage`를 다루기 때문에 서로 다른 두 텐서가 같은 모습을 `storage`를 만들 수 있다. 하지만 두 `storage`의 offset과 stride가 서로 다를 것이다. 다음 그림을 통해 이해해보자.<br/>
 
-![figure3](figure3.png)
+![figure3](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-1-21-pytorch_tensor/figure3.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;그림의 두 텐서는 분명히 다르지만 이들의 `storage`는 서로 같다. 그럼 `storage`만 보고는 이 둘을 구분지을 수 없을 것이다. 빨간색으로 나타낸 정보가 두 텐서를 구분지을 수 있을 것이다.<br/><br/>
 
@@ -257,7 +257,7 @@ print("Strides: ", b.stride())
 
 다음과 같은 한 가지 예시를 더 살펴보자.<br/>
 
-![figure4](figure4.png)
+![figure4](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-1-21-pytorch_tensor/figure4.png)
 
 
 ```python
@@ -338,7 +338,7 @@ print(id(a.storage()), id(b.storage()))
 
 &nbsp;&nbsp;&nbsp;&nbsp;하지만 `storage`만 사용하면 strides만 뒤짚어주면 전치 연산이 끝나게 된다. 그것이 전치의 정의이기 때문이다. 그림을 참고하자.<br/>
 
-![figure5](figure5.png)
+![figure5](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/2020-1-21-pytorch_tensor/figure5.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp; 코드로도 확인해보자
 
