@@ -37,8 +37,6 @@ comments: true
     - [NAdam](#NAdam)
 5. [결론](#결론)
 
-<br/>
-
 ![figure1](https://raw.githubusercontent.com/HiddenBeginner/hiddenbeginner.github.io/master/static/img/_posts/optimizers_figure1.png)
 
 [0] Optimizer overview 논문 : [An overview of gradient descent optimization algorithms](https://arxiv.org/abs/1609.04747)<br/>
