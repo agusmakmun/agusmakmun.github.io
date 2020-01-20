@@ -8,7 +8,8 @@ comments: true
 ---
 
 # <center>빠른 텐서 연산을 위한 자료구조</center>
-### <center>PyTorch 텐서는 메모리에 어떻게 저장되어 있을까?</center>
+**<center>-PyTorch 텐서는 메모리에 어떻게 저장되어 있을까?-</center>**
+<br/>
 
 &nbsp;&nbsp;&nbsp;&nbsp;오늘은 [Deep learning with Pytorch](https://www.manning.com/books/deep-learning-with-pytorch)이란 책을 읽으면서 좋았던 내용을 공유하는 포스팅을 작성하고자 한다. 다른 딥러닝 책들과는 다르게 텐서에 대해서 너무 얕지도 않게 너무 깊지도 않게 설명해주고 있어서 좋았다. 이 포스팅에서는 텐서 연산을 빠르게 수행하기 위하여 PyTorch에서는 텐서를 어떻게 메모리에 저장하는지에 이야기할 것이다.<br/><br/>
 
@@ -252,6 +253,7 @@ print("Strides: ", b.stride())
     Offset:  0
     Strides:  (2, 1)
     
+<br/>
 
 다음과 같은 한 가지 예시를 더 살펴보자.<br/>
 
