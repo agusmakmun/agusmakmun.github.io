@@ -1,10 +1,8 @@
 title: Stefanescu Eduard
-description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django.
+description: This blog post will contains articles, tutorials and life experiences.
+github: https://github.com/stefanescueduard
+about: I'm an enthusiast of .NET and Angular frameworks. Also from time to time I like to learn new frameworks.
 disqus_shortname: stackproblems
-google_analytics: UA-XXXXXXXX-Y
 
 enableTags: true
 tagarray: []
@@ -15,28 +13,27 @@ collections:
     permalink: /project/:path/
 
 social:
-    - icon: fa-facebook
-      link: "#"
-    - icon: fa-twitter
-      link: "#"
-    - icon: fa-linkedin
-      link: "#"
-    - icon: fa-stack-exchange
-      link: "#"
-    - icon: fa-github
-      link: "https://github.com/agusmakmun"
+  - icon: fa-facebook
+    link: "#"
+  - icon: fa-twitter
+    link: "#"
+  - icon: fa-linkedin
+    link: "#"
+  - icon: fa-stack-exchange
+    link: "#"
+  - icon: fa-github
+    link: "https://github.com/stefanescueduard"
 
 share:
   twitter_username: github.io
-  fb_appid: 1749788565247320
 
 urls:
-    - text: About Me
-      url: /about/
-    - text: My Projects
-      url: /projects/
-    - text: XML Feed
-      url: /feed.xml
+  - text: About Me
+    url: /about/
+  - text: My Projects
+    url: /projects/
+  - text: XML Feed
+    url: /feed.xml
 
 url: "https://stefanescueduard.github.io"
 baseurl: ""
@@ -53,4 +50,4 @@ compress_html:
   comments: ["<!-- ", " -->"]
   endings: all
   ignore:
-    envs: ['development']
+    envs: ["development"]
