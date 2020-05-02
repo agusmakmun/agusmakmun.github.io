@@ -52,7 +52,7 @@ def numberize(number):
 Usage example;
 
 
-```
+```python
 >>> numberize(1000)
 1.0 k
 >>> numberize(1000000)
