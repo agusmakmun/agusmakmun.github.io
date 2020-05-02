@@ -80,6 +80,9 @@ footer {
   bottom: 0;
   padding-bottom: 10px;
 }
+div.post-content .btn-tags {
+  margin-bottom: 3px;
+}
 
 /* Left column */
 div.col-sm-3 {
