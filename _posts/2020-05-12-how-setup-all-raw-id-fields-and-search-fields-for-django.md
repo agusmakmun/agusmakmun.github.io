@@ -12,8 +12,8 @@ the basic way to enable raw id fields inside the `admin.ModelAdmin` look like th
 
 
 ```python
-@admin.register(DaftarSoal, site=admin_site)
-class DaftarSoalAdmin(admin.ModelAdmin):
+@admin.register(QuestionList, site=admin_site)
+class QuestionListAdmin(admin.ModelAdmin):
     raw_id_fields = ('question_set', 'question', 'folder')    # manually
 ```
 
@@ -53,3 +53,11 @@ class DefaultAdminMixin:
 
 
 A `OneToOneField` is a subclass of a `ForeignKey`, so there is no need to make search for a `OneToOneField`.
+and to implement it, you can follow this below example;
+
+
+```python
+@admin.register(QuestionList, site=admin_site)
+class QuestionListAdmin(DefaultAdminMixin, admin.ModelAdmin):
+    pass
+```
