@@ -1,7 +1,7 @@
 title: Stack Problems
 description: My Personal Stack Problems
 author: Agus Makmun
-github: https://github.com/agusmakmun
+github: https://github.com/ShingObt
 about: I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django.
 disqus_shortname: stackproblems
 google_analytics: UA-XXXXXXXX-Y
@@ -39,7 +39,7 @@ urls:
       url: /feed.xml
 
 url: "https://agusmakmun.github.io"
-baseurl: ""
+baseurl: "/blog/"
 paginate: 20
 per_page: 20
 paginate_path: "/page/:num/"
