@@ -6,23 +6,21 @@ use_math: true
 ---
 ### 인사글 
 
-안녕하세요. 아주대학교에서 수학 전공으로 학사를 마치고 인공지능·데이터사이언스학과로 석사 진학 예정중인 이동진이라고 합니다. 산업에서 발생하는 문제들을 논리적으로 분석하고 수학적인 해결책을 제시하는 것을 좋아합니다. 제가 최근에 관심을 갖고 공부하고 있는 것들은 다음과 같습니다. 
+안녕하세요. 아주대학교 인공지능·데이터사이언스학과에서 석사 과정을 밟고 있는 이동진입니다. 산업에서 발생하는 문제들을 논리적으로 분석하고 수학적인 해결책을 제시하는 것을 좋아합니다. 제가 최근에 관심을 갖고 공부하고 있는 것들은 다음과 같습니다. 
 
 - 위상수학적 데이터 분석 (Topological data analysis)
-  - Persistent barcodes
-  - Persistent diagrams
-  - MAPPER, UMAP 등
+  - Combining persistent homology and machine learnings
+  - Visualization tools: MAPPER, UMAP
+
 - 인공지능 및 데이터 사이언스 
   - 다양한 데이터 컴피티션 플랫폼 활동
   - 딥러닝 논문 읽기 모임 참여 중
   - 수원 영통 케글 스터디 참여 중
-  - GAN (Generative adversarial networks)
 
-최소에 3주에 한 번 포스팅 하는 것을 목표로 하고 있으며, 앞으로 게시하고 싶은 포스트의 주제는 다음과 같습니다.
+최소에 한 달에 한 번 포스팅 하는 것을 목표로 하고 있으며, 앞으로 게시하고 싶은 포스트의 주제는 다음과 같습니다.
 
-- Rectified Adam 논문 리뷰
-- Rectified Adam과 AdamW 구현 및 성능 비교
-- Autograd 정리 
+- Persistent homology 공부한 것들
+- 인공지능 분야의 논문에서 등장하는 수학들을 이해하기 쉽게 읽어주는 글
 
 이 블로그 뿐만 아니라 케글에도 간간히 [커널글](https://www.kaggle.com/micajoumathematics)들을 올리고 있으니 놀러와주세요~!<br/>
 
@@ -53,6 +51,10 @@ use_math: true
 - 기존에 있던 원의 중심을 추정하는 모델과 최소 오차제곱법을 통한 원의 중심 추정 모델을 결합하여 새로운 원의 중심 추정 모델을 제시
 - 세종 VLBI 안테나의 기준점 및 교차축 산정
 
+**2020년 2월 ~ 2020년 5월** 위상수학적 데이터 분석을 이용한 이상거래 탐지시스템 고도화 검증 (국민은행 용역과제)
+
+- 보안 이슈로 자세한 내용 생략!
+
 <br/>
 
 #### 기타 활동들
@@ -70,6 +72,8 @@ use_math: true
 
 - [Radam: On the variance of the adaptive learning rate and beyond](https://youtu.be/_F5_hgX_lSE)
 - [AdamW: Decoupled weight decay regularization](https://youtu.be/-Sd_zH_LHBo)
+- [Visualizing data using t-SNE](https://youtu.be/zCYKD3YfcSM)
+
 
 **2020년 1월 ~ 0000년 0월** 수원 영통역 케글 스터디
 
@@ -124,4 +128,6 @@ use_math: true
 - 대회 주제: 위성 사진에서 4가지 구름 형태에 대응하는 영역을 분할하고 분류하는 대회
 - 해결 방법: U-net with ResNet-34 backbone
 - 결과: 1,104등 / 1,538팀
+
+**2020년6월 ~ 2020년 7월** KaKao arena - Melon playlist continuation
 
