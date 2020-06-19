@@ -5,7 +5,7 @@ date:   2020-06-18 14:00:00 +0700
 categories: [Reid_Tattersall]
 ---
 ### TLDR
-Are you looking to integrate Quote & Apply into your web application? Of course you are. Why wouldn't you want to protect families and simplify the selling of insurance for your users? Follow our recipe to cook yourself something your family of users will enjoy.
+Are you looking to integrate Quote & Apply into your web application? Of course you are. Why wouldn't you want to protect families and simplify the selling of insurance for your users? Follow our recipe to cook yourself something your family of users will enjoy. Happy early Summer Solstice.
 
 ### Setting the stage
 Our fictitious web application "SuperSurito" is an employee benefits application looking to offer users individual life insurance during the selection of their benefits. Their core products are currently group health, dental, disability, and life. Group life isn't a complete life insurance solution for a myriad of reasons. SuperSurito is growing a marketplace of products so users have a simplified process of obtaining insurance. After stumbling upon Quote & Apply, they decided it was by far the best life insurance process. Their only question was how...
