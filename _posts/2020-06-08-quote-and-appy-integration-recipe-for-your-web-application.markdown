@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Quote & Appy Integration Recipe for Web Applications"
+title:  "Quote & Apply Integration Recipe for Web Applications"
 date:   2020-06-18 14:00:00 +0700
 categories: [Reid_Tattersall]
 ---
