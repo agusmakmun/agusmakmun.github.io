@@ -12,7 +12,7 @@ categories: [python, django]
 **1. Add the base_site file inside `templates/admin/base_site.html`.**
 
 ```html
-[[ extends "admin/base.html" ]]    ==> please change [[ ]] to {% because gh-pages doesn't support `extends` tag.
+[[ extends "admin/base.html" ]]    ==> please change [[ ]] to django templatetag, because gh-pages doesn't support it.
 {% load static i18n %}
 
 {% block title %}{{ title }} | {{ site_title|default:_('Situs django admin') }}{% endblock %}
