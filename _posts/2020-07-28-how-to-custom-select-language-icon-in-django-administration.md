@@ -11,43 +11,7 @@ categories: [python, django]
 
 **1. Add the base_site file inside `templates/admin/base_site.html`.**
 
-```html
-[[ extends "admin/base.html" ]]    ==> please change [[ ]] to django templatetag, because gh-pages doesn't support it.
-{% load static i18n %}
-
-{% block title %}{{ title }} | {{ site_title|default:_('Situs django admin') }}{% endblock %}
-
-{% block branding %}
-<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Administrasi django') }}</a></h1>
-{% endblock %}
-
-{% block nav-global %}{% endblock %}
-
-{% block welcome-msg %}
-
-  {# CUSTOM LANGUAGE ICONS #}
-  {% get_current_language as LANGUAGE_CODE %}
-  {% get_available_languages as LANGUAGES %}
-  {% get_language_info_list for LANGUAGES as languages %}
-  <span id="language-icons" style="margin: -1px 0 0 -65px; position: absolute;">
-    {% for language in languages %}
-      {% if language.code == 'id' %}
-        <a href="?lang=id" style="margin-right: 3px;border-bottom:none" title="Indonesia">
-          <img height="15px" src="{% static 'icons/flags/id.svg' %}">
-        </a>
-      {% elif language.code == 'en' %}
-        <a href="?lang=en" style="margin-right: 3px;border-bottom:none" title="English">
-          <img height="15px" src="{% static 'icons/flags/us.svg' %}">
-        </a>
-      {% endif %}
-    {% endfor %}
-  </span>
-
-  {# DFEAULT WELCOME MESSAGE GOES HERE #}
-  {{ block.super }}
-
-{% endblock %}
-```
+<iframe width="100%" height="350" src="//jsfiddle.net/agaust/s6pqknL4/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
 
 **2. Custom language middleware, in your file `middleware.py`**
