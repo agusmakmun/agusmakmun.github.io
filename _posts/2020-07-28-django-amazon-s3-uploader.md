@@ -7,6 +7,46 @@ categories: [python, django]
 
 Amazon S3 or Amazon Simple Storage Service is a service offered by Amazon Web Services that provides object storage through a web service interface. Amazon S3 uses the same scalable storage infrastructure that Amazon.com uses to run its global e-commerce network.
 
+#### AWS S3 Configuration
+
+> Before you can begin using Boto 3 (for AWS S3), you should set up authentication credentials.
+> in this case, AWS S3 Only for upload files or images purpose.
+
+
+**a. Using awscli _(recommended)_**
+
+```
+$ sudo apt-get install -y awscli
+$ aws configure set aws_access_key_id {{access_key}}
+$ aws configure set aws_secret_access_key {{secret_key}}
+$ aws configure set region {{region_name}}  # e.g: ap-southeast-1
+```
+
+**b. Manual Configuration**
+
+```
+$ mkdir ~/.aws && nano ~/.aws/credentials
+```
+
+and then fill:
+
+```
+[default]
+aws_access_key_id = xxxx
+aws_secret_access_key = xxxx
+```
+
+You may also want to set a default region of your server. The `ap-southeast-1` depend with your server region.
+This can be done in the configuration file. By default, its location is at `~/.aws/config`:
+
+```
+[default]
+region=ap-southeast-1
+```
+
+-----------------
+
+
 This example below is one of way "how to integrate" the AmazonS3 with Django _(with django-rest-framework)_.
 
 ```
