@@ -4,7 +4,6 @@ title:  "Contracting Transfer Policy"
 date:   2020-08-14 14:00:00 +0700
 categories: [Reid_Tattersall, Contracting]
 ---
-### Contracting Transfer Policy
 To respect all parties who contribute value by bringing agents onboard to BackNine and servicing them, the following policies are currently in place.
 
 #### Transferring uplines
