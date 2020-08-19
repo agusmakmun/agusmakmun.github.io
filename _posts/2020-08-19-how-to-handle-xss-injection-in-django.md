@@ -106,3 +106,42 @@ def xss_cleaner(content):
 
     return content
 ```
+
+
+**Don't want to save it in the models, only inside the `forms`?**, no worry just like this;
+
+
+```python
+from siap_app.utils.cleaner import xss_cleaner
+
+
+class PostForm(forms.ModelForm):
+
+    def clean(self):
+        cleaned_data = super().clean()
+        for (k, v) in cleaned_data.items():
+            if isinstance(v, str):
+                v = xss_cleaner(v)
+                cleaned_data.update({k: v})
+        return cleaned_data
+
+    class Meta:
+        model = Post
+        fields = '__all__'
+```
+
+or if you want speficif field.
+
+
+```python
+class PostForm(forms.ModelForm):
+
+    def clean_description(self, description):
+        if isinstance(description, str):
+            return xss_cleaner(description)
+        return description
+
+    class Meta:
+        model = Post
+        fields = '__all__'
+```
