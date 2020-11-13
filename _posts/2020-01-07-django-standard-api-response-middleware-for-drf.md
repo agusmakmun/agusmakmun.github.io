@@ -50,7 +50,7 @@ class BaseAPIResponseMiddleware(MiddlewareMixin):
                "count": 2,
                "page_size": 5,
                "current_page": 1,
-               "next": "http://127.0.0.1:8000/api/page/?page=2&search=a",
+               "next": "{{url}}/api/post/?page=2&search=a",
                "previous": null
             }
 
@@ -130,7 +130,6 @@ class BaseAPIResponseMiddleware(MiddlewareMixin):
         return response_data
 
     def process_response(self, request, response):
-
         # use default response if it setup.
         if request.headers.get('Use-Default-Response'):
             return response
@@ -147,6 +146,19 @@ class BaseAPIResponseMiddleware(MiddlewareMixin):
                 response.content = json.dumps(response_data, cls=DjangoJSONEncoder)
             except Exception:
                 pass
+
+        # handle error response but without `response.data`
+        # this error response specific for "Server Error" mode.
+        response_format = request.headers.get('Response-Format')
+        if (response.status_code >= 500) and (response_format == 'application/json'):
+            response_data = {'success': False, 'result': {},
+                             'status': response.status_code,
+                             'message': response.reason_phrase}
+            response.status_code = 200
+            response.data = response_data
+            response.content = json.dumps(response_data, cls=DjangoJSONEncoder)
+            response['Content-Type'] = 'application/json'
+
         return response
 ```
 
@@ -160,7 +172,6 @@ from __future__ import unicode_literals
 from collections import OrderedDict
 
 from django.conf import settings
-from django.core.paginator import (Paginator, EmptyPage, PageNotAnInteger)
 from django.utils.translation import ugettext_lazy as _
 
 from rest_framework import status
@@ -173,23 +184,21 @@ class RestPagination(PageNumberPagination, LimitOffsetPagination):
     class FoobarPagiantion(RestPagination):
         page_size = 10
 
-
     class FoobarView(ListAPIView):
         pagination_class = FoobarPagiantion
     """
 
     def paginate_queryset(self, queryset, request, view=None):
-        queryset = super().paginate_queryset(queryset, request, view=view)
         limit = request.query_params.get('limit')
         if str(limit).isdigit():
-            return queryset[:int(limit)]
-        return queryset
+            self.page_size = int(limit)
+        return super().paginate_queryset(queryset, request, view=view)
 
     def get_paginated_response(self, results):
-        next_link = self.get_next_link() if self.get_next_link() is not None else ''
-        prev_link = self.get_previous_link() if self.get_previous_link() is not None else ''
+        next_link = self.get_next_link() or ''
+        prev_link = self.get_previous_link() or ''
 
-        if settings.USE_SSL:
+        if getattr(settings, 'USE_SSL', False):
             next_link = next_link.replace('http:', 'https:')
             prev_link = prev_link.replace('http:', 'https:')
 
@@ -197,8 +206,8 @@ class RestPagination(PageNumberPagination, LimitOffsetPagination):
             ('count', self.page.paginator.count),
             ('page_size', self.page_size),
             ('current_page', self.page.number),
-            ('next', next_link if next_link != '' else None),
-            ('previous', prev_link if prev_link != '' else None),
+            ('next', next_link or None),
+            ('previous', prev_link or None),
             ('status', status.HTTP_200_OK),
             ('message', _('Success')),
             ('success', True),
