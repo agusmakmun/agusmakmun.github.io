@@ -130,6 +130,11 @@ class BaseAPIResponseMiddleware(MiddlewareMixin):
         return response_data
 
     def process_response(self, request, response):
+
+        # use default response if it setup.
+        if request.headers.get('Use-Default-Response'):
+            return response
+
         if hasattr(response, 'data') and isinstance(response.data, dict):
             try:
                 response_data = self.render_response(response)
@@ -199,4 +204,36 @@ class RestPagination(PageNumberPagination, LimitOffsetPagination):
             ('success', True),
             ('results', results)
         ]))
+```
+
+----------------
+
+When you want to implement for specific feature by using default response, e.g: I want to use it in my webhook,
+then you can also use the wrapper to do it. For example in your `wrappers.py`
+
+```python
+def use_default_response(view_func):
+    """
+    function wrapper to rollback `BaseAPIResponseMiddleware`
+    into default response middleware.
+    """
+    def wrapper_function(request, *args, **kwargs):
+        request.META['HTTP_USE_DEFAULT_RESPONSE'] = True
+        return view_func(request, *args, **kwargs)
+    return wrapper_function
+```
+
+then, in your specific view;
+
+
+```python
+from path.to.wrappers import use_default_response
+from django.utils.decorators import method_decorator
+
+
+class WebhookView(APIView):
+
+    @method_decorator(use_default_response)
+    def post(self, request, *args, **kwargs):
+        pass
 ```
