@@ -3,7 +3,6 @@ layout: post
 title: "Reading Group Post"
 date:   2020-08-19 10:10:15 +0700
 categories: [python, django, security]
-papers: [{name: lavanya, link: https://google.com}]
 ---
 
 Previously, the Django has [X-XSS-Protection: 1; mode=block](https://docs.djangoproject.com/en/dev/ref/middleware/#x-xss-protection-1-mode-block) to handle this case. Some browsers have the ability to block content that appears to be an XSS attack. They work by looking for JavaScript content in the GET or POST parameters of a page. If the JavaScript is replayed in the server’s response, the page is blocked from rendering and an error page is shown instead.
