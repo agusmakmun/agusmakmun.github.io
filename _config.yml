@@ -1,6 +1,7 @@
 title: CS Reading Group
 description: CS adjacent reading group
 author: CS Reading Group
+github: https://github.com/csreadinggroup
 about: We are a journal club started in June 2020 by a bunch of computer science and computer science-adjacent undergraduates. 
 
 enableTags: true
@@ -10,6 +11,18 @@ collections:
   project:
     output: true
     permalink: /project/:path/
+
+social:
+    - icon: fa-facebook
+      link: "#"
+    - icon: fa-twitter
+      link: "#"
+    - icon: fa-linkedin
+      link: "#"
+    - icon: fa-stack-exchange
+      link: "#"
+    - icon: fa-github
+      link: "https://github.com/csreadinggroup"
 
 urls:
     - text: About Me
