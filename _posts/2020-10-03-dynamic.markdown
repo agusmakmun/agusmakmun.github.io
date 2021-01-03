@@ -1,0 +1,9 @@
+---
+layout: post
+title: "Dynamic Graph Connectivity"
+date:  2020-10-03
+categories: [data structures, algorithms, graphs]
+papers:
+- name: "Dynamic graph connectivity in polylogarithmic worst case time"
+  link: "https://epubs.siam.org/doi/pdf/10.1137/1.9781611973105.81"
+---

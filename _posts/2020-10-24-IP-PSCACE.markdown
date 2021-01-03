@@ -1,0 +1,9 @@
+---
+layout: post
+title: "IP=PSPACE"
+date:  2020-11-07
+categories: [theory, complexity]
+papers:
+- name: "IP=PSPACE"
+  link: "https://www.math.ucsd.edu/~sbuss/CourseWeb/Math268_2012F/Shamir92.pdf"
+---
