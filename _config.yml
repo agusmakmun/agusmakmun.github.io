@@ -1,10 +1,7 @@
-title: Cs Reading Group
-description: My Personal Stack Problems
+title: CS Reading Group
+description: CS adjacent reading group
 author: CS Reading Group
-github: https://github.com/agusmakmun
-about: I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django.
-disqus_shortname: stackproblems
-google_analytics: UA-XXXXXXXX-Y
+about: We are a journal club started in June 2020 by a bunch of computer science and computer science-adjacent undergraduates. 
 
 enableTags: true
 tagarray: []
@@ -13,22 +10,6 @@ collections:
   project:
     output: true
     permalink: /project/:path/
-
-social:
-    - icon: fa-facebook
-      link: "#"
-    - icon: fa-twitter
-      link: "#"
-    - icon: fa-linkedin
-      link: "#"
-    - icon: fa-stack-exchange
-      link: "#"
-    - icon: fa-github
-      link: "https://github.com/csreadinggroup"
-
-share:
-  twitter_username: github.io
-  fb_appid: 1749788565247320
 
 urls:
     - text: About Me

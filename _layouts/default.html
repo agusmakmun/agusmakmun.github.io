@@ -59,29 +59,6 @@ layout: compress
       {% endfor %}
     {% endif %}
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@{{ site.share.twitter_username }}">
-    <meta name="twitter:creator" content="@{{ site.share.twitter_username }}">
-
-    {% if page.title %}
-      <meta name="twitter:title" content="{{ page.title }}">
-    {% else %}
-      <meta name="twitter:title" content="{{ site.title }}">
-    {% endif %}
-
-    {% if page.url %}
-      <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
-    {% endif %}
-
-    {% if page.description %}
-      <meta name="twitter:description" content="{{ page.description }}">
-    {% else %}
-      <meta name="twitter:description" content="{{ site.description }}">
-    {% endif %}
-
-    {% if page.header-img %}
-      <meta name="twitter:image:src" content="{{ site.url }}/{{ page.header-img }}">
-    {% endif %}
 
     <!-- Font awesome icons -->
     <link href="/static/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
