@@ -1,6 +1,6 @@
-title: Stack Problems
+title: Cs Reading Group
 description: My Personal Stack Problems
-author: Agus Makmun
+author: CS Reading Group
 github: https://github.com/agusmakmun
 about: I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django.
 disqus_shortname: stackproblems
@@ -24,7 +24,7 @@ social:
     - icon: fa-stack-exchange
       link: "#"
     - icon: fa-github
-      link: "https://github.com/agusmakmun"
+      link: "https://github.com/csreadinggroup"
 
 share:
   twitter_username: github.io
@@ -32,13 +32,13 @@ share:
 
 urls:
     - text: About Me
-      url: /about/
-    - text: My Projects
-      url: /projects/
-    - text: XML Feed
-      url: /feed.xml
+      url: /
+    - text: Blog
+      url: /blog/
+    - text: Papers
+      url: /papers/
 
-url: "https://agusmakmun.github.io"
+url: "https://csreadinggroup.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
