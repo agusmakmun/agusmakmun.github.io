@@ -1,8 +1,4 @@
----
-layout: page
-title: Home
----
-
+{::options parse_block_html="true" /}
 
 ## Summary
 We are a journal club started in June 2020 by a bunch of computer science and computer science-adjacent undergraduates. Each week, one person is in "charge" of presenting a paper and prepares a ~10-min summary of the paper and interesting discussion questions.  Those not presenting in a particular week are encouraged to skim or read the paper.

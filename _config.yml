@@ -44,6 +44,8 @@ paginate: 20
 per_page: 20
 paginate_path: "/page/:num/"
 markdown: kramdown
+kramdown: 
+  parse_html_block: true
 gems:
   - jekyll-paginate
   - jekyll-gist
