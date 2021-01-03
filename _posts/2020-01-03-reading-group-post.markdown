@@ -1,6 +1,6 @@
 ---
 layout: post
-name: "Reading Group Post"
+title: "Reading Group Post"
 date:   2020-08-19 10:10:15 +0700
 categories: [python, django, security]
 papers: [{name: lavanya, link: https://google.com}]
