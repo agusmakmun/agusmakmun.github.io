@@ -11,7 +11,7 @@ layout: default
     <li><a href="{{ post.url }}">{{ post.title }}</a> &raquo; <i><span>{{ post.date | date_to_string }} </span></i>
 	<ul>
             {% for paper in post.papers %}
-	    <li> {{ paper }}</li>
+	    <li><a href="{paper.link}"> {{post.title}} </a></li>
 	    {% endfor %}
         </ul>
     </li>
