@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Reading Group Post"
-date:   2020-08-19 10:10:15 +0700
-categories: [python, django, security]
+title: "Timnit Gebru"
+date:  2020-12-28 
+categories: [fairness, ML, society]
 papers:
 - name: "Closing the AI Accountability Gap: Defining an End-to-End Framework for Internal Algorithmic Auditing"
   link: "https://arxiv.org/pdf/2001.00973.pdf"
