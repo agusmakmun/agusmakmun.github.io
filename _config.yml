@@ -20,9 +20,9 @@ urls:
     - text: About Me
       url: /
     - text: Blog
-      url: /blog/
+      url: /blog
     - text: Papers
-      url: /papers/
+      url: /papers
 
 url: "https://csreadinggroup.github.io"
 baseurl: ""
