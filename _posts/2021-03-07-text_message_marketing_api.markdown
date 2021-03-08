@@ -12,6 +12,5 @@ Hi John, this is your insurance agent Reid Tattersall. Did you know you could pr
 When your prospect clicks on the link, it'll launch your Quote & Apply website with the client’s information pre-filled.
 
 To learn more about BackNine's text messaging API, view our [API documentation](https://docs.back9ins.com/#text-messaging).
-
 #### Have a Question?
 Please let us know at support@back9ins.com.
