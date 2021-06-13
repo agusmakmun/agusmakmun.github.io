@@ -151,13 +151,16 @@ public class SampleApiClass extends AbstractHandler {
 Let's now add an OpenAPI servlet into the server context on a separate path `/openapi` so that we would be able to generate API docs independently when the serer is running. Also, this will allow us to download and save the docs as YAML or JSON. 
 
 ```java
-// Expose API definition independently into yaml/json
+// Expose API definition independently into yaml/json 
 ServletHolder openApi = servletContextHandler.addServlet(OpenApiServlet.class, "/openapi/*");
 openApi.setInitOrder(2);
 openApi.setInitParameter("openApi.configuration.resourcePackages", "com.example.sample-package");
 ```
+After this setup if you start the server and hit the url `http://localhost:8080/`, you should be able to see the swagger.json API docs. 
 
 ### STEP 4. Add static-UI pages into /resources/webapp 
+
+Lets try to make it more human redable. Swagger-UI package holds a directory `/dist/` which contains the html package to build static UI page. You need to go to swagger-UI github and copy the content of `dist/` into `/resources/webapp` of your project directory. You may require to change the value of source in index.html to `localhost:8080/openapi/swagger.json`. This will create a hook between static resources to your swagger.json. And finally add resourceBasePath for this to work as below - 
 
 ```java
 // Setup Swagger-UI static resources
@@ -167,7 +170,7 @@ servletContextHandler.setResourceBase(resourceBasePath);
 servletContextHandler.addServlet(new ServletHolder(new DefaultServlet()), "/*");
 ```
 
-Finally start the server: 
+At last, start the server: 
 
 ```java
 // Start the Server so it starts accepting connections from clients.
@@ -178,62 +181,45 @@ server.join();
 Build.gradle should have dependencies like this - 
 
 ```gradle
-```
+dependencies {
+    implementation 'org.eclipse.jetty:jetty-server:11.0.0'
+    implementation 'org.eclipse.jetty:jetty-util:11.0.0'
+    implementation 'org.eclipse.jetty:jetty-servlet:11.0.0'
 
-### STEP 4. Export API docs
-```java
-```
+    // Jersey dependencies
+    implementation 'org.glassfish.jersey.containers:jersey-container-jetty-http:3.0.2'
+    implementation 'org.glassfish.jersey.containers:jersey-container-servlet-core:3.0.2'
+    implementation 'org.glassfish.jersey.media:jersey-media-json-binding:3.0.2'
+    implementation 'org.glassfish.jersey.core:jersey-common:3.0.2'
+    implementation 'org.glassfish.jersey.inject:jersey-hk2:3.0.2'
+    implementation 'org.glassfish.jaxb:jaxb-runtime:3.0.1'
 
-```java
-public class EmployeeRecord {
-	/*the private data members inside a class that is public*/
-	private int empId;
-	private String empName;
-	private String empAddr;
-	private int empSal;
-		public int getEmpId() {
-		return empId;
-	}
-
-	public void setEmpId(int idIn) {
-		empId = idIn;
-	}
-		public String getEmpName() {
-		return empName;
-	}
-		public void setEmpName(String nameIn) {
-		empName = nameIn;
-	}
-
-	public String getEmpAddr() {
-		return empAddr;
-	}
-
-	public void setEmpAddr(String addrIn) {
-		empAddr = addrIn;
-	}
-
-	public int getEmpSal() {
-		empSal;
-	}
-
-	public void setEmpSal(int salaryIn) {
-		empSal = salaryIn;
-	}
+    // Swagger & Jakarta namespace dependencies
+    implementation 'org.apache.commons:commons-lang3:3.7'
+    implementation 'io.swagger.core.v3:swagger-jaxrs2-jakarta:2.1.9'
+    implementation 'io.swagger.core.v3:swagger-jaxrs2-servlet-initializer-jakarta:2.1.9'
+    implementation 'jakarta.ws.rs:jakarta.ws.rs-api:3.0.0'
+    implementation 'jakarta.servlet:jakarta.servlet-api:5.0.0'
 }
 ```
 
+Open `http://localhost:8080/` in your browser and you should be able to see the swagger-ui for all your APIs. 
+
+### STEP 4. Export API docs
+
+If you are willing to export all your docs to share with others in your team or at your workplace, you can go to the URL `http://localhost:8080/openapi/openapi.yaml` or `http://localhost:8080/openapi/openapi.json` to export the docs as YAML or JSON file respectively. 
+
 ### Further Scope
 
-The saved yaml or json documentation of your API can be used to exercise the APIs into tools like postman. If you want to generate client sdk using docs, you can use `swagger-generate` tool in your favorite language like this - 
+The saved yaml or json documentation can be used to exercise the APIs into tools like postman. Also, If you want to generate client sdk using docs, you can use `swagger-generate` tool in your favorite language like this - 
 ```bash
 swagger-generate -i <openapi.yaml-OR-running-server-URL> -l <language-of-choice> -o <output-directory>
 ```
 example:
 ```bash
-swagger-generate -i htttp://localhost:8080/openapi/openapi.yaml -l python -o /tmp/sdk-client-python
+swagger-generate -i http://localhost:8080/openapi/openapi.yaml -l python -o /tmp/sdk-client-python
 ```
 
 ### Summary
 
-In J2EE environment, POJO based programming model helps a lot to achieve the functionalities of dependency injection and inversion of control. Also this type of practice helps writing modules that are high cohesive and low coupled thereby making the project robust. Spring, one of the most popular Java framework in the industry always promotes the POJO based development. 
+If you are working with Jetty 11 and developing REST Apis, you are tend to require the documentation for your API. OpenAPi is the most standard specification that can be followed for API development and is popularly accepted in the industry today. All you need to do is - import dependencies in dependency tool, annotate code with OAS standards, hookup jersey and swagger into Jetty and enjoy using API docs. 
