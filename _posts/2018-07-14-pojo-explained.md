@@ -2,7 +2,7 @@
 layout: post
 title: 	"POJO explained in details"
 data:	2018-07-14 02:02:56
-categories: [java, j2ee, backend]
+categories: [java, backend]
 ---
 
 ### What is the concept of pojo?
