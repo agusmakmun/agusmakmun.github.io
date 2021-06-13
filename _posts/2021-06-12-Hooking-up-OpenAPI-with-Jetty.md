@@ -63,8 +63,8 @@ The rules are very simple and as follows:
 1. Create a jetty server 
 2. Intercept API using Jersey
 3. Add OpenAPI servlet into Jetty Server
-4. Export API docs
-5. Add static-UI pages into /resources/webapp
+4. Add static-UI pages into /resources/webapp
+5. Export API docs
 
 ### STEP 1. Create Jetty Server
 
@@ -205,7 +205,7 @@ dependencies {
 
 Open `http://localhost:8080/` in your browser and you should be able to see the swagger-ui for all your APIs. 
 
-### STEP 4. Export API docs
+### STEP 5. Export API docs
 
 If you are willing to export all your docs to share with others in your team or at your workplace, you can go to the URL `http://localhost:8080/openapi/openapi.yaml` or `http://localhost:8080/openapi/openapi.json` to export the docs as YAML or JSON file respectively. 
 
