@@ -11,27 +11,26 @@ Jetty 11.X is released now and has deprecated its support for `javax` namespace 
 
 Nonetheless, swagger (OpenAPI) documentation that used to seamlessly integrate with core java APIs now has an additional dependency whether is a maven or gradle based project. Lets get started into the detailed process of how the new integration is done. 
 
+### What steps it should follow?
+
+The rules are very simple and as follows:
+1. Create a jetty server 
+2. Intercept API using Jersey
+3. Add OpenAPI servlet into Jetty Server
+4. Add static-UI pages into /resources/webapp
+5. Export API docs
+
 ### What is Jetty?
 
-The Ecplise Jetty Project provides a web server and servlet container, additionally providing support for HTTP/2, WebSocket, OSGi, JMX, JNDI, JAAS and many other integrations. These components are open source and are freely available for commercial use and distribution.
+Jetty has been designed to have a small memory foot print with a critical basis for good performance and scalability. The less memory the server uses, the more memory is available for the application and/or more instances of the server can be run on virtual hardware. As such Jetty is very cloud friendly. 
 
-Jetty is used in a wide variety of projects and products, both in development and production. Jetty has long been loved by developers due to its long history of being easily embedded in devices, tools, frameworks, application servers, and modern cloud services.
+Most recent release as this blog is being written by is `Jetty:11.0.5`. 
 
-Biggest advantage of using Jetty is that Jetty has been designed to have a small memory foot print. This is a critical basis for good performance and scalability. The less memory the server uses, the more memory is available for the application and/or more instances of the server can be run on virtual hardware. As such Jetty is very cloud friendly. 
-
-Most recent release as this blog is being written by is `Jetty:11.0.5`.
+You can read more at [Eclipse Jetty Project](https://www.eclipse.org/jetty/)
 
 ### What is Jersey?
 
-According to [Wikipedia](https://en.wikipedia.org/wiki/Project_Jersey#:~:text=Jersey%20RESTful%20Web%20Services%20%2C%20formerly,%26%20JSR%20370)%20Reference%20Implementation.), Jersey RESTful Web Services , formerly Glassfish Jersey, currently Eclipse Jersey framework is an open source framework for developing RESTful Web Services in Java. It provides support for JAX-RS APIs and serves as a JAX-RS (JSR 311 & JSR 339 & JSR 370) Reference Implementation.
-
-Developing RESTful Web services that seamlessly support exposing your data in a variety of representation media types and abstract away the low-level details of the client-server communication is not an easy task without a good toolkit. In order to simplify development of RESTful Web services and their clients in Java, a standard and portable JAX-RS API has been designed.
-
-Jersey RESTful Web Services 2.x framework is open source, production quality, framework for developing RESTful Web Services in Java that provides support for JAX-RS APIs and serves as a JAX-RS (JSR 311 & JSR 339 & JSR 370) Reference Implementation.
-
-Jersey RESTful Web Services 3.x framework is open source, production quality, framework for developing RESTful Web Services in Java that provides support for Jakarta RESTful Web Services 3.0.
-
-Jersey framework is more than the JAX-RS Reference Implementation. Jersey provides it’s own API that extend the JAX-RS toolkit with additional features and utilities to further simplify RESTful service and client development. Jersey also exposes numerous extension SPIs so that developers may extend Jersey to best suit their needs.
+A seamless support framework to simplify development of RESTful Web services and their clients in Java, a standard and portable JAX-RS API has been designed. 
 
 Goals of Jersey project can be summarized in the following points:
 
@@ -45,26 +44,11 @@ The latest published release of Jakarta EE 9 Jersey is `3.0.2`.
 
 Swagger is an open source set of rules, specifications and tools for developing and describing RESTful APIs. The Swagger framework allows developers to create interactive, machine and human-readable API documentation.
 
-API specifications typically include information such as supported operations, parameters and outputs, authorization requirements, available endpoints and licenses needed. Swagger can generate this information automatically from the source code by asking the API to return a documentation file from its annotations.
-
-Swagger helps users build, document, test and consume RESTful web services. It can be used with both a top-down and bottom-up API development approach. In the top-down, or design-first, method, Swagger can be used to design an API before any code is written. In the bottom-up, or code-first method, Swagger takes the code written for an API and generates the documentation.
-
 **The OpenAPI Specification (OAS):**
 
 The OpenAPI Specification was originally based on the Swagger Specification, donated by SmartBear Software.
 
 The OpenAPI Specification (OAS) defines a standard, programming language-agnostic interface description for HTTP APIs, which allows both humans and computers to discover and understand the capabilities of a service without requiring access to source code, additional documentation, or inspection of network traffic. 
-
-When properly defined via OpenAPI, a consumer can understand and interact with the remote service with a minimal amount of implementation logic. Similar to what interface descriptions have done for lower-level programming, the OpenAPI Specification removes guesswork in calling a service.
-
-### What steps it should follow?
-
-The rules are very simple and as follows:
-1. Create a jetty server 
-2. Intercept API using Jersey
-3. Add OpenAPI servlet into Jetty Server
-4. Add static-UI pages into /resources/webapp
-5. Export API docs
 
 ### STEP 1. Create Jetty Server
 
