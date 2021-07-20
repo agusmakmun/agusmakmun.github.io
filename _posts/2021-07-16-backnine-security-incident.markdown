@@ -11,3 +11,8 @@ A bug with BackNine's code caused some insurance applications to be uploaded to 
 Logging was not enabled on the S3 bucket so it's unknown who viewed or copied files.
 
 BackNine is working with counsel to provide disclosures to affected individuals.
+
+__________
+Update as of 7/20/2021
+
+BackNine has no evidence to indicate that the information contained within the inadvertently published files has been or will be misused. Nevertheless, BackNine is in the process of identifying the potentially affected individuals and the categories of information involved for each. Upon completion of this process, BackNine will provide notification to the potentially affected individuals and regulatory entities in accordance with all applicable laws. BackNine is working diligently to provide these notifications as soon as possible.
