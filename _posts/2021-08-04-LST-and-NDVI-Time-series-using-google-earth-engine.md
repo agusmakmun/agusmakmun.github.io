@@ -4,7 +4,7 @@ title:  "LST and NDVI Time series using google earth engine"
 date:   2021-08-04 
 categories: [study]
 ---
-
+---
 **impormation**
 
 site: Korea and japan (123, 30, 148, 45)
@@ -13,7 +13,7 @@ time: 2010 ~ 2020 (6~8month)
 
 method: GEE, MODIS
 
-
+---
 
 **LST CODE**
 ```
@@ -39,11 +39,11 @@ print(series2); //2010 年~2020 年Map.addLayer(rectangle);
 
 Map.addLayer(rectangle);
 
+![ee-chart (1)](https://user-images.githubusercontent.com/88094893/128096574-1fda2c8c-ef25-4105-a71d-07eca6dc4165.png)
 
 ```
 
-![time series](/path/to/ee-chart![ee-chart](https://user-images.githubusercontent.com/88094893/128095630-62d4b03f-28d8-4dd6-9ec7-8d3d6bc588ce.png)
+![ee-chart](https://user-images.githubusercontent.com/88094893/128096567-1f4b52f5-ca29-4220-a6be-7cf99f7d73eb.png)
 
-
-![time series](https://user-images.githubusercontent.com/88094893/128095653-c54bfb59-04fa-42f2-b9c4-8d2930d3e113.png)
+![ee-chart (1)](https://user-images.githubusercontent.com/88094893/128096579-07b3c2c7-bb5d-4dc0-bce6-fb59de2aa7d0.png)
 
