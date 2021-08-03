@@ -39,7 +39,7 @@ print(series2); //2010 年~2020 年Map.addLayer(rectangle);
 
 Map.addLayer(rectangle);
 
-![ee-chart (1)](https://user-images.githubusercontent.com/88094893/128096574-1fda2c8c-ef25-4105-a71d-07eca6dc4165.png)
+
 
 ```
 
