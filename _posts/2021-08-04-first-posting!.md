@@ -35,5 +35,5 @@ categories: [daylife]
 
 
 
-[YonYon Youtube Channel][https://www.youtube.com/channel/UCTTXYQoBOr4kWo7Wbrni8rQ]
+[YonYon Youtube Channel](https://www.youtube.com/channel/UCTTXYQoBOr4kWo7Wbrni8rQ)
 
