@@ -15,14 +15,14 @@ method: GEE, MODIS
 
 ---
 
-**LST CODE**
+# LST CODE
 ```
 
 var dataset = ee.ImageCollection('MODIS/006/MOD11A2')
 .filterDate('2000-06-01','2020-09-01') .filter(ee.Filter.dayOfYear(152, 244));
 var LST = dataset.select('LST_Day_1km');
 
-LST = LST.map(function(image) {
+LST = LST.map(function(image) {  
 return image.addBands(image.multiply(0.02).subtract(273.15).rename('Daytime_LST'));
  });
 var LST_degC = LST.select('Daytime_LST');
@@ -37,6 +37,7 @@ var series2 = ui.Chart.image.doySeriesByYear(
 LST_degC, 'Daytime_LST', rectangle, ee.Reducer.mean(), 1000);
 print(series2); //2010 年~2020 年Map.addLayer(rectangle);
 
+
 Map.addLayer(rectangle);
 
 
@@ -47,3 +48,12 @@ Map.addLayer(rectangle);
 
 ![ee-chart (1)](https://user-images.githubusercontent.com/88094893/128096579-07b3c2c7-bb5d-4dc0-bce6-fb59de2aa7d0.png)
 
+
+
+
+
+# NDVI
+
+```
+
+```
