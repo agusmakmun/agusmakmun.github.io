@@ -4,6 +4,20 @@ title: About
 permalink: /about/
 ---
 
-I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django. Now, I am doing more on backend.
 
-email: agus[at]python.web.id
+## hello
+
+My name is **yonyon**
+
+I am a student studying at a Japanese graduate school. 
+
+University major is biology and graduate school major is remote sensing.
+
+I am very interested in IT and the environment. 
+
+ 
+Korean\life in japan\IT\YOUTUB
+
+[My Youtube Channel][https://www.youtube.com/channel/UCTTXYQoBOr4kWo7Wbrni8rQ]
+
+
