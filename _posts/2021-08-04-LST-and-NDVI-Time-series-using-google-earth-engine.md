@@ -9,7 +9,7 @@ categories: [study]
 
 site: Korea and japan (123, 30, 148, 45)
 
-time: 2010~2020 (6~8month)
+time: 2010 ~ 2020 (6~8month)
 
 method: GEE, MODIS
 
