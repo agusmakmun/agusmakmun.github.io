@@ -1,9 +1,49 @@
 ---
 layout: post
-title:  "How to make a notification when terminal process is complete"
+title:  "LST and NDVI Time series using google earth engine"
 date:   2020-04-07 
 categories: [study]
 ---
 
+**impormation**
 
+site: Korea and japan (123, 30, 148, 45)
+
+time: 2010~2020 (6~8month)
+
+method: GEE, MODIS
+
+
+
+**LST CODE**
+```
+
+var dataset = ee.ImageCollection('MODIS/006/MOD11A2')
+.filterDate('2000-06-01','2020-09-01') .filter(ee.Filter.dayOfYear(152, 244));
+var LST = dataset.select('LST_Day_1km');
+
+LST = LST.map(function(image) {
+return image.addBands(image.multiply(0.02).subtract(273.15).rename('Daytime_LST'));
+ });
+var LST_degC = LST.select('Daytime_LST');
+
+var LST_degC_2018 = LST.select('Daytime_LST').filterDate('2000-06-01','2020-09-01');
+var rectangle = ee.Geometry.Rectangle([123, 30, 148, 45]);
+
+
+var series1 = ui.Chart.image.series(LST_degC_2018, geometry, ee.Reducer.mean(), 1000);
+print(series1); //2018 年のみ 2018년도만
+var series2 = ui.Chart.image.doySeriesByYear(
+LST_degC, 'Daytime_LST', rectangle, ee.Reducer.mean(), 1000);
+print(series2); //2010 年~2020 年Map.addLayer(rectangle);
+
+Map.addLayer(rectangle);
+
+
+```
+
+![time series](/path/to/ee-chart![ee-chart](https://user-images.githubusercontent.com/88094893/128095630-62d4b03f-28d8-4dd6-9ec7-8d3d6bc588ce.png)
+
+
+![time series](https://user-images.githubusercontent.com/88094893/128095653-c54bfb59-04fa-42f2-b9c4-8d2930d3e113.png)
 
