@@ -38,7 +38,7 @@ urls:
     - text: XML Feed
       url: /feed.xml
 
-url: "https://agusmakmun.github.io"
+url: "https://yonyonsan.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
