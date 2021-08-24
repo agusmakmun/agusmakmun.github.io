@@ -15,7 +15,7 @@ Our fictitious web application "SuperSurito" is an employee benefits application
 <div>
   <script
     id="strife"
-    src="https://strife.back9ins.com/production/strife.js?prefill&npn=10790698&referrer_type=Agency&referrer_id=18"
+    src="https://cdn.quoteandapply.io/widget.js?prefill&npn=10790698&referrer_type=Agency&referrer_id=18"
     data-strife-container-id="container-id"
   ></script>
 </div>
@@ -26,7 +26,7 @@ Our fictitious web application "SuperSurito" is an employee benefits application
 <div>
   <script
     id="strife"
-    src="https://strife.back9ins.com/production/strife.js?prefill&npn=10790698&referrer_type=Agency&referrer_id=18"
+    src="https://cdn.quoteandapply.io/widget.js?prefill&npn=10790698&referrer_type=Agency&referrer_id=18"
     data-strife-container-id="container-id"
   ></script>
 </div>
