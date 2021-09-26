@@ -6,18 +6,20 @@ categories: [c, cmake, stm32, micro-ros, clion]
 image: Broadcast_Mail.png
 ---
 
-Micro-ROS brings the ability to integrate micro-controllers into the ROS ecosystem. Having micro-controllers publishing topic directly into your ros2 host could facilitate a lot the integration. So far Micro-ROS is only officially supporting a small amount of boards. Unforthunlty I didn't have any stm32 boad supported officially supported by Micro-ROS so I decided to have a look at how to run Micro-ROS on the stm32 board I had at home. So I have a Nucleo-L476RG which is a ultra low power board. It has a lot of pins and configuration possibility, a Flash size of 1MB and two RAMs (96 KB and 32 KB). In my case I am going to use the UART to transmit my data (using the debugger UART to avoid additional wiring). Basically what we are going to do is that we are going to create a project with CUBEMX, configure it and adapt the CMakeLists in order to link with the static Micro-ROS library. In my case I will use clion as an IDE but most of the CMake-compatible IDE should work (Clion has a nice stm32 plugins that facilitates a lot of things). Micro-ROS is not already exepcting you to use CMake, it's rather using plain Makefiles. But with just a few change we will be able to use cmake.
+Micro-ROS brings the ability to integrate microcontrollers into the ROS ecosystem. Having microcontrollers publishing topic directly into your ROS2 host could facilitate a lot of the integration. So far, Micro-ROS is only officially supporting a small amount of boards. Unfortunately, I didn't have any stm32 board officially supported by Micro-ROS, so I decided to have a look at how to run Micro-ROS on the stm32 board I had at home. So I have a Nucleo-L476RG which is an ultra low power board. It has a lot of pins and configuration possibility, a Flash size of 1 MB and two RAMs (96 KB and 32 KB). In my case, I am going to use the UART to transmit my data (using the debugger UART to avoid additional wiring). Basically what we are going to do is that we are going to create a project with CUBEMX, configure it and adapt the CMakeLists in order to link with the static Micro-ROS library. In my case I will use Clion as an IDE but most of the CMake-compatible IDE should work (Clion has a nice stm32 plugins that facilitates a lot of things like uploading, debugging, etc.). Micro-ROS is not already expecting you to use CMake, it's rather using plain Makefiles. But with just a few changes we will be able to use Cmake.
+
+-----
 
 ### Install all you need
 
-In this post I am using Ubuntu 20.04 with ROS2 foxy already installed.
+In this post, I am using Ubuntu 20.04 with ROS2 foxy already installed.
 
 #### Micro ROS setup
 
-Clone this repo <https://github.com/micro-ROS/micro_ros_setup/tree/foxy> and follow the instruction in order to build the Micro-ROS agent (interface between the UART and ROS2). For some reason every script in this repo have a carriage-return character at the end of every lines. In order to run it on Linux you can run `find . -type f -print0 | xargs -0 dos2unix` in order to convert all the files.
+Clone this repo <https://github.com/micro-ROS/micro_ros_setup/tree/foxy> and follow the instruction in order to build the Micro-ROS agent (interface between the UART and ROS2). For some reason, every script in this repo have a carriage-return character at the end of every line. In order to run it on Linux, you can run `find . -type f -print0 | xargs -0 dos2unix` in order to convert all the files.
 #### Micro_ros_stm32cubemx_utils
-In order to generate the static library we are going to need another repo micro_ros_stm32cubemx_utils <https://github.com/micro-ROS/micro_ros_stm32cubemx_utils/tree/foxy>. 
-For this example this repo as well as the CubeMX project are going to be located in one directory.
+In order to generate the static library, we are going to need another repo micro_ros_stm32cubemx_utils <https://github.com/micro-ROS/micro_ros_stm32cubemx_utils/tree/foxy>. 
+For this example, this repo as well as the CubeMX project are going to be located in one directory.
 {% highlight bash %}
 .
 ├── l476rg_test   # The CubeMX project explained right after
@@ -47,25 +49,25 @@ Make sure to enable to DMA for the corresponding UART. Both priorities must be s
 ![DMA setup](/static/img/posts/Run_micro-ros_on_almost_any_stm32/DMA.png "DMA setup")
 
 #### FreeRTOS
-For our example we will need FreeRTOS. We will simply need to configure a task (the default) for micro-ros. Activate FreeRTOS in CubeMX (I used CMSIS v2). Micro-ros will need at least 12kB for it's task hence we need to increase the default TOTAL_HEAP_SIZE of FreeRTOS. I picked 20000 bytes for my test (but you can of course use 12000).
+For our example, we will need FreeRTOS. We will simply need to configure a task (the default) for Micro-ROS. Activate FreeRTOS in CubeMX (I used CMSIS v2). Micro-ros will need at least 12 kB for its task, hence we need to increase the default TOTAL_HEAP_SIZE of FreeRTOS. I picked 20000 bytes for my test (but you can of course use 12000).
 
 
 ![FreeRTOS setup](/static/img/posts/Run_micro-ros_on_almost_any_stm32/freertos.png "FreeRTOS setup")
 
 
-You must also create a task for you micro-ros. We are simply going to use the default one. And set a size of 3000 words (3000 words of 4 bytes is 12kB).
+You must also create a task for your Micro-ROS. We are simply going to use the default one. And set a size of 3000 words (3000 words of 4 bytes is 12 kB).
 
 
 ![FreeRTOS task setup](/static/img/posts/Run_micro-ros_on_almost_any_stm32/freertos_task.png "FreeRTOS task setup")
 
 
 #### Generate the project
-Here I want to use clion with cmake hence I am going to generate my project for the SW4STM32 toolchain : Project Manage -> Project -> Toolchain / IDE; and select SW4STM32. Generate code in order to have the source files as well as the CMakeLists.txt.
+Here I want to use Clion with Cmake hence I am going to generate my project for the SW4STM32 toolchain : Project Manage -> Project -> Toolchain / IDE; and select SW4STM32. Generate code in order to have the source files as well as the CMakeLists.txt.
 
 -----
 
 ### Generate the Micro-ROS static library
-Here we are going to use the micro_ros_stm32cubemx_utils repo that we donwloaded before. This repository is using the makefiles to extract the compilation flags in order to build the micro-ros static library. Unfortunatly so far it's only extracting from files with .mk extension and in our case the file containing the flags (generated by cmake) is called `flags.make`. Thus we will have to make a little change to the repo. We will change the file microros_static_library_ide/library_generation/library_generation.sh by adding `[a]` and `[e]` line 13:
+Here we are going to use the micro_ros_stm32cubemx_utils repo that we downloaded before. This repository is using the Makefiles to extract the compilation flags in order to build the Micro-ROS static library. Unfortunately, so far it's only extracting from files with .mk extension and in our case the file containing the flags (generated by Cmake) is called `flags.make`. Thus, we will have to make a little change to the repo. We will change the file microros_static_library_ide/library_generation/library_generation.sh by adding `[a]` and `[e]` line 13:
 {% highlight git %}
 @@ -10,7 +10,7 @@ if [ -f "$BASE_PATH/libmicroros/libmicroros.a" ]; then
      exit 0
@@ -90,15 +92,15 @@ Here we are going to use the micro_ros_stm32cubemx_utils repo that we donwloaded
 -ffunction-sections -fdata-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Og
 -------------
 {% endhighlight %}
-Make sure the options are the same that the on for your target otherwise you could face some undefined var/functions or linking issues.
-This will take some time and after in the subfolder "libmicroros" containing an "include" folder and the library. In my case I copied the libmicroros folder in my stm32 project root. I also included in it the extra_sources available in the "micro_ros_stm32cubemx_utils" repo.
+Make sure the options are the same that are on for your target, otherwise you could face some undefined var/functions or linking issues.
+This will take some time and after in the subfolder "libmicroros" containing an "include" folder and the library. In my case, I copied the libmicroros folder in my stm32 project root. I also included in it the extra_sources available in the "micro_ros_stm32cubemx_utils" repo.
 
 -----
 
 ### Use the library
 
 #### CMakeLists.txt
-In order to use the library we must add it and the headers in our CMakeLists.txt.
+In order to use the library, we must add it and the headers in our CMakeLists.txt.
 We must first add the includes from Micro-ROS:
 {% highlight bash%}
 include_directories(Core/Inc
@@ -122,10 +124,10 @@ target_link_libraries(${PROJECT_NAME}.elf ${CMAKE_SOURCE_DIR}/libmicroros/libmic
 
 #### Updating the main.c
 
-Now that the CMakeLists.txt is ready we can modify the main in order to publish our topic. We are bassicaly going to use what is defined in https://github.com/micro-ROS/micro_ros_stm32cubemx_utils/blob/foxy/sample_main.c which is a full example of topic publishing.
+Now that the CMakeLists.txt is ready, we can modify the main in order to publish our topic. We are basically going to use what is defined in https://github.com/micro-ROS/micro_ros_stm32cubemx_utils/blob/foxy/sample_main.c which is a full example of topic publishing.
 We will only have to modify the main.c (core/src) in our case.
 
-First we must include the necessary Micro-ROS layer includes, and our message type.
+First, we must include the necessary Micro-ROS layer includes, and our message type.
 {% highlight cpp %}
 /* USER CODE BEGIN Includes */
 #include <rcl/rcl.h>
@@ -232,8 +234,8 @@ void StartDefaultTask(void *argument)
   /* USER CODE END 5 */
 }
 {% endhighlight %}
-From this point your code is ready to compile and ready to upload on the MCU. On my MCU compiled with debug mode the publisher takes one to two second to start publishing.
-Once your MCU is running and connected to your computer you will need the Micro-ROS agent. Make sure to source your Micro-ROS ws `source microros_ws/install/local_setup.zsh` and run the agent `ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyACM0` (To identify your serial port you can simply list your /dev/ and check which on appears when you connect your MCU).
+From this point, your code is ready to compile and ready to upload on the MCU. On my MCU compiled with debug mode, the publisher takes one to two second to start publishing.
+Once your MCU is running and connected to your computer, you will need the Micro-ROS agent. Make sure to source your Micro-ROS ws `source microros_ws/install/local_setup.zsh` and run the agent `ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyACM0` (To identify your serial port, you can simply list your /dev/ and check which one appears when you connect your MCU).
 Your agent should display something like:
 {% highlight bash %}
 [1632668621.125343] info     | TermiosAgentLinux.cpp | init                     | running...             | fd: 3
@@ -245,7 +247,7 @@ Your agent should display something like:
 [1632668621.166655] info     | ProxyClient.cpp    | create_publisher         | publisher created      | client_key: 0x5851F42D, publisher_id: 0x000(3), participant_id: 0x000(1)
 [1632668621.176929] info     | ProxyClient.cpp    | create_datawriter        | datawriter created     | client_key: 0x5851F42D, datawriter_id: 0x000(5), publisher_id: 0x000(3)
 {% endhighlight %}
-Here we see that a node connects and that it create a pubisher. Now your MCU topic is available in your ROS2 and you can simply echo it.
+Here we see that a node connects and that it create a publisher. Now your MCU topic is available in your ROS2 and you can simply echo it.
 {% highlight bash %}
 :: ~ » ros2 topic echo /cubemx_publisher
 data: 123
