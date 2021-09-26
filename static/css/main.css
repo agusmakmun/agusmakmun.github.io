@@ -3,7 +3,7 @@ body {
   background: url("/static/img/subtle_dots.png");
   line-height: 1.5em;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 20px;
   color: #EEEEEE;
 }
 hr {
@@ -16,7 +16,7 @@ hr {
 span.time, span.categories {
   color: #ADADAD;
   margin-bottom: 5px;
-  font-size: 11px;
+  font-size: 16px;
 }
 h1, h2, h3 {
   color: #C9B8B8;
@@ -24,10 +24,17 @@ h1, h2, h3 {
 }
 h1 {
   margin-bottom: 10px;
-  font-size: 25px;
+  font-size: 35px;
 }
 h2, h3 {
   margin-bottom: 5px;
+}
+h3 {
+  font-size: 25px;
+}
+h4 {
+  font-weight: normal;
+  font-size: 20px;
 }
 a, a:link, a:active {
   text-decoration: none;
