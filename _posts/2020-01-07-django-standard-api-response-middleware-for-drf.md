@@ -26,12 +26,11 @@ from django.core.serializers.json import DjangoJSONEncoder
 from rest_framework import status
 
 
-class BaseAPIResponseMiddleware(MiddlewareMixin):
+class StandardAPIResponseMiddleware(MiddlewareMixin):
 
     def render_response(self, response):
         """
         function to fixed the response API following with this format:
-
         [1] success single
             {
              "status": 200,
@@ -39,21 +38,18 @@ class BaseAPIResponseMiddleware(MiddlewareMixin):
              "message": "The success message",
              "result": {}
             }
-
         [2] success list
             {
                "status": 200,
                "success": true,
                "message": null,
                "results": [],
-
                "count": 2,
                "page_size": 5,
                "current_page": 1,
-               "next": "{{url}}/api/post/?page=2&search=a",
+               "next": "{{url}}/api/page/?page=2&search=a",
                "previous": null
             }
-
         [3] failed
             {
                "status": 400,
@@ -127,11 +123,23 @@ class BaseAPIResponseMiddleware(MiddlewareMixin):
             if 'success' not in response_data:
                 response_data.update({'success': True})
 
+            # assign default result/s to new format
+            if 'results' in response.data:
+                response_data['results'] = response.data['results'] or []
+            else:
+                if 'result' not in response.data:
+                    response_data['result'] = response.data or {}
+                    default_keys = ['status', 'message', 'success', 'result']
+                    for (key, value) in response_data['result'].items():
+                        if (key in response_data) and (key not in default_keys):
+                            del response_data[key]
+
         return response_data
 
     def process_response(self, request, response):
-        # use default response if it setup.
-        if request.headers.get('Use-Default-Response'):
+
+        # use default response if it (doesn't use our Standard API response middleware).
+        if not request.META.get('HTTP_USE_STANDARD_API_RESPONSE'):
             return response
 
         if hasattr(response, 'data') and isinstance(response.data, dict):
@@ -144,6 +152,7 @@ class BaseAPIResponseMiddleware(MiddlewareMixin):
 
                 response.data = response_data
                 response.content = json.dumps(response_data, cls=DjangoJSONEncoder)
+                response['Content-Type'] = 'application/json'
             except Exception:
                 pass
 
@@ -151,6 +160,12 @@ class BaseAPIResponseMiddleware(MiddlewareMixin):
         # this error response specific for "Server Error" mode.
         response_format = request.headers.get('Response-Format')
         if (response.status_code >= 500) and (response_format == 'application/json'):
+
+            if not settings.DEBUG:
+                # capturing the error message.
+                from sentry_sdk import capture_exception  # module
+                capture_exception(str(response.content))
+
             response_data = {'success': False, 'result': {},
                              'status': response.status_code,
                              'message': response.reason_phrase}
