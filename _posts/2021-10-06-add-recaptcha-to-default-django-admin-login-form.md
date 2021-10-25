@@ -6,9 +6,27 @@ categories: [python, django, security]
 ---
 
 Previously makesure you already install the [`django-recaptcha`](https://pypi.org/project/django-recaptcha/),
+don't miss also to [Sign up for reCAPTCHA](https://www.google.com/recaptcha/about/)
 
 ```
 pip install django-recaptcha
+```
+
+Add `'captcha'` to your `INSTALLED_APPS` setting.
+
+```python
+INSTALLED_APPS = [
+    ...,
+    'captcha',
+    ...
+]
+```
+
+Add the Google reCAPTCHA keys generated into your Django settings with `RECAPTCHA_PUBLIC_KEY` and `RECAPTCHA_PRIVATE_KEY`.
+
+```python
+RECAPTCHA_PUBLIC_KEY = 'MyRecaptchaKey123'
+RECAPTCHA_PRIVATE_KEY = 'MyRecaptchaPrivateKey456'
 ```
 
 Then modify the default authentication form with add new captcha field, in your `myapp/forms.py`:
