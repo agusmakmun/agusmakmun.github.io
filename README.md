@@ -75,6 +75,12 @@ bundle install
 jekyll serve
 ```
 
+**Updating the `Gemfile.lock`**
+
+```
+bundle update
+```
+
 ### Contributing
 
 Feel free to [open a bug](https://github.com/agusmakmun/agusmakmun.github.io/issues) or [contribute to code](https://github.com/agusmakmun/agusmakmun.github.io/pulls)!
