@@ -1,10 +1,10 @@
-title: Stack Problems
-description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django.
-disqus_shortname: stackproblems
-google_analytics: UA-XXXXXXXX-Y
+title: Thovylog
+description: Thovy's Dev Growthlog
+author: Thovy
+github: https://github.com/thovy
+about: I will make useful web apps
+disqus_shortname: thovylog
+google_analytics: G-NE6N02QVFD
 
 enableTags: true
 tagarray: []
@@ -15,20 +15,20 @@ collections:
     permalink: /project/:path/
 
 social:
-    - icon: fa-facebook
-      link: "#"
-    - icon: fa-twitter
-      link: "#"
-    - icon: fa-linkedin
-      link: "#"
-    - icon: fa-stack-exchange
-      link: "#"
+#     - icon: fa-facebook
+#       link: "#"
+#     - icon: fa-twitter
+#       link: "#"
+#     - icon: fa-linkedin
+#       link: "#"
+#     - icon: fa-stack-exchange
+#       link: "#"
     - icon: fa-github
-      link: "https://github.com/agusmakmun"
+      link: "https://github.com/thovy"
 
-share:
-  twitter_username: github.io
-  fb_appid: 1749788565247320
+# share:
+#   twitter_username: github.io
+#   fb_appid: 1749788565247320
 
 urls:
     - text: About Me
@@ -38,7 +38,7 @@ urls:
     - text: XML Feed
       url: /feed.xml
 
-url: "https://agusmakmun.github.io"
+url: "https://thovy.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
