@@ -8,7 +8,7 @@ categories: [python, django]
 Sometimes we have case where we want to upgrade the 3rd party packages.
 But, we have case where the migration files were totally different with the old version.
 
-While upgrading the dj-stripe version, the migration files were totally different.
+For example in my case, while upgrading the dj-stripe version, the migration files were totally different.
 And it causing inconsistent migration history or other migration issues.
 
 So, to fix this we need to reset the **`django_migrations`** table after deployment is done, then restart the pods/containers.
