@@ -13,6 +13,26 @@ And it causing inconsistent migration history or other migration issues.
 
 So, to fix this we need to reset the **`django_migrations`** table after deployment is done, then restart the pods/containers.
 
+### Change the migration files
+
+You need to change all migration files that has relation with 3rd party packages, and change the dependencies to the newest version of 3rd party packages.
+For example, inside file of `myproject/users/migrations/0005_auto_20210117_0220.py` have dependency to the related 3rd party package.
+
+So, you need to change the `dependencies` of package to the newest version from 3rd party packages.
+
+```python
+class Migration(migrations.Migration):
+
+    dependencies = [
+        ('djstripe', '0006_2_3'),
+        ('users', '0004_auto_20201231_1454'),
+    ]
+```
+
+For example in above case, I change the `'0006_2_3'` to `'0011_2_7'` where it's the latest version from 3rd party package that I want to upgrade.
+https://github.com/dj-stripe/dj-stripe/blob/2.7.1/djstripe/migrations/0011_2_7.py
+
+
 ### a. Steps for Docker:
 1. Deploy
 2. Execute below commands:
