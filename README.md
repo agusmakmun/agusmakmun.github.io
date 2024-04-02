@@ -70,10 +70,22 @@ image: Broadcast_Mail.png             # (custom) image only for meta `property="
 
 #### Installing in your local
 
+**Option 1:**
+
+```
+bundle install --path vendor/bundle
+
+bundle exec jekyll serve
+```
+
+**Option 2:** If you already installed the jekyll
+
 ```
 bundle install
 jekyll serve
 ```
+
+Then visit the http://127.0.0.1:4000
 
 **Updating the `Gemfile.lock`**
 

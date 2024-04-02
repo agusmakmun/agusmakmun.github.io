@@ -10,7 +10,7 @@ Add this in your file of `/etc/bash.bashrc`, makesure you logged in as root.
 {% highlight ruby %}
 ### ===============================================
 ### Simple bash scripting for login before open the terminal.
-### Credit: <Summon Agus> - agus@python.web.id
+### Credit: <Summon Agus> - summon.agus[at]gmail.com
 ### Location, end script of: /etc/bash.bashrc
 ### ===============================================
 
