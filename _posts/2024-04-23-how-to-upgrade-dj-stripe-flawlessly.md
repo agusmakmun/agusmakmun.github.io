@@ -69,6 +69,15 @@ Check out this issue for more information: https://github.com/dj-stripe/dj-strip
 stripe>=4.0.0,<5.0.0  # https://github.com/dj-stripe/dj-stripe/issues/1842#issuecomment-1319185657
 ```
 
+
+### Conclusion
+
+1. Find the closest version that compatible with your version _(for doing migration)_.
+2. Update the dependency in `requirements.txt` file and then deploy it.
+   - Don't forget to run the `python manage.py migrate djstripe` command.
+3. Change your migration file to refer to the new version (e.g., from `0006_2_3` to `0008_2_5`), and then deploy it.
+
+
 ### Alternatives
 
 - https://stackoverflow.com/a/31122841
