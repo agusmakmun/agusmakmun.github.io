@@ -1,42 +1,50 @@
 [
 	{
-		"slug": "cool-project",
-		"name": "Cool project 1",
-		"image": "placeholder.jpg",
-		"url": "https://www.google.com",
-		"date": "Jan 2014",
-		"tags": ["Angular JS","API"]
+		"slug": "spark-streaming-tweets-live",
+		"name": "Spark Streaming Tweets Live",
+		"image": "/static/img/projects/spark-streaming.png",
+		"url": "https://github.com/anirtek/spark-streaming-tweets-live",
+		"date": "2023",
+		"tags": ["Spark", "Scala", "Streaming", "Big Data", "Real-time Processing", "Twitter API", "Data Analysis", "Maven"]
 	},
 	{
-		"name": "Cool project 2",
-		"image": "placeholder.jpg",
-		"url": "#",
-		"date": "May 2014",
-		"tags": ["Python","Django"]
+		"slug": "java-persistence-api",
+		"name": "Java Persistence API Implementation",
+		"image": "/static/img/projects/jpa-spring.png",
+		"url": "https://github.com/anirtek/java-persistence-api",
+		"date": "2023",
+		"tags": ["Java", "JPA", "Hibernate", "Spring", "Maven", "ORM", "Database", "Enterprise Java", "MySQL"]
 	},
 	{
-		"name": "Cool project 3",
-		"image": "placeholder.jpg",
-		"url": "#",
-		"date": "June 2014",
-		"tags": ["HTML","JQuery","Django"]
+		"slug": "eventually-consistent-kv-storage",
+		"name": "Eventually Consistent Key-Value Storage",
+		"image": "/static/img/projects/kv-storage.png",
+		"url": "https://github.com/anirtek/Eventually-Consistent-Key-Value-Storage",
+		"date": "2023",
+		"tags": ["Distributed Systems", "Consistency", "Key-Value Storage", "Java", "Concurrency", "Network Programming", "Gossip Protocol", "Vector Clocks"]
 	},
 	{
-		"name": "Cool project 4",
-		"image": "placeholder.jpg",
-		"date": "Oct 2016",
-		"tags": ["Python","nodejs"]
+		"slug": "distributed-banking-snapshot",
+		"name": "Distributed Banking Using Snapshot Algorithm",
+		"image": "/static/img/projects/distributed-banking.png",
+		"url": "https://github.com/anirtek/Distributed_Banking-Using-Snapshot_Algorithm",
+		"date": "2023",
+		"tags": ["Distributed Systems", "Banking", "Snapshot Algorithm", "Consistency", "Java", "Concurrency", "Network Programming", "Fault Tolerance"]
 	},
 	{
-		"name": "Cool project 5",
-		"image": "placeholder.jpg",
-		"date": "Oct 2016",
-		"tags": ["Python","nodejs"]
+		"slug": "chord-dht",
+		"name": "Chord Distributed Hash Table",
+		"image": "/static/img/projects/chord-dht.png",
+		"url": "https://github.com/anirtek/Chord-Distributed-Hash-Table",
+		"date": "2023",
+		"tags": ["Distributed Systems", "DHT", "P2P", "Chord Protocol", "Java", "Concurrency", "Network Programming", "Consistent Hashing"]
 	},
 	{
-		"name": "Cool project 6",
-		"image": "placeholder.jpg",
-		"date": "Oct 2016",
-		"tags": ["Python","nodejs"]
+		"slug": "protobuf-tutorial",
+		"name": "Protocol Buffers Tutorial",
+		"image": "/static/img/projects/protobuf.png",
+		"url": "https://github.com/anirtek/protobuf-tutorial",
+		"date": "2023",
+		"tags": ["Protocol Buffers", "Serialization", "C++", "Java", "Python"]
 	}
 ]

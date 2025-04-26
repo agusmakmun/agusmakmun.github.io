@@ -39,11 +39,15 @@ urls:
       url: /about/
     - text: My Projects
       url: /projects/
+    - text: Machine Learning
+      url: /category/machine-learning/
+    - text: Backend Development
+      url: /category/backend-development/
     - text: XML Feed
       url: /feed.xml
 
-url: "https://anirtek.github.io"
-baseurl: "https://anirtek.github.io"
+url: ""
+baseurl: ""
 paginate: 20
 per_page: 20
 paginate_path: "/page/:num/"
