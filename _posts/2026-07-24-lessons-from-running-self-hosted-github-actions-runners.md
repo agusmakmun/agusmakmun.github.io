@@ -11,6 +11,7 @@ the motivation is usually simple: Actions minutes get expensive, for example whe
 It works, and it's much cheaper. But the first weeks will surface a bunch of problems that GitHub-hosted runners quietly hide from you,
 because every job there gets a fresh, isolated VM. On your own box, jobs share memory, disk, and the home directory.
 
+{% raw %}
 ### 1. Parallel Docker builds → OOM
 
 Several runners on one server means several heavy Next.js `docker build`s at the same time, and the kernel OOM killer picked one at random.
@@ -113,3 +114,4 @@ keepalives (`ServerAliveInterval`) for long `docker pull`s turned random red bui
 
 Self-hosted runners are worth it for the cost, but you are now operating a shared server. Assume jobs run concurrently,
 isolate everything per runner (`$RUNNER_TEMP`), watch `/tmp` and memory, and schedule cleanups that are safe to run during a build.
+{% endraw %}
