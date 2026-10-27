@@ -5,7 +5,7 @@ github: https://github.com/agusmakmun
 repo: agusmakmun/agusmakmun.github.io # star count in the header
 about: 'SDE Lead working across the whole stack: backend, frontend, databases and the infrastructure that ships them. These days mostly infrastructure and Next.js, like moving apps off Vercel and Supabase to self-hosted.'
 disqus_shortname: stackproblems
-google_analytics: # GA4 measurement ID (G-XXXXXXX); analytics is skipped while empty
+google_analytics: G-7EFYCH5FQ7 # GA4 measurement ID; analytics is skipped while empty
 
 # Redesign profile (sidebar on the home page)
 tagline: SDE Lead · CDP · CASP

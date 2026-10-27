@@ -64,7 +64,10 @@ nav: /writing/
         <h3>Written by {{ site.author }} <span class="pill mono">Author</span></h3>
         <p>{{ site.about }}</p>
         <div class="links">
-          <a href="{{ site.github }}" target="_blank" rel="noopener">{% include brand-icon.html name="github" %}github.com/agusmakmun</a>
+          {% comment %}Author link: LinkedIn from social_links if set, otherwise GitHub.{% endcomment %}
+          {% assign linkedin = site.social_links | where: "brand", "linkedin" | first %}
+          {% if linkedin %}{% assign author_url = linkedin.link %}{% assign author_brand = "linkedin" %}{% else %}{% assign author_url = site.github %}{% assign author_brand = "github" %}{% endif %}
+          <a href="{{ author_url }}" target="_blank" rel="noopener">{% include brand-icon.html name=author_brand %}{{ author_url | remove: "https://" | remove: "http://" | remove: "www." }}</a>
           <a href="{{ '/feed.xml' | relative_url }}"><span class="icon">feed</span>RSS feed</a>
           <a class="green" href="{{ '/about/' | relative_url }}">More about me</a>
         </div>
