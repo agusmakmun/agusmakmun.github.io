@@ -1,66 +1,46 @@
 ---
 layout: default
+nav: /projects/
 ---
-<article class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <hr />
-  </header>
-
-  <div class="post-content">
-    {{ content }}
-
-    {% assign p_array = "" | split:"|"  %}
-    {% for project in site.project %}
-      {% capture p_slug %}{{ project.url | split:"/" | last }},{{ project.url }}{% endcapture %}
-      {% assign p_slug_arr = p_slug | split:"," %}
-      {% assign p_array = p_array | push: p_slug_arr  %}
-    {% endfor %}
-
-    <div class="projects">
-      {% include project_tags.html %}
-      
-      {% for i in site.data.projects %}
-      <div class="project-item project-outer" data-tags='{{ i.tags | jsonify | downcase }}'>
-        <div class="project-inner">
-          <a href="/static/projects/{{ i.image }}" class="thickbox">
-            <div class="project-img bordered" style="background-image: url('/static/projects/{{ i.image }}');"></div>
-          </a>
-          {% assign p_url = nil %}
-          {% for pr in p_array %}
-            {% if pr contains i.slug %}
-              {% assign p_url = pr[1] %}
-            {% endif %}
-          {% endfor %}
-
-          {% if p_url == nil %}{% assign p_url = i.url %}{% endif %}
-          {% if p_url %}
-            <a class="project-detail" href="{{ p_url }}">
-          {% endif %}
-            <h3 class="project-headlines">{{ i.name }}</h3>
-          {% if p_url %}
-            </a>
-          {% endif %}
-
-          <div class="project-content">
-            <div class="tag-holder">
-              {% if i.tags %}
-                {% for j in i.tags %}
-                  <span class="tags tag-filter" data-tag="{{ j | downcase }}"><a href="#{{ j }}">{{ j }}</a></span>
-                {% endfor %}
-              {% endif %}
-            </div>
-          </div>
-          <div class="project-footer">
-            {% if i.url %}
-              <a href="{{ i.url }}" class="project-link" target="_blank"><i class="fa fa-globe"></i> View</a>
-            {% endif %}
-            <span class="project-timeline">{{ i.date }}</span>
-          </div>
-        </div>
-        <hr>
-      </div>
-      {% endfor %}
-    </div>
+{% assign oss = site.data.projects %}
+<div class="list-head">
+  <div>
+    <div class="path"><span>~/projects</span><span class="muted">·</span><span class="green">things I've built</span></div>
+    <h1>{{ page.title }} <span class="pill">{{ oss.work.size | plus: oss.featured.size | plus: oss.more.size }} projects</span></h1>
   </div>
-</article>
+</div>
+{% if content != "" %}<div class="projects-intro">{{ content }}</div>{% endif %}
+
+{% assign tags = "" | split: "" %}
+{% for p in oss.work %}{% assign tags = tags | concat: p.tags %}{% endfor %}
+{% for p in oss.featured %}{% assign tags = tags | concat: p.tags %}{% endfor %}
+{% for p in oss.more %}{% assign tags = tags | concat: p.tags %}{% endfor %}
+{% assign tags = tags | uniq | sort_natural %}
+<div class="pills tag-filter">
+  <button type="button" class="pill active" data-tag="all">All</button>
+  {% for t in tags %}<button type="button" class="pill" data-tag="{{ t | downcase }}">{{ t }}</button>{% endfor %}
+</div>
+
+<section class="proj-section">
+  <h2 class="section-title"><span class="icon">deployed_code</span>Open source</h2>
+  <div class="projects-grid">
+    {% for p in oss.featured %}{% include project-card.html project=p %}{% endfor %}
+  </div>
+  <div class="more-oss">
+    {% for p in oss.more %}
+      <a class="project-card more-row" href="{% if p.url %}{{ p.url }}{% else %}https://github.com/{{ p.repo }}{% endif %}" target="_blank" rel="noopener" data-tags='{{ p.tags | jsonify | downcase }}'>
+        <span><strong>{{ p.name }}</strong><span class="muted"> — {{ p.summary }}</span></span>
+        <span class="icon muted">arrow_outward</span>
+      </a>
+    {% endfor %}
+  </div>
+  <p class="muted small">More on <a class="green" href="{{ site.github }}?tab=repositories" target="_blank" rel="noopener">GitHub</a>.</p>
+</section>
+
+<section class="proj-section">
+  <h2 class="section-title"><span class="icon">work</span>Work projects</h2>
+  <div class="projects-grid">
+    {% for p in oss.work %}{% include project-card.html project=p %}{% endfor %}
+  </div>
+  <p class="muted small">Built as part of my roles; the full timeline is on the <a class="green" href="{{ '/about/' | relative_url }}#experience">About</a> page.</p>
+</section>

@@ -1,0 +1,25 @@
+{% comment %}Career highlights + experience timeline, from _data/work.yml. Used on /about/.{% endcomment %}
+{% assign work = site.data.work %}
+<div class="highlights">
+  {% for h in work.highlights %}<div class="stat"><span>{{ h.value }}</span><span>{{ h.label }}</span>{% if h.source %}<small>{{ h.source }}</small>{% endif %}</div>{% endfor %}
+</div>
+<ol class="timeline">
+  {% for job in work.experience %}
+    <li class="job">
+      <span class="job-mark"><span class="icon">{{ job.icon }}</span></span>
+      <div class="job-body">
+        <h4>{% if job.url %}<a href="{{ job.url }}" target="_blank" rel="noopener">{{ job.company }}</a>{% else %}{{ job.company }}{% endif %}</h4>
+        {% for r in job.roles %}
+          <div class="role">
+            <div class="role-head">
+              <strong>{{ r.title }}</strong>
+              <span class="mono muted">{{ r.dates }}{% if r.place %} · {{ r.place }}{% endif %}</span>
+            </div>
+            {% if r.summary %}<p>{{ r.summary }}</p>{% endif %}
+            {% if r.points %}<ul>{% for pt in r.points %}<li>{{ pt }}</li>{% endfor %}</ul>{% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </li>
+  {% endfor %}
+</ol>

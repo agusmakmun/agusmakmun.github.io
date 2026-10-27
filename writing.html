@@ -1,0 +1,14 @@
+---
+description: "Every Stack Solutions post, grouped by year: notes and fixes from building and running production systems."
+layout: default
+title: Writing
+permalink: /writing/
+---
+<div class="list-head">
+  <div>
+    <div class="path"><span>~/journal/archive</span></div>
+    <h1>All Stack Solutions <span class="pill">{{ site.posts.size }} posts</span></h1>
+  </div>
+</div>
+{% include category-pills.html %}
+{% include posts-by-year.html posts=site.posts %}

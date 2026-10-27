@@ -17,11 +17,13 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      BUNDLE_WITHOUT: test # html-proofer is only for `make check`
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3"
+          ruby-version: '3.3'
           bundler-cache: true
       - id: pages
         uses: actions/configure-pages@v5

@@ -1,0 +1,21 @@
+{% assign p = include.post %}
+<article class="post-row">
+  <div class="lead">
+    {% if include.num %}<span class="num">{% if include.num < 10 %}0{% endif %}{{ include.num }}</span>{% endif %}
+    <div class="body">
+      <a class="title" href="{{ p.url | relative_url }}">{{ p.title }}</a>
+      {% comment %}description if set, else the start of the body (Jekyll's excerpt is only the first paragraph, often a heading).{% endcomment %}
+      {% capture summary %}{% if p.description %}{{ p.description }}{% else %}{{ p.content | strip_html | normalize_whitespace | truncate: 260 }}{% endif %}{% endcapture %}
+      <p class="excerpt">{{ summary | strip }}</p>
+      {% if p.categories.size > 0 %}
+        <div class="pills">
+          {% for c in p.categories limit:3 %}<a class="pill" href="{{ '/category/' | append: c | relative_url }}">{{ c }}</a>{% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="meta">
+    <time datetime="{{ p.date | date: '%Y-%m-%d' }}">{{ p.date | date: '%d %b %Y' }}</time>
+    <span class="icon">chevron_right</span>
+  </div>
+</article>
