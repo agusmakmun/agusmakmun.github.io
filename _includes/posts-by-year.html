@@ -1,0 +1,11 @@
+{% if include.posts.size > 0 %}
+  {% assign years = include.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
+  {% for y in years %}
+    <h2 class="year-head">{{ y.name }}</h2>
+    <div class="posts-list">
+      {% for post in y.items %}{% include post-row.html post=post %}{% endfor %}
+    </div>
+  {% endfor %}
+{% else %}
+  <p class="muted">There are no posts in this category yet.</p>
+{% endif %}

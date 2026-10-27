@@ -1,0 +1,21 @@
+{% comment %}One project card with a generated cover. Links to the GitHub repo if there is one, else to url.{% endcomment %}
+{% assign p = include.project %}
+{% if p.repo %}{% capture href %}https://github.com/{{ p.repo }}{% endcapture %}{% else %}{% assign href = p.url %}{% endif %}
+<article class="card project-card" data-tags='{{ p.tags | jsonify | downcase }}'>
+  {% if href %}<a class="cover" href="{{ href }}" target="_blank" rel="noopener" style="--accent: {{ p.color }}" aria-label="{{ p.name }}">{% else %}<div class="cover" style="--accent: {{ p.color }}">{% endif %}
+    <span class="icon">{{ p.icon }}</span>
+    <code>{% if p.repo %}$ {% endif %}{{ p.cmd }}</code>
+  {% if href %}</a>{% else %}</div>{% endif %}
+  <div class="inner">
+    <h3>{% if href %}<a href="{{ href }}" target="_blank" rel="noopener">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</h3>
+    <p>{{ p.summary }}</p>
+    <div class="pills">{% for t in p.tags %}<span class="pill">{{ t }}</span>{% endfor %}</div>
+    <div class="foot">
+      <span class="mono">{% if p.company %}{{ p.company }} · {{ p.years }}{% else %}since {{ p.since }}{% endif %}</span>
+      <span class="links">
+        {% if p.post %}<a href="{{ p.post | relative_url }}"><span class="icon">article</span>Post</a>{% endif %}
+        {% if p.repo and p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener"><span class="icon">open_in_new</span>Site</a>{% endif %}
+      </span>
+    </div>
+  </div>
+</article>

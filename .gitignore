@@ -5,3 +5,6 @@ _site*
 .DS_Store
 vendor/
 .bundle/
+.jekyll-cache/
+.playwright-mcp/
+

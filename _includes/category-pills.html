@@ -1,0 +1,8 @@
+{% assign cats = site.categories | sort %}
+<div class="pills cat-filter">
+  <a class="pill{% unless include.current %} solid{% endunless %}" href="{{ '/writing/' | relative_url }}">All</a>
+  {% for c in cats %}
+    {% assign slug = c | first %}
+    <a class="pill{% if slug == include.current %} solid{% endif %}" href="{{ '/category/' | append: slug | relative_url }}">{{ slug }} <span class="muted" style="margin-left:.25rem">{{ c | last | size }}</span></a>
+  {% endfor %}
+</div>

@@ -1,73 +1,141 @@
 ---
 layout: default
+nav: /writing/
 ---
-<header class="post-header">
-  <h1 class="post-title">{{ page.title }}</h1>
-</header>
-
-<span class="time">{{ page.date | date_to_string }}</span>
-{% if page.categories %}
-  <span class="categories">
-    &raquo; {% for category in page.categories %}<a href="/category/{{ category }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}
-  </span>
-{% endif %}
-
-<div class="content">
-  <div class="post">{{ content }}</div>
-  {% include share-page.html %}
+{% assign words = content | strip_html | number_of_words %}
+{% assign minutes = words | divided_by: 200 | at_least: 1 %}
+{% assign main_cat = page.categories | first %}
+<div class="article-head">
+  <div class="breadcrumb">
+    <a href="{{ '/' | relative_url }}"><span class="icon">home</span>Home</a>
+    <span class="sep">/</span>
+    <a href="{{ '/writing/' | relative_url }}">Stack Solutions</a>
+    {% if main_cat %}
+      <span class="sep">/</span>
+      <a class="current" href="{{ '/category/' | append: main_cat | relative_url }}">{{ main_cat }}</a>
+    {% endif %}
+  </div>
+  {% if page.categories.size > 0 %}
+    <div class="pills">
+      {% for c in page.categories %}<a class="pill" href="{{ '/category/' | append: c | relative_url }}">#{{ c }}</a>{% endfor %}
+    </div>
+  {% endif %}
+  <h1 class="article-title">{{ page.title }}</h1>
+  <div class="byline">
+    <div class="who">
+      <span class="avatar">AM</span>
+      <div>
+        <a class="name" href="{{ '/about/' | relative_url }}">{{ site.author }}</a>
+        <div class="sub">
+          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %b %Y' }}</time>
+          <span>·</span>
+          <span><span class="icon">schedule</span> {{ minutes }} min read</span>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="outline-btn" id="copy-link" type="button"><span class="icon">link</span><span>Copy link</span></button>
+      {% assign share_url = page.url | absolute_url | url_encode %}
+      {% assign share_title = page.title | url_encode %}
+      <div class="share">
+        <button class="outline-btn" id="share-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="share-menu"><span class="icon">share</span><span>Share</span></button>
+        <div class="share-menu" id="share-menu" hidden>
+          <a href="https://x.com/intent/post?text={{ share_title }}&amp;url={{ share_url }}" target="_blank" rel="noopener">{% include brand-icon.html name="x" %}X</a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url }}" target="_blank" rel="noopener">{% include brand-icon.html name="linkedin" %}LinkedIn</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}" target="_blank" rel="noopener">{% include brand-icon.html name="facebook" %}Facebook</a>
+          <a href="https://news.ycombinator.com/submitlink?u={{ share_url }}&amp;t={{ share_title }}" target="_blank" rel="noopener">{% include brand-icon.html name="hackernews" %}Hacker News</a>
+          <a href="mailto:?subject={{ share_title }}&amp;body={{ share_url }}"><span class="icon">mail</span>Email</a>
+          <button type="button" id="share-native" hidden><span class="icon">ios_share</span>More…</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-{% assign hasSimilar = '' %}
-  {% for post in site.posts  %}
-    {% assign postHasSimilar = false %}
-      {% for tag in post.categories %}
-        {% for thisTag in page.categories %}
-          {% if postHasSimilar == false and hasSimilar.size < 6 and post != page and tag == thisTag %}
-            {% if hasSimilar.size == 0 %}
-            <div class="panel-body">
-              <h4>Related Posts</h4>
-              <ul>
-            {% endif %}
-                <li class="relatedPost">
-                  <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                  {% if post.categories %}
-                    (Categories: {% for category in post.categories %}<a href="/category/{{ category }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %})
-                  {% endif %}
-                </li>
-          {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
-          {% assign postHasSimilar = true %}
+<div class="article-grid">
+  <div>
+    <article class="prose">
+      {{ content }}
+    </article>
+
+    <div class="card author-card">
+      <span class="avatar">AM</span>
+      <div>
+        <h3>Written by {{ site.author }} <span class="pill mono">Author</span></h3>
+        <p>{{ site.about }}</p>
+        <div class="links">
+          <a href="{{ site.github }}" target="_blank" rel="noopener">{% include brand-icon.html name="github" %}github.com/agusmakmun</a>
+          <a href="{{ '/feed.xml' | relative_url }}"><span class="icon">feed</span>RSS feed</a>
+          <a class="green" href="{{ '/about/' | relative_url }}">More about me</a>
+        </div>
+      </div>
+    </div>
+
+    {% if page.previous or page.next %}
+      <div class="post-nav">
+        {% if page.previous %}
+          <a href="{{ page.previous.url | relative_url }}">
+            <span class="eyebrow"><span class="icon">arrow_back</span>Previous post</span>
+            <strong>{{ page.previous.title }}</strong>
+          </a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next %}
+          <a class="next" href="{{ page.next.url | relative_url }}">
+            <span class="eyebrow">Next post<span class="icon">arrow_forward</span></span>
+            <strong>{{ page.next.title }}</strong>
+          </a>
         {% endif %}
-      {% endfor %}
-    {% endfor %}
-  {% endfor %}
-  {% if hasSimilar.size > 0 %}
-  </ul>
+      </div>
+    {% endif %}
+  </div>
+
+  <aside class="card toc" id="toc">
+    <div class="toc-head">
+      <span><span class="icon">menu_book</span>Contents</span>
+      <span class="muted" id="toc-count"></span>
+    </div>
+    <nav id="toc-nav"></nav>
+    <div class="toc-meta">
+      <div><span>Published</span><span class="mono">{{ page.date | date: '%d %b %Y' }}</span></div>
+      <div><span>Reading time</span><span class="mono">{{ minutes }} min</span></div>
+      {% if page.categories.size > 0 %}<div><span>Topics</span><span class="mono green">{{ page.categories | join: ', ' }}</span></div>{% endif %}
+    </div>
+  </aside>
 </div>
+
+{% assign related_count = 0 %}
+{% capture related %}
+  {% for post in site.posts %}
+    {% if post.url == page.url %}{% continue %}{% endif %}
+    {% assign shared = false %}
+    {% for c in post.categories %}{% if page.categories contains c %}{% assign shared = true %}{% endif %}{% endfor %}
+    {% if shared %}
+      <a class="card" href="{{ post.url | relative_url }}">
+        <div>
+          <div class="pills">{% for c in post.categories limit:2 %}<span class="pill">{{ c }}</span>{% endfor %}</div>
+          <h4>{{ post.title }}</h4>
+        </div>
+        <div class="foot"><span>{{ post.date | date: '%d %b %Y' }}</span><span>→</span></div>
+      </a>
+      {% assign related_count = related_count | plus: 1 %}
+      {% if related_count == 3 %}{% break %}{% endif %}
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+{% if related_count > 0 %}
+  <section class="related">
+    <div class="related-head">
+      <h3><span class="icon">library_books</span>Related Stack Solutions</h3>
+      <a href="{{ '/writing/' | relative_url }}">View all posts<span class="icon">arrow_forward</span></a>
+    </div>
+    <div class="related-grid">{{ related }}</div>
+  </section>
 {% endif %}
 
-<div class="PageNavigation">
-  {% if page.previous.url %}
-    <a class="prev" href="{{ page.previous.url }}">&laquo; {{ page.previous.title }}</a>
-  {% endif %}
-  {% if page.next.url %}
-    <a class="next" href="{{ page.next.url }}">{{ page.next.title }} &raquo;</a>
-  {% endif %}
-</div>
-
-<div class="disqus-comments">
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-    /* <![CDATA[ */
-    var disqus_shortname = "{{ site.disqus_shortname }}";
-    var disqus_identifier = "{{ site.url }}_{{ page.title }}";
-    var disqus_title = "{{ page.title }}";
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    /* ]]> */
-  </script>
-</div>
+{% if site.disqus_shortname %}
+  {% capture disqus_id %}{{ site.url }}_{{ page.title }}{% endcapture %}
+  <section class="comments">
+    <div id="disqus_thread"></div>
+    <script>var disqus_config = function () { this.page.url = {{ page.url | absolute_url | jsonify }}; this.page.identifier = {{ disqus_id | jsonify }}; }; (function () { var d = document, s = d.createElement('script'); s.src = 'https://{{ site.disqus_shortname }}.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })();</script>
+  </section>
+{% endif %}

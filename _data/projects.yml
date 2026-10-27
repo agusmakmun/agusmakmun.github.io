@@ -1,0 +1,321 @@
+# Open-source projects.
+# cover: Material Symbols icon + accent colour for the generated cover; cmd = line shown on the cover.
+featured:
+  - name: Martor (django-markdown-editor)
+    repo: agusmakmun/django-markdown-editor
+    url: https://django-markdown-editor.readthedocs.io
+    since: 2016
+    tags: [Django, Python, JavaScript]
+    icon: edit_note
+    color: '#0c4b33'
+    cmd: pip install martor
+    summary: Markdown editor for Django with live preview, image upload, mentions and Bootstrap / Semantic-UI themes. My most-used project.
+  - name: Stack Solutions (this site)
+    repo: agusmakmun/agusmakmun.github.io
+    url: https://agusmakmun.github.io
+    since: 2016
+    tags: [Jekyll]
+    icon: coffee
+    color: '#6f4e37'
+    cmd: docker compose up
+    summary: Free and open-source Jekyll theme behind this blog, now with the Editorial Clarity redesign.
+  - name: Python Wordlist Generator
+    repo: agusmakmun/python-wordlist-generator
+    since: 2015
+    tags: [Python, Security]
+    icon: password
+    color: '#1f2937'
+    cmd: python wordlist.py
+    summary: Generates wordlists from a character set and length range, for password-strength testing.
+  - name: Django Log Viewer
+    repo: agusmakmun/django-log-viewer
+    url: https://pypi.org/project/django-log-viewer/
+    since: 2019
+    tags: [Django, Python]
+    icon: receipt_long
+    color: '#155e75'
+    cmd: pip install django-log-viewer
+    summary: Read, search and download your Django log files right from the admin.
+  - name: Django AWS Terminal
+    repo: agusmakmun/django-aws-terminal-websocket
+    post: /python/django/observability/websocket/2024/04/23/django-vm-websocket.html
+    since: 2025
+    tags: [Django, Infrastructure]
+    icon: terminal
+    color: '#232f3e'
+    cmd: ssh ec2-user@browser
+    summary: Real-time browser terminal for EC2 with Django Channels, WebSockets and xterm.js, traced with OpenTelemetry, Jaeger and Grafana.
+  - name: Earthquake Alert Indonesia
+    repo: agusmakmun/earthquake-alert-indonesia
+    since: 2026
+    tags: [JavaScript, Infrastructure]
+    icon: earthquake
+    color: '#b45309'
+    cmd: serverless · no database
+    summary: Real-time earthquake early-warning app built on BMKG open data, with a serverless, database-less design.
+
+more:
+  - name: django-image-optimizer
+    repo: agusmakmun/django-image-optimizer
+    tags: [Django, Python]
+    summary: Optimise uploaded images with TinyPNG or Pillow.
+  - name: Web framework benchmark
+    repo: agusmakmun/flask-django-quart-fastapi-performance-test-comparison
+    tags: [Python]
+    summary: Performance comparison of Flask, Django, Quart and FastAPI.
+  - name: ScanReq
+    repo: agusmakmun/scan-unused-requirements
+    tags: [Python]
+    summary: Finds unused packages in a requirements.txt.
+  - name: drf-recaptcha-enterprise
+    repo: agusmakmun/drf-recaptcha-enterprise
+    tags: [Django, Security]
+    summary: Django REST Framework fields and validators for Google reCAPTCHA Enterprise.
+  - name: VS Code Sidebar Terminal
+    repo: agusmakmun/vscode-sidebar-terminal
+    tags: [TypeScript]
+    summary: VS Code extension for quick terminal access from the sidebar.
+  - name: django-address-model
+    repo: agusmakmun/django-address-model
+    tags: [Django]
+    summary: Abstract model for complete Indonesian-style addresses.
+  - name: Welut
+    repo: agusmakmun/welut
+    tags: [Django]
+    summary: Converts .epub, .mobi and .pdf files into images for e-library sites.
+  - name: Team Workload Distribution
+    repo: agusmakmun/team-workload-distribution
+    url: https://team-workload-distribution.vercel.app
+    tags: [TypeScript]
+    summary: React app to visualise task priorities across a team.
+  - name: Expense Tracker Bot
+    repo: agusmakmun/expense-tracker
+    tags: [Python]
+    summary: Telegram bot that logs expenses from plain text into Google Sheets.
+
+# Things built at work (LinkedIn experience + public-safe summary of Design Shifu release notes), newest first.
+# Never add: customer/employee names, prices or costs, internal hosts/env vars, incidents, scoring rules. No repo: cards link to url if set.
+# Tags only where LinkedIn names the tech.
+work:
+  - name: Supabase → Self-hosted Migration
+    company: Design Shifu
+    years: Aug – Oct 2026
+    post: /postgres/nextjs/architecture/2026/10/24/migrating-off-supabase-to-drizzle-and-nextauth.html
+    tags: [Infrastructure, Next.js]
+    icon: database
+    color: '#14532d'
+    cmd: Postgres · Drizzle · NextAuth
+    summary: Moved a live product off Supabase's database, auth, storage and webhooks to self-hosted Postgres, Drizzle ORM, NextAuth and S3-compatible storage. Each stage sat behind a flag, with security audit passes before the cutover and old file links kept working.
+  - name: Vercel → Self-hosted Migration
+    company: Design Shifu
+    years: Feb – Jun 2026
+    tags: [Infrastructure, Next.js]
+    icon: dns
+    color: '#0a0a0a'
+    cmd: Hetzner · Dokploy · Docker
+    summary: Moved the Next.js apps off Vercel onto self-hosted Docker, staging first and then production, and closed the Vercel account. Added zero-downtime deploys, DNS failover and self-healing cleanup jobs.
+  - name: Platform Infrastructure
+    company: Design Shifu
+    years: 2026 – now
+    tags: [Infrastructure]
+    icon: hub
+    color: '#6d28d9'
+    cmd: owned end to end
+    summary: Handle the platform's overall infrastructure.
+  - name: Self-hosted CI/CD Runners
+    company: Design Shifu
+    years: Jul – Oct 2026
+    tags: [Infrastructure]
+    icon: rocket_launch
+    color: '#1e293b'
+    cmd: ~7,600 runner min/month saved
+    summary: Moved pipelines to self-hosted runners for faster, parallel builds, with smoke tests, coverage reports and security scanning built in.
+  - name: Self-hosted Redis
+    company: Design Shifu
+    years: May 2026
+    tags: [Infrastructure]
+    icon: memory
+    color: '#991b1b'
+    cmd: managed → self-hosted
+    summary: Replaced a paid third-party Redis service with a self-hosted one.
+  - name: Admin MCP Server
+    company: Design Shifu
+    years: Aug 2026
+    tags: [AI]
+    icon: smart_toy
+    color: '#7c3aed'
+    cmd: 41 read-only tools
+    summary: A read-only Model Context Protocol server that lets AI assistants answer questions about live platform data in plain language.
+  - name: AI Brief & Delivery Checks
+    company: Design Shifu
+    years: Mar – Oct 2026
+    tags: [AI, Next.js]
+    icon: auto_awesome
+    color: '#c026d3'
+    cmd: voice → brief → QC
+    summary: Voice-to-brief and a brief creator that scores and improves design briefs, plus automated checks of each delivery against the brief, brand rules and client preferences.
+  - name: Billing & Subscriptions
+    company: Design Shifu
+    years: Jun – Sep 2026
+    tags: [Stripe, Next.js]
+    icon: credit_card
+    color: '#4338ca'
+    cmd: invoices · upgrades · proration
+    summary: Automatic PDF invoices, an inline plan-upgrade flow, plan tiers with feature gating, and correct proration on plan changes.
+  - name: White-label Reseller Platform
+    company: Design Shifu
+    years: May – Oct 2026
+    tags: [Next.js]
+    icon: storefront
+    color: '#0f766e'
+    cmd: multi-tenant SaaS
+    summary: Lets partners resell the service under their own brand, with branded theming, per-team queues and Slack integration.
+  - name: Dashboard Redesign
+    company: Design Shifu
+    years: Mar 2026
+    tags: [Next.js]
+    icon: dashboard
+    color: '#be123c'
+    cmd: one design system
+    summary: Rebuilt the admin and designer dashboards on a single shared design system.
+  - name: Auto-Assign Engine
+    company: Design Shifu
+    years: Jan – May 2026
+    tags: [Next.js]
+    icon: schedule
+    color: '#a16207'
+    cmd: Hono · BullMQ
+    summary: Matches incoming design requests to the right designer by skill, client history and workload, running on a background job queue, with a simulator to test assignments.
+  - name: Hands-on Lab Platform
+    company: Practical DevSecOps
+    years: 2021 – 2025
+    url: https://www.practical-devsecops.com/
+    tags: [Infrastructure, EdTech]
+    icon: lan
+    color: '#4c1d95'
+    cmd: ~2k machines · 2.5s start
+    summary: Browser-based desktop and VS Code lab environments for DevSecOps training, across multiple clouds. Served 334 users on ~2k machines at once with a 98% success rate; start-up cut from 6s to 2.5s and infra cost down ~30% with MicroVMs.
+  - name: Lab VS Code + Terminal Extension
+    company: Practical DevSecOps
+    years: 2025
+    tags: [EdTech]
+    icon: code_blocks
+    color: '#0e7490'
+    cmd: VS Code · terminal · labs
+    summary: VS Code and terminal extension for the lab machines, built for the new Secure Coding course.
+  - name: Harmony Design System
+    company: Practical DevSecOps
+    years: 2025
+    tags: [EdTech]
+    icon: palette
+    color: '#be185d'
+    cmd: one design system · all platforms
+    summary: Helped bring a shared design system, Harmony, to all of the company's platforms.
+  - name: Enterprise B2B Dashboard
+    company: Practical DevSecOps
+    years: 2025
+    tags: [EdTech]
+    icon: monitoring
+    color: '#334155'
+    cmd: B2B subscriptions
+    summary: Enhanced the enterprise dashboard behind the B2B subscription model.
+  - name: LMS & Exam Platform
+    company: Practical DevSecOps
+    years: 2023 – 2024
+    tags: [EdTech]
+    icon: school
+    color: '#3730a3'
+    cmd: video · quizzes · exams
+    summary: LMS backend with video lessons, interactive content, quizzes and a PDF viewer; exam challenges inside the lab, Apple Pay for lab extensions and AI-powered command explanations.
+  - name: Secure Cloud Drive
+    company: Practical DevSecOps
+    years: 2021 – 2023
+    tags: [EdTech, Security]
+    icon: cloud_lock
+    color: '#1e3a8a'
+    cmd: one-time download links
+    summary: Upload exam reports and distribute course materials through one-time download links.
+  - name: Student Portal & Automation
+    company: Practical DevSecOps
+    years: 2021 – 2023
+    tags: [EdTech]
+    icon: manage_accounts
+    color: '#5b21b6'
+    cmd: portal · automation scripts
+    summary: Worked on the members and students portal, plus automation scripts that streamlined operational workflows.
+  - name: Logistics Platform for Hauliers
+    company: HyperHaul
+    years: 2020 – 2021
+    tags: [Python]
+    icon: local_shipping
+    color: '#b91c1c'
+    cmd: manage · plan · communicate
+    summary: Backend for logistics management software that helps hauliers manage, plan and communicate across their organisation and stakeholders.
+  - name: SIAP Student Competency App
+    company: Muhammadiyah University of Surakarta
+    years: 2020
+    tags: [Python, Infrastructure]
+    icon: insights
+    color: '#1d4ed8'
+    cmd: Lightsail · S3 · RDS
+    summary: Measures student competency from evidence such as online exams, quizzes and assignments. Owned the whole backend, REST API, dashboards and AWS deployment.
+  - name: Home-Kitchen Management Dashboard
+    company: Dapur Pintar Indonesia
+    years: 2020
+    tags: [Python]
+    icon: restaurant
+    color: '#c2410c'
+    cmd: MokaPOS integration
+    summary: Management dashboard for a platform turning home kitchens into commercial ones, integrated with MokaPOS to track outlet performance.
+  - name: Entrepreneur Platform Backend
+    company: DOA Indonesia
+    years: 2019 – 2020
+    tags: [Python, Django]
+    icon: lightbulb
+    color: '#a16207'
+    cmd: REST API
+    summary: REST API backend for a platform helping Indonesians turn their ideas into businesses.
+  - name: Cross-border Shopping Backend
+    company: titipbeliin.com
+    years: 2018 – 2019
+    url: https://titipbeliin.com
+    tags: [Python, Django]
+    icon: shopping_bag
+    color: '#9a3412'
+    cmd: REST API · scrapers · AWS
+    summary: Django REST API and scrapers that let local shoppers buy from international e-commerce sites, running on AWS.
+  - name: Plazadana
+    company: PT. Bina Amwaluna Suarga
+    years: 2018
+    url: https://plazadana.com
+    tags: [Python]
+    icon: handshake
+    color: '#065f46'
+    cmd: crowdfunding marketplace
+    summary: Business rules for an Islamic retail-equity crowdfunding marketplace, built from scratch to public launch.
+  - name: Thesis Information System
+    company: Muhammadiyah University of Surakarta
+    years: 2017 – 2018
+    url: https://skripsi.ums.ac.id
+    tags: [Python]
+    icon: menu_book
+    color: '#0f766e'
+    cmd: skripsi.ums.ac.id
+    summary: Helped develop the university's thesis information system, built HR development reports, and migrated a project to an AWS VPS.
+  - name: DracOS Forum & Blog
+    company: DracOS Linux
+    years: 2016 – 2017
+    tags: [Python, Django]
+    icon: forum
+    color: '#18181b'
+    cmd: Django · SSO · multi-DB
+    summary: Forum and blog for an open-source, non-profit Linux distribution, with single sign-on and multiple databases, deployed on a VPS.
+  - name: PQS Publishing Website
+    company: PQS Publishing
+    years: 2015 – 2016
+    url: https://www.penerbitpqs.com
+    tags: [WordPress]
+    icon: auto_stories
+    color: '#7c2d12'
+    cmd: penerbitpqs.com
+    summary: Official website for an Islamic book publisher, built and launched as a freelance project.

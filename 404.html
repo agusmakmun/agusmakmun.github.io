@@ -1,0 +1,22 @@
+---
+layout: default
+title: Page not found
+permalink: /404.html
+noindex: true
+sitemap: false
+---
+<div class="not-found">
+  <div class="path"><span>~/journal</span><span class="muted">·</span><span class="green">404</span></div>
+  <h1>This page wandered off <span class="icon">explore</span></h1>
+  <p>The link may be old or mistyped. Try searching, or start from one of these:</p>
+  <div class="actions">
+    <button class="chip-btn" type="button" data-open-search><span class="icon">search</span><span>Search posts</span><kbd>⌘K</kbd></button>
+    <a class="chip-btn" href="{{ '/' | relative_url }}"><span class="icon">home</span><span>Home</span></a>
+    <a class="chip-btn" href="{{ '/writing/' | relative_url }}"><span class="icon">article</span><span>All posts</span></a>
+  </div>
+
+  <h2 class="year-head">Latest posts</h2>
+  <div class="posts-list">
+    {% for post in site.posts limit:3 %}{% include post-row.html post=post %}{% endfor %}
+  </div>
+</div>

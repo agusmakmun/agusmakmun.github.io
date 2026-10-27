@@ -1,45 +1,113 @@
 ---
 layout: default
+nav: /
 ---
-
-<div id="home">
-  <h1>{{ site.title }}</h1>
-  <hr />
-
-  <ol class="posts">
-    {% for post in paginator.posts %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a> &raquo; <i><span>{{ post.date | date_to_string }}</span></i></li>
-    {% endfor %}
-  </ol>
-
-  <!-- Pagination links -->
-  {% if paginator.total_pages > 1 %}
-    <ul class="pagination pagination-sm">
-      {% if paginator.previous_page %}
-        <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a></li>
-      {% else %}
-        <li class="disabled"><span aria-hidden="true">&laquo;</span></li>
-      {% endif %}
-
-      <li><a href="/">First</a></li>
-
-      {% for page in (1..paginator.total_pages) %}
-        {% if page == paginator.page %}
-          <li class="active"><a>{{ page }}<span class="sr-only">(current)</span></a></li>
-        {% elsif page == 1 %}
-          <li><a href="/">{{ page }}</a></li>
-        {% else %}
-          <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
-        {% endif %}
+{% assign total = site.posts.size %}
+{% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
+<div class="home-grid">
+  <aside class="profile">
+    <div class="profile-top">
+      <div class="profile-avatar">AM<span class="dot" title="{{ site.status }}"></span></div>
+      {% if site.status %}<span class="status">{{ site.status }}</span>{% endif %}
+    </div>
+    <div>
+      <h2>{{ site.author }}</h2>
+      <p>{{ site.about }}</p>
+    </div>
+    {% if site.profile_stats %}
+      <div class="stats">
+        {% for s in site.profile_stats %}<div class="stat"><span>{{ s.label }}</span><span>{{ s.value }}</span></div>{% endfor %}
+      </div>
+    {% endif %}
+    {% if site.stack %}
+      <div class="stack">
+        <div class="eyebrow" style="margin-bottom:.5rem">Core Technologies</div>
+        <div class="pills">{% for t in site.stack %}<span class="pill">{{ t }}</span>{% endfor %}</div>
+      </div>
+    {% endif %}
+    <div class="socials">
+      {% for l in site.social_links %}
+        <a href="{{ l.link | relative_url }}" title="{{ l.title }}"{% if l.link contains '://' %} target="_blank" rel="noopener"{% endif %}>{% if l.brand %}{% include brand-icon.html name=l.brand %}{% else %}<span class="icon">{{ l.icon }}</span>{% endif %}</a>
       {% endfor %}
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:.75rem">Sections</div>
+      <nav class="section-nav">
+        <a class="active" href="{{ '/writing/' | relative_url }}"><span><span class="icon">arrow_right</span>Stack Solutions</span><span class="count">{{ total }}</span></a>
+        <a href="{{ '/about/' | relative_url }}"><span><span class="icon">chevron_right</span>About Me</span><span class="count plain">bio</span></a>
+        <a href="{{ '/projects/' | relative_url }}"><span><span class="icon">chevron_right</span>My Projects</span><span class="count">{{ site.data.projects.featured.size | plus: site.data.projects.more.size | plus: site.data.projects.work.size }}</span></a>
+        <a href="{{ '/feed.xml' | relative_url }}"><span><span class="icon">chevron_right</span>XML Feed (RSS 2.0)</span><span class="count plain">xml</span></a>
+      </nav>
+    </div>
+  </aside>
 
-      <li><a href="/page/{{ paginator.total_pages }}/">Last</a></li>
+  <section>
+    <div class="list-head">
+      <div>
+        <div class="path"><span>~/journal/stack-solutions</span><span class="muted">·</span><span class="green">page {{ paginator.page }} of {{ paginator.total_pages }}</span></div>
+        <h1>{{ site.title }} <span class="pill">{{ total }} posts</span></h1>
+      </div>
+      <div class="switcher" role="group" aria-label="View">
+        <button type="button" data-view="compact" aria-pressed="true"><span class="icon">format_list_bulleted</span>Compact</button>
+        <button type="button" data-view="cards" aria-pressed="false"><span class="icon">grid_view</span>Expanded</button>
+      </div>
+    </div>
 
-      {% if paginator.next_page %}
-        <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a></li>
-      {% else %}
-        <li class="disabled"><span>&raquo;</span></li>
+    <div class="posts-list" id="posts-list">
+      {% for post in paginator.posts %}
+        {% assign n = offset | plus: forloop.index %}
+        {% include post-row.html post=post num=n %}
+      {% endfor %}
+    </div>
+
+    {% assign first = offset | plus: 1 %}
+    {% assign last = offset | plus: paginator.posts.size %}
+    <div class="pager">
+      <div>Showing <b>{{ first }}–{{ last }}</b> of <b>{{ total }}</b> posts</div>
+      {% if paginator.total_pages > 1 %}
+        {% capture page1 %}{{ '/' | relative_url }}{% endcapture %}
+        <nav aria-label="Pagination">
+          {% if paginator.previous_page %}
+            <a href="{{ page1 }}"><span class="icon">keyboard_double_arrow_left</span><span class="word">First</span></a>
+            <a href="{{ paginator.previous_page_path | relative_url }}" aria-label="Previous"><span class="icon">chevron_left</span></a>
+          {% else %}
+            <span class="disabled"><span class="icon">keyboard_double_arrow_left</span><span class="word">First</span></span>
+            <span class="disabled"><span class="icon">chevron_left</span></span>
+          {% endif %}
+          {% comment %}Show first, last and current ±1; collapse the rest into "…" so 50+ pages still fit.{% endcomment %}
+          {% assign win_lo = paginator.page | minus: 1 %}
+          {% assign win_hi = paginator.page | plus: 1 %}
+          {% assign gap_shown = false %}
+          {% for n in (1..paginator.total_pages) %}
+            {% if n == 1 or n == paginator.total_pages or n >= win_lo and n <= win_hi %}
+              {% assign gap_shown = false %}
+              {% if n == paginator.page %}
+                <span class="current" aria-current="page">{{ n }}</span>
+              {% elsif n == 1 %}
+                <a href="{{ page1 }}">1</a>
+              {% else %}
+                <a href="{{ site.paginate_path | replace: ':num', n | relative_url }}">{{ n }}</a>
+              {% endif %}
+            {% elsif gap_shown == false %}
+              <span class="gap" aria-hidden="true">…</span>
+              {% assign gap_shown = true %}
+            {% endif %}
+          {% endfor %}
+          {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | relative_url }}" aria-label="Next"><span class="icon">chevron_right</span></a>
+            <a href="{{ site.paginate_path | replace: ':num', paginator.total_pages | relative_url }}"><span class="word">Last</span><span class="icon">keyboard_double_arrow_right</span></a>
+          {% else %}
+            <span class="disabled"><span class="icon">chevron_right</span></span>
+            <span class="disabled"><span class="word">Last</span><span class="icon">keyboard_double_arrow_right</span></span>
+          {% endif %}
+        </nav>
       {% endif %}
-    </ul>
-  {% endif %}
-</div><!-- end #home -->
+    </div>
+
+    {% capture feed %}curl -s {{ '/feed.xml' | absolute_url }}{% endcapture %}
+    <div class="feed-tip">
+      <span><span class="icon green">terminal</span>Subscribe via command line: <code>{{ feed }}</code></span>
+      <button type="button" data-copy="{{ feed }}"><span class="icon">content_copy</span><span>Copy</span></button>
+    </div>
+  </section>
+</div>

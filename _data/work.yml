@@ -1,0 +1,148 @@
+# Source: LinkedIn profile (Oct 2026) and the author's own role descriptions. Keep to what's stated there.
+highlights:
+  - value: '10+ yrs'
+    label: 'Building and shipping software'
+    source: 'Since 2015'
+  - value: '~2k'
+    label: 'Lab machines running at once for 334 users, 98% success rate'
+    source: 'Practical DevSecOps'
+  - value: '6s → 2.5s'
+    label: 'Faster lab start-up for students'
+    source: 'Practical DevSecOps'
+  - value: '−30%'
+    label: 'Lower lab infrastructure cost, from MicroVMs and leaner scheduling'
+    source: 'Practical DevSecOps'
+
+experience:
+  - company: Design Shifu
+    icon: palette
+    roles:
+      - title: SDE Lead
+        dates: Jan 2026 – Present
+        place: Indonesia
+        summary: Moved over from Practical DevSecOps to make the sister company's platform as solid as Practical DevSecOps'.
+        points:
+          - Own the overall infrastructure.
+          - Migrated the platform off Vercel to self-hosted infrastructure.
+          - Migrated off Supabase to self-hosted Postgres, auth and storage.
+
+  - company: Practical DevSecOps
+    url: https://www.practical-devsecops.com/
+    icon: security
+    roles:
+      - title: Head of Regional Operations & SDE Lead (Level 3)
+        dates: Dec 2024 – Dec 2025
+        place: Indonesia
+        summary: Dual role leading the Indonesia regional team (8–13 people) and a development team (3–6 engineers) building cloud-based education platforms.
+        points:
+          - Helped the company reach SOC 2, ISO 27001 & GDPR compliance by maturing the platforms.
+          - Labs served 334 users on ~2k machines simultaneously with a 98% success rate.
+          - Cut lab start-up time from 6s to 2.5s.
+          - Reduced infrastructure cost by ~30%: moved to a MicroVM provider, auto-cleaned test machines, pre-deployed for HPA and cut scheduler resource use.
+          - Made the e2e and integration tests more usable, and unblocked the team on M1 machines that couldn't run the test setup.
+          - Built a VS Code + Terminal extension for the lab machines, used by the new Secure Coding course.
+          - Introduced pre-provisioned machines before exams; supported new courses and exams (CAISP, CSC, AI Red Teamer).
+          - Helped ship the Harmony design system and the enterprise dashboard for B2B subscriptions.
+          - Led the development team, including training and working with the other team leads, and kept bridging business needs to the product.
+      - title: Software Development Team Lead (Level 2)
+        dates: Aug 2023 – Nov 2024
+        place: Singapore
+        summary: Led a development team that grew from 3–4 to 5–6 engineers, planning with OKRs, KPIs, timelines and UML diagrams.
+        points:
+          - Researched and built desktop-based and VS Code-based browser lab environments for hands-on training.
+          - Expanded lab infrastructure to multiple cloud providers.
+          - Designed the LMS backend (video lessons, interactive content, quizzes, PDF viewer).
+          - Added a dedicated Markdown renderer page, Apple Pay for lab extensions and AI-powered command explanations.
+          - Integrated exam challenges directly into the lab, unifying learning and assessment.
+      - title: Software Development Team Lead (Level 1)
+        dates: Aug 2021 – Jul 2023
+        place: Singapore
+        points:
+          - Led an interactive lab platform for DevSecOps training (GitLab, Docker, Kubernetes, DOJO).
+          - Built a secure cloud drive for exam reports and course materials with one-time download links.
+          - Employee of the Month 2023 — Best Lead.
+      - title: Full Stack Engineer (part-time)
+        dates: Oct 2020 – Jul 2021
+        place: Singapore
+
+  - company: HyperHaul
+    icon: local_shipping
+    roles:
+      - title: Backend Developer
+        dates: Oct 2020 – Jul 2021
+        place: Singapore
+        summary: Backend for a Singapore company's logistics management software, helping hauliers manage, plan and communicate across their organisation and stakeholders, until development stopped due to funding.
+
+  - company: Muhammadiyah University of Surakarta
+    icon: school
+    roles:
+      - title: Backend Developer (contract)
+        dates: Apr 2020 – Sep 2020
+        place: Surakarta, Indonesia
+        summary: 'Owned the backend of SIAP, which measures student competency from evidence such as online exams, quizzes and assignments: REST API, dashboards and deployment on AWS Lightsail, S3 & RDS. The project stopped after COVID-19 cut its funding.'
+
+  - company: Dapur Pintar Indonesia
+    icon: restaurant
+    roles:
+      - title: Backend Developer (contract)
+        dates: Jan 2020 – Mar 2020
+        summary: Built the management dashboard for a platform turning home kitchens into commercial ones (local menus plus food delivery), integrated with MokaPOS for outlet performance. The project stopped after COVID-19 cut its funding.
+
+  - company: DOA Indonesia
+    icon: lightbulb
+    roles:
+      - title: Backend Engineer (contract)
+        dates: Jul 2019 – Mar 2020
+        place: Bekasi, Indonesia
+        summary: Backend services and REST APIs for a platform helping Indonesian entrepreneurs build and launch their ideas, until the project stopped due to funding.
+
+  - company: titipbeliin.com
+    url: https://titipbeliin.com
+    icon: shopping_bag
+    roles:
+      - title: Senior Python Programmer
+        dates: Sep 2018 – Dec 2019
+        place: Indonesia
+        summary: Backend for a platform connecting local shoppers with international e-commerce sites, simplifying overseas logistics and payment.
+        points:
+          - Built the Python & Django backend and REST API.
+          - Wrote the scrapers for international stores.
+          - Ran the AWS servers.
+
+  - company: PT. Bina Amwaluna Suarga
+    url: https://plazadana.com
+    icon: account_balance
+    roles:
+      - title: Full Stack Developer (contract)
+        dates: Apr 2018 – Jul 2018
+        place: Jakarta, Indonesia
+        summary: Built the business rules for Plazadana, an Islamic retail-equity crowdfunding marketplace, from scratch to public launch.
+
+  - company: Muhammadiyah University of Surakarta
+    icon: school
+    roles:
+      - title: Lecturer Assistant (contract)
+        dates: Aug 2017 – Jul 2018
+        place: Surakarta, Indonesia
+        points:
+          - Contributed to the research "Combining Analytic Hierarchy Process and Sentiment Analysis to Higher Education Strategic Planning".
+          - Helped develop the Thesis Information System (skripsi.ums.ac.id).
+          - Built reports for the Human Resource Development information system.
+          - Migrated a project to a VPS on AWS.
+
+  - company: DracOS Linux
+    icon: terminal
+    roles:
+      - title: Python Developer
+        dates: Feb 2016 – Apr 2017
+        place: Jakarta, Indonesia
+        summary: Built the forum and blog for this open-source, non-profit Linux distribution with Django, single sign-on and multiple databases, deployed on a VPS.
+
+  - company: PQS Publishing
+    url: https://www.penerbitpqs.com
+    icon: menu_book
+    roles:
+      - title: Freelance Full Stack Developer
+        dates: Dec 2015 – Jan 2016
+        place: Surakarta, Indonesia
+        summary: Built and launched the official website of an Islamic book publisher (WordPress, MySQL).
