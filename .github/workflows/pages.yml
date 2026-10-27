@@ -3,6 +3,7 @@ name: Deploy Jekyll site to Pages
 on:
   push:
     branches: [master]
+  pull_request: # build only, to catch errors before merging; never deploys
   workflow_dispatch:
 
 permissions:
@@ -11,8 +12,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.ref) || 'pages' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
@@ -31,8 +32,10 @@ jobs:
         env:
           JEKYLL_ENV: production
       - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
 
   deploy:
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     environment:
