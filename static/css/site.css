@@ -85,6 +85,12 @@ button {
   display: inline-block;
   vertical-align: middle;
   white-space: nowrap;
+  /* ligatures match lowercase names only; uppercase labels would break them */
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
 .mono {
