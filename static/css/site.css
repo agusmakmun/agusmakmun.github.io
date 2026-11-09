@@ -1191,6 +1191,12 @@ a.pill:hover {
 .prose a:hover {
   text-decoration-color: var(--ink);
 }
+/* ponytail: links inside code (e.g. added by link-detecting extensions) keep the code color */
+.prose pre a,
+.prose pre a:hover {
+  color: inherit;
+  text-decoration-color: currentColor;
+}
 .prose strong {
   color: var(--ink);
   font-weight: 600;
