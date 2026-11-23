@@ -148,7 +148,7 @@ and password reset. A finding looks like this:
 If you use Cursor, Copilot or another agent, download the checklist into your project:
 
 ```bash
-curl -o LAUNCH_CHECKLIST.md https://raw.githubusercontent.com/agusmakmun/web-app-checklist/main/skills/go-live-audit/references/checklist.md
+curl -o LAUNCH_CHECKLIST.md https://raw.githubusercontent.com/agusmakmun/web-app-checklist/main/skills/web-app-checklist/references/checklist.md
 ```
 
 Then run this prompt from the project root:
@@ -169,7 +169,7 @@ fixes. Then fix the failures **one at a time**, each with a regression test. A s
 fix five things and break three others.
 
 The checklist also ends with a
-[verification cheat sheet](https://github.com/agusmakmun/web-app-checklist/blob/main/skills/go-live-audit/references/checklist.md#verification-cheat-sheet):
+[verification cheat sheet](https://github.com/agusmakmun/web-app-checklist/blob/main/skills/web-app-checklist/references/checklist.md#verification-cheat-sheet):
 `curl` checks for HTTPS and headers, exposed `.env`/`.git` files, CORS and rate limits, `dig` for SPF/DMARC, gitleaks
 over the full git history, and a check that your DB port is closed. Run these against the deployed app, not just the
 code.
