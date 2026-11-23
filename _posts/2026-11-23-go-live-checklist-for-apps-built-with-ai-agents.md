@@ -102,8 +102,56 @@ The checklist also has a phase for the agent itself, because some of the worst i
 
 ### Make the agent audit itself
 
-Here the agent is useful again. Copy the checklist into your project as `LAUNCH_CHECKLIST.md` and run this from the
-project root:
+Here the agent is useful again. There are two ways to point it at the checklist.
+
+#### Option 1: install it as a Claude Code skill
+
+The repo is also a Claude Code plugin. Install it once:
+
+```text
+/plugin marketplace add agusmakmun/web-app-checklist
+/plugin install web-app-checklist@web-app-checklist
+```
+
+Then, from any project, just ask *"is this app ready to go live?"*. You don't need to name the skill; Claude picks it
+up from the request. It then:
+
+1. Recons the stack. The most important question is whether the browser talks to the database directly, or only the
+   backend does, because that decides which access-control items apply.
+2. Checks every applicable item against the code, starting with about 20 high-signal searches: `NEXT_PUBLIC_*`
+   secrets, ID lookups without an owner filter, string-built SQL, `dangerouslySetInnerHTML`, CORS `*` with
+   credentials, plan upgrades outside webhooks, tables without RLS, and more.
+3. Marks each item PASS / FAIL / PARTIAL / N/A / CANNOT VERIFY. **A PASS needs `file:line` evidence.** Things outside
+   the repo (DNS, backups, provider dashboards) get the exact command or dashboard check to run instead.
+4. Writes a `GO_LIVE_AUDIT.md` report with a verdict, the blockers (each with its risk and the minimal fix), and a fix
+   order.
+
+It's read-only: it doesn't change code, doesn't touch production, and masks any secrets it finds. You can also scope
+it: *"run a go-live audit, auth and payments only"*.
+
+To check that it actually works, I built a small Next.js app with 14 planted problems: a committed `.env.local`, a
+Stripe secret key behind `NEXT_PUBLIC_`, an invoice route without an owner check, SHA-256 passwords, SQL injection,
+CORS `*`, a health check that returned the database URL, Pro granted on the success page, a Supabase table without
+RLS, Postgres published on `5432:5432`, and a few more. The skill caught all 14. It also marked the one correctly
+written route as PASS instead of raising a false alarm, and found problems I hadn't planted, like the missing logout
+and password reset. A finding looks like this:
+
+```markdown
+| #   | Item                   | Status | Evidence                                                     | Minimal fix                        |
+|-----|------------------------|--------|--------------------------------------------------------------|------------------------------------|
+| 4.2 | Ownership check (IDOR) | FAIL   | `app/api/invoices/[id]/route.ts:7` no owner filter           | `WHERE id = $1 AND owner_id = $2`  |
+| 6.2 | Paid access via webhook| FAIL   | `app/checkout/success/page.tsx:5` upgrades the plan on load  | Grant Pro only from a verified Stripe webhook |
+```
+
+#### Option 2: any coding agent
+
+If you use Cursor, Copilot or another agent, download the checklist into your project:
+
+```bash
+curl -o LAUNCH_CHECKLIST.md https://raw.githubusercontent.com/agusmakmun/web-app-checklist/main/skills/go-live-audit/references/checklist.md
+```
+
+Then run this prompt from the project root:
 
 ```text
 You are a senior security engineer doing a pre-launch audit of this codebase.
@@ -115,14 +163,16 @@ Do not mark anything PASS without evidence. Do not modify code yet.
 Output a table sorted by priority: BLOCKER failures first.
 ```
 
-Two details make this work. "Cite file:line" stops the agent from passing items on vibes, because an item with no
-evidence becomes a FAIL or CANNOT VERIFY. "Do not modify code yet" keeps the audit separate from the fixes. Then fix
-the failures **one at a time**, each with a regression test. A single "fix everything" prompt tends to fix five things
-and break three others.
+Two details make this work, with either option. "Cite file:line" stops the agent from passing items on vibes, because
+an item with no evidence becomes a FAIL or CANNOT VERIFY. "Do not modify code yet" keeps the audit separate from the
+fixes. Then fix the failures **one at a time**, each with a regression test. A single "fix everything" prompt tends to
+fix five things and break three others.
 
-The README also has a verification cheat sheet with `curl` checks for HTTPS and headers, exposed `.env`/`.git` files,
-CORS, rate limits, `dig` for SPF/DMARC, gitleaks over the full git history, and checks that your DB port is closed.
-Run these against the deployed app, not just the code.
+The checklist also ends with a
+[verification cheat sheet](https://github.com/agusmakmun/web-app-checklist/blob/main/skills/go-live-audit/references/checklist.md#verification-cheat-sheet):
+`curl` checks for HTTPS and headers, exposed `.env`/`.git` files, CORS and rate limits, `dig` for SPF/DMARC, gitleaks
+over the full git history, and a check that your DB port is closed. Run these against the deployed app, not just the
+code.
 
 ### What it deliberately leaves out
 
@@ -136,7 +186,8 @@ settings, and that's where the audit prompt helps, because it runs against your 
 - AI agents make shipping fast. They don't make it safe. Verify everything; trust nothing that has no evidence.
 - Start the checklist in the codebase, not at the DNS panel. The expensive mistakes happen while you're coding.
 - Most real breaches in AI-built apps are boring: keys in the bundle, no RLS, missing ownership checks.
-- Put the rules where the agent reads them every session, then make the agent prove each item with `file:line`.
+- Put the rules where the agent reads them every session, then make the agent prove each item with `file:line`. The
+  Claude Code skill does this for you.
 - Don't launch on a Friday. Launch when you can watch it for the next 48 hours.
 
 The full checklist, with references to the OWASP cheat sheets and the other sources behind each item, is at
